@@ -1,13 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'app/routes/app_pages.dart';
+import 'package:oracle/app/modules/app_page/views/app_page_view.dart';
 
 void main() {
-  runApp(
-    GetMaterialApp(
-      title: "Application",
-      initialRoute: AppPages.INITIAL,
-      getPages: AppPages.routes,
-    ),
-  );
+  runApp(AppPageView());
 }

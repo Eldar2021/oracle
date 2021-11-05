@@ -12,7 +12,7 @@ dependencies:
   # get atate managment
   get: 4.3.8
   # splash native
-  animated_splash_screen: ^1.1.0
+  splash_screen_view: ^3.0.0
 #-----------------
   flutter: 
     sdk: flutter
