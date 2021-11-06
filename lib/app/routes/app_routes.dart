@@ -7,10 +7,12 @@ abstract class Routes {
   static const HOME = _Paths.HOME;
   static const APP_PAGE = _Paths.APP_PAGE;
   static const LOGIN = _Paths.LOGIN;
+  static const AUTH_PHONE = _Paths.AUTH_PHONE;
 }
 
 abstract class _Paths {
   static const HOME = '/home';
   static const APP_PAGE = '/app-page';
   static const LOGIN = '/login';
+  static const AUTH_PHONE = '/auth-phone';
 }
