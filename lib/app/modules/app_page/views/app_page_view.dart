@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:oracle/app/routes/app_pages.dart';
 import 'package:oracle/constants/color_constants.dart';
 import 'package:splash_screen_view/SplashScreenView.dart';
 import '../controllers/app_page_controller.dart';
@@ -12,9 +13,19 @@ class AppPageView extends GetView<AppPageController> {
       debugShowCheckedModeBanner: false,
       title: "Бумеранг",
       locale: Get.deviceLocale,
+      getPages: AppPages.routes,
       theme: ThemeData.dark().copyWith(
-          scaffoldBackgroundColor: MyColors.backgraundColor,
-          textTheme: TextTheme()),
+        appBarTheme: AppBarTheme(backgroundColor: MyColors.backgraundColor),
+        scaffoldBackgroundColor: MyColors.backgraundColor,
+        textTheme: TextTheme(),
+        inputDecorationTheme: InputDecorationTheme(
+          filled: true,
+          fillColor: MyColors.textFieldBgColor,
+          border: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(16.0),
+          ),
+        ),
+      ),
       home: SplashScreenView(
         text: "LOGO",
         textStyle: TextStyle(

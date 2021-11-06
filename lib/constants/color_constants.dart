@@ -6,4 +6,6 @@ class MyColors{
   static const Color buttonBgColor = Color(0xff272F37); 
   static const Color linkTextColor = Color(0xff0761DC);
   static const Color grayTextColor = Color(0xff767676);
+  static const Color textFieldBgColor = Color(0xff272F37);
+  static const Color elevatedButtonBgColor = Color(0xff0761DC);
 }

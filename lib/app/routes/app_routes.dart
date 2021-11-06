@@ -8,6 +8,8 @@ abstract class Routes {
   static const APP_PAGE = _Paths.APP_PAGE;
   static const LOGIN = _Paths.LOGIN;
   static const AUTH_PHONE = _Paths.AUTH_PHONE;
+  static const REGISTER = _Paths.REGISTER;
+  static const RESTORE_PASSWORD = _Paths.RESTORE_PASSWORD;
 }
 
 abstract class _Paths {
@@ -15,4 +17,6 @@ abstract class _Paths {
   static const APP_PAGE = '/app-page';
   static const LOGIN = '/login';
   static const AUTH_PHONE = '/auth-phone';
+  static const REGISTER = '/register';
+  static const RESTORE_PASSWORD = '/restore-password';
 }

@@ -6,8 +6,12 @@ import 'package:oracle/app/modules/home/bindings/home_binding.dart';
 import 'package:oracle/app/modules/home/views/home_view.dart';
 import 'package:oracle/app/modules/login/bindings/auth_phone_binding.dart';
 import 'package:oracle/app/modules/login/bindings/login_binding.dart';
+import 'package:oracle/app/modules/login/bindings/register_binding.dart';
+import 'package:oracle/app/modules/login/bindings/restore_password_binding.dart';
 import 'package:oracle/app/modules/login/views/auth_phone_view.dart';
 import 'package:oracle/app/modules/login/views/login_view.dart';
+import 'package:oracle/app/modules/login/views/register_view.dart';
+import 'package:oracle/app/modules/login/views/restore_password_view.dart';
 
 part 'app_routes.dart';
 
@@ -36,6 +40,16 @@ class AppPages {
       name: _Paths.AUTH_PHONE,
       page: () => AuthPhoneView(),
       binding: AuthPhoneBinding(),
+    ),
+    GetPage(
+      name: _Paths.REGISTER,
+      page: () => RegisterView(),
+      binding: RegisterBinding(),
+    ),
+    GetPage(
+      name: _Paths.RESTORE_PASSWORD,
+      page: () => RestorePasswordView(),
+      binding: RestorePasswordBinding(),
     ),
   ];
 }
