@@ -17,17 +17,12 @@ dependencies:
   flutter_svg: ^0.23.0+1
   # rating view
   flutter_rating_bar: ^4.0.0
-user_profile_review
   # get rest api
   dio: ^4.0.1
   # date time format
   intl: ^0.17.0
 #-----------------
-  flutter: 
-
-  #-----------------
   flutter:
-main
     sdk: flutter
 
 dev_dependencies:
@@ -41,7 +36,9 @@ flutter:
     - assets/icons/authenticate/
     - assets/icons/bottom_nav/
     - assets/icons/components/
+    - assets/icons/array/
     - assets/icons/user/
+    - assets/icons/draver_nav/
     - assets/images/user/
     - assets/images/background/
-    - assets/icons/draver_nav/
+
