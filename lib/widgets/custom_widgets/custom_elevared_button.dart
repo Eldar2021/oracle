@@ -10,19 +10,23 @@ class CustomElevatedButton extends StatelessWidget {
     this.text = "Войти",
     this.borderRadius = 16.0,
     this.bgColor = MyColors.elevatedButtonBgColor,
+    this.fontSize,
     Key? key,
   }) : super(key: key);
+
   final String text;
   final Function function;
   final double height;
   final double width;
   final double borderRadius;
   final Color bgColor;
+  final double? fontSize;
 
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
-      child: Text("$text", style: Get.textTheme.subtitle1),
+      child: Text("$text",
+          style: Get.textTheme.subtitle1!.copyWith(fontSize: fontSize ?? 0)),
       style: ElevatedButton.styleFrom(
         primary: bgColor,
         fixedSize: Size(width, height),

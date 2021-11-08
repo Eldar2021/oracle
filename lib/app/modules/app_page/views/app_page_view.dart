@@ -12,7 +12,7 @@ class AppPageView extends GetView<AppPageController> {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
-      title: "Бумеранг",
+      title: "Gamer X",
       locale: Get.deviceLocale,
       getPages: AppPages.routes,
       theme: ThemeData.dark().copyWith(
