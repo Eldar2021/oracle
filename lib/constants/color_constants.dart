@@ -23,5 +23,6 @@ class MyColors{
   static const Color ratingStarColor = Color(0xffFFBB3D);
   static const Color moneyTextColor = Color(0xffFFB156);
   static const Color viewsTextColor = Color(0xff949494);
+  static const Color actionTextColor = Color(0xff52606D);
 
 }

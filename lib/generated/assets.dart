@@ -2,6 +2,11 @@
 class Assets {
   Assets._();
 
+  static const String arrayArrayBottom = 'assets/icons/array/arrayBottom.svg';
+  static const String arrayArrayRight = 'assets/icons/array/arrayRight.svg';
+  static const String arrayBackX = 'assets/icons/array/backx.svg';
+  static const String arraySolid = 'assets/icons/array/solid.svg';
+  static const String arrayTrue = 'assets/icons/array/true.svg';
   static const String authenticateFacebook = 'assets/icons/authenticate/facebook.svg';
   static const String authenticateGoogle = 'assets/icons/authenticate/google.svg';
   static const String authenticatePhone = 'assets/icons/authenticate/phone.svg';
@@ -14,6 +19,7 @@ class Assets {
   static const String componentsDefeatFlag = 'assets/icons/components/defeatFlag.svg';
   static const String componentsDislike = 'assets/icons/components/dislike.svg';
   static const String componentsEyes = 'assets/icons/components/eyes.svg';
+  static const String componentsFilter = 'assets/icons/components/filter.svg';
   static const String componentsFlagStar = 'assets/icons/components/flagStar.svg';
   static const String componentsLike = 'assets/icons/components/like.svg';
   static const String componentsPercent = 'assets/icons/components/percent.svg';
