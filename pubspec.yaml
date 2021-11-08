@@ -2,11 +2,11 @@ name: oracle
 version: 1.0.0+1
 publish_to: none
 description: A new Flutter project.
-environment: 
-  sdk: '>=2.12.0 <3.0.0'
+environment:
+  sdk: ">=2.12.0 <3.0.0"
 
-dependencies: 
-#-----------------------
+dependencies:
+  #-----------------------
   # ios design
   cupertino_icons: ^1.0.2
   # get atate managment
@@ -17,25 +17,31 @@ dependencies:
   flutter_svg: ^0.23.0+1
   # rating view
   flutter_rating_bar: ^4.0.0
+user_profile_review
   # get rest api
   dio: ^4.0.1
   # date time format
   intl: ^0.17.0
 #-----------------
   flutter: 
+
+  #-----------------
+  flutter:
+main
     sdk: flutter
 
-dev_dependencies: 
+dev_dependencies:
   flutter_lints: ^1.0.0
-  flutter_test: 
+  flutter_test:
     sdk: flutter
 
-flutter: 
+flutter:
   uses-material-design: true
   assets:
     - assets/icons/authenticate/
     - assets/icons/bottom_nav/
     - assets/icons/components/
-    - assets/icons/array/
     - assets/icons/user/
     - assets/images/user/
+    - assets/images/background/
+    - assets/icons/draver_nav/

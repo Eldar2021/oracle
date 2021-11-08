@@ -2,6 +2,7 @@
 class Assets {
   Assets._();
 
+user_profile_review
   static const String arrayArrayBottom = 'assets/icons/array/arrayBottom.svg';
   static const String arrayArrayRight = 'assets/icons/array/arrayRight.svg';
   static const String arrayBackX = 'assets/icons/array/backx.svg';
@@ -9,11 +10,18 @@ class Assets {
   static const String arrayTrue = 'assets/icons/array/true.svg';
   static const String authenticateFacebook = 'assets/icons/authenticate/facebook.svg';
   static const String authenticateGoogle = 'assets/icons/authenticate/google.svg';
+
+  static const String authenticateFacebook =
+      'assets/icons/authenticate/facebook.svg';
+  static const String authenticateGoogle =
+      'assets/icons/authenticate/google.svg';
+main
   static const String authenticatePhone = 'assets/icons/authenticate/phone.svg';
   static const String bottomNavBottom1 = 'assets/icons/bottom_nav/bottom1.svg';
   static const String bottomNavBottom2 = 'assets/icons/bottom_nav/bottom2.svg';
   static const String bottomNavBottom3 = 'assets/icons/bottom_nav/bottom3.svg';
   static const String bottomNavBottom4 = 'assets/icons/bottom_nav/bottom4.svg';
+ user_profile_review
   static const String componentsArrayShare = 'assets/icons/components/arrayShare.svg';
   static const String componentsConfirm = 'assets/icons/components/confirm.svg';
   static const String componentsDefeatFlag = 'assets/icons/components/defeatFlag.svg';
@@ -21,18 +29,40 @@ class Assets {
   static const String componentsEyes = 'assets/icons/components/eyes.svg';
   static const String componentsFilter = 'assets/icons/components/filter.svg';
   static const String componentsFlagStar = 'assets/icons/components/flagStar.svg';
+
+  static const String componentsDefeatFlag =
+      'assets/icons/components/defeatFlag.svg';
+  static const String componentsDislike = 'assets/icons/components/dislike.svg';
+  static const String componentsFlagStar =
+      'assets/icons/components/flagStar.svg';
+main
   static const String componentsLike = 'assets/icons/components/like.svg';
   static const String componentsPercent = 'assets/icons/components/percent.svg';
-  static const String componentsRatingEmpty = 'assets/icons/components/ratingEmpty.svg';
-  static const String componentsRatingFullStar = 'assets/icons/components/ratingFullStar.svg';
-  static const String componentsRatingQualityStar = 'assets/icons/components/ratingQualityStar.svg';
+  static const String componentsRatingEmpty =
+      'assets/icons/components/ratingEmpty.svg';
+  static const String componentsRatingFullStar =
+      'assets/icons/components/ratingFullStar.svg';
+  static const String componentsRatingQualityStar =
+      'assets/icons/components/ratingQualityStar.svg';
   static const String componentsWinFlag = 'assets/icons/components/winFlag.svg';
   static const String userDota = 'assets/images/user/dota.png';
   static const String userPhote = 'assets/images/user/phote.png';
   static const String userUserEmail = 'assets/icons/user/userEmail.svg';
   static const String userUserPhone = 'assets/icons/user/userPhone.svg';
-  static const String userUserStreamProfile = 'assets/icons/user/userStreamProfile.svg';
+  static const String userUserStreamProfile =
+      'assets/icons/user/userStreamProfile.svg';
   static const String userUserTl = 'assets/icons/user/userTl.svg';
   static const String userUserWhatsApp = 'assets/icons/user/userWhatsApp.svg';
-
+  static const String aboutUsSvg = "assets/icons/draver_nav/about.svg";
+  static const String answerSvg = "assets/icons/draver_nav/answers.svg";
+  static const String battleSvg = "assets/icons/draver_nav/battle.svg";
+  static const String exitSvg = "assets/icons/draver_nav/exit.svg";
+  static const String helpSvg = "assets/icons/draver_nav/help.svg";
+  static const String identitySvg = "assets/icons/draver_nav/identity.svg";
+  static const String myBattlesSvg = "assets/icons/draver_nav/myBattles.svg";
+  static const String moneySvg = "assets/icons/draver_nav/money.svg";
+  static const String notificationSvg =
+      "assets/icons/draver_nav/notification.svg";
+  static const String drawerBackground = "assets/images/background/draver.png";
+  static const String userAvatar = "assets/images/user/phote.png";
 }
