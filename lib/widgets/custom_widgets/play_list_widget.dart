@@ -10,22 +10,24 @@ class PlaysList extends StatelessWidget {
   const PlaysList({
     Key? key,
     required this.controller,
+    required this.plays,
   }) : super(key: key);
 
   final ProfileController controller;
+  final List<Play> plays;
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      child: Column(
+      child: plays.isEmpty? Container(): Column(
         children: [
           Text("Игры"),
           ListView.builder(
               shrinkWrap: true,
               primary: false,
-              itemCount: plays1.length,
+              itemCount: plays.length,
               itemBuilder: (context, index) {
-                Play play = plays1[index];
+                Play play = plays[index];
                 return Container(
                   decoration: BoxDecoration(
                     border: Border(

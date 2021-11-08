@@ -2,7 +2,13 @@ import 'package:get/get.dart';
 
 import 'package:oracle/app/modules/app_page/bindings/app_page_binding.dart';
 import 'package:oracle/app/modules/app_page/views/app_page_view.dart';
+import 'package:oracle/app/modules/category/bindings/category_binding.dart';
+import 'package:oracle/app/modules/category/views/category_view.dart';
+import 'package:oracle/app/modules/filter/bindings/filter_binding.dart';
+import 'package:oracle/app/modules/filter/views/filter_view.dart';
+import 'package:oracle/app/modules/home/bindings/give_reriew_binding.dart';
 import 'package:oracle/app/modules/home/bindings/home_binding.dart';
+import 'package:oracle/app/modules/home/views/give_review_view.dart';
 import 'package:oracle/app/modules/home/views/screen_view.dart';
 import 'package:oracle/app/modules/login/bindings/auth_phone_binding.dart';
 import 'package:oracle/app/modules/login/bindings/login_binding.dart';
@@ -50,6 +56,21 @@ class AppPages {
       name: _Paths.RESTORE_PASSWORD,
       page: () => RestorePasswordView(),
       binding: RestorePasswordBinding(),
+    ),
+    GetPage(
+      name: _Paths.GIVE_REVIEW,
+      page: () => GiveReviewView(),
+      binding: GiveReviewBinding(),
+    ),
+    GetPage(
+      name: _Paths.CATEGORY,
+      page: () => CategoryView(),
+      binding: CategoryBinding(),
+    ),
+    GetPage(
+      name: _Paths.FILTER,
+      page: () => FilterView(),
+      binding: FilterBinding(),
     ),
   ];
 }

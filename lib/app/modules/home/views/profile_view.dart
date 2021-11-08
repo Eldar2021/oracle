@@ -6,7 +6,6 @@ import 'package:get/get.dart';
 import 'package:oracle/app/data/models/user_model/user_model.dart';
 import 'package:oracle/app/modules/home/controllers/profile_controller.dart';
 import 'package:oracle/generated/assets.dart';
-import 'package:oracle/widgets/custom_widgets/custom_elevared_button.dart';
 import 'package:oracle/widgets/custom_widgets/like_dislike_widget.dart';
 import 'package:oracle/widgets/custom_widgets/play_list_widget.dart';
 import 'package:oracle/widgets/custom_widgets/rating_copleted_widget.dart';
@@ -29,6 +28,7 @@ class ProfileView extends GetView<ProfileController> {
     return Scaffold(
       appBar: buildAppBar(),
       body: SingleChildScrollView(
+        physics: BouncingScrollPhysics(),
         child: ConstrainedBox(
           constraints: BoxConstraints(
             maxHeight: double.infinity,
@@ -54,16 +54,10 @@ class ProfileView extends GetView<ProfileController> {
           const SizedBox(height: 60),
           RatingsCompleted(user: user),
           const SizedBox(height: 50),
-          ReviewsList(reviews: reviews1),
-          const SizedBox(height: 40),
-          CustomElevatedButton(
-            text: "Смотртеть все отзывы",
-            width: 206,
-            function: () {},
-          ),
+          ReviewsList(reviews: reviews2),
           const SizedBox(height: 40),
           UserEmailPhoneList(),
-          PlaysList(controller: controller)
+          PlaysList(controller: controller, plays: plays1),
         ],
       ),
     );
