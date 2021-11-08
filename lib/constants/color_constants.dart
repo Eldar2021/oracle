@@ -20,5 +20,8 @@ class MyColors{
   static const Color orangeColor = Color(0xffFF7A00);
   static const Color purpleColor = Color(0xff6700EB);
   static const Color greenColor = Color(0xff4CEF00);
+  static const Color ratingStarColor = Color(0xffFFBB3D);
+  static const Color moneyTextColor = Color(0xffFFB156);
+  static const Color viewsTextColor = Color(0xff949494);
 
 }

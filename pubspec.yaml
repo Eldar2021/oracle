@@ -17,6 +17,10 @@ dependencies:
   flutter_svg: ^0.23.0+1
   # rating view
   flutter_rating_bar: ^4.0.0
+  # get rest api
+  dio: ^4.0.1
+  # date time format
+  intl: ^0.17.0
 #-----------------
   flutter: 
     sdk: flutter

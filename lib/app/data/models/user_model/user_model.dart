@@ -96,11 +96,13 @@ UserModel userModel1 = UserModel(
   ratingPunctuality: 5.0,
   email: "eldiiaralmazbekov@gmail.com",
   profile: "eldiiar",
-  //reviews: reviews1,
+  // reviews: reviews1,
   //plays: plays1,
 );
 List<Play> plays1 = [play1, play2, play3, play4];
+List<Play> plays2 = [];
 List<Review> reviews1 = [review1, review2];
+List<Review> reviews2 = [];
 Review review1 = Review(
   user: userModel1,
   comment: "Пацан красавчик, хорошо играет, жду новых игр с тобой",

@@ -11,6 +11,7 @@ abstract class Routes {
   static const REGISTER = _Paths.REGISTER;
   static const RESTORE_PASSWORD = _Paths.RESTORE_PASSWORD;
   static const PROFILE = _Paths.PROFILE;
+  static const GIVE_REVIEW = _Paths.GIVE_REVIEW;
 }
 
 abstract class _Paths {
@@ -21,4 +22,5 @@ abstract class _Paths {
   static const REGISTER = '/register';
   static const RESTORE_PASSWORD = '/restore-password';
   static const PROFILE = '/profile';
+  static const GIVE_REVIEW = '/give-review';
 }

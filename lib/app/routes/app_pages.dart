@@ -2,7 +2,9 @@ import 'package:get/get.dart';
 
 import 'package:oracle/app/modules/app_page/bindings/app_page_binding.dart';
 import 'package:oracle/app/modules/app_page/views/app_page_view.dart';
+import 'package:oracle/app/modules/home/bindings/give_reriew_binding.dart';
 import 'package:oracle/app/modules/home/bindings/home_binding.dart';
+import 'package:oracle/app/modules/home/views/give_review_view.dart';
 import 'package:oracle/app/modules/home/views/screen_view.dart';
 import 'package:oracle/app/modules/login/bindings/auth_phone_binding.dart';
 import 'package:oracle/app/modules/login/bindings/login_binding.dart';
@@ -50,6 +52,11 @@ class AppPages {
       name: _Paths.RESTORE_PASSWORD,
       page: () => RestorePasswordView(),
       binding: RestorePasswordBinding(),
+    ),
+    GetPage(
+      name: _Paths.GIVE_REVIEW,
+      page: () => GiveReviewView(),
+      binding: GiveReviewBinding(),
     ),
   ];
 }
