@@ -108,7 +108,8 @@ Review review1 = Review(
 );
 Review review2 = Review(
   user: userModel1,
-  comment: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat",
+  comment:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat",
   time: "15:15, 08.06.21г",
 );
 
@@ -118,7 +119,7 @@ Play play1 = Play(
   wins: 1,
   battles: 6,
   defeats: 4,
-  winRate: (1/6)*100,
+  winRate: (1 / 6) * 100,
 );
 Play play2 = Play(
   name: "Dota 2",
@@ -126,7 +127,7 @@ Play play2 = Play(
   wins: 5,
   battles: 10,
   defeats: 5,
-  winRate: (5/10)*100,
+  winRate: (5 / 10) * 100,
 );
 Play play3 = Play(
   name: "Dota 2",
@@ -134,7 +135,7 @@ Play play3 = Play(
   wins: 9,
   battles: 21,
   defeats: 12,
-  winRate: (9/21)*100,
+  winRate: (9 / 21) * 100,
 );
 Play play4 = Play(
   name: "Dota 2",
@@ -142,5 +143,5 @@ Play play4 = Play(
   wins: 9,
   battles: 10,
   defeats: 1,
-  winRate: (9/10)*100,
+  winRate: (9 / 10) * 100,
 );
