@@ -1,12 +1,11 @@
 import 'package:get/get.dart';
-
-import '../controllers/home_controller.dart';
+import 'package:oracle/app/modules/home/controllers/screen_cotroller.dart';
 
 class HomeBinding extends Bindings {
   @override
   void dependencies() {
-    Get.lazyPut<HomeController>(
-      () => HomeController(),
+    Get.lazyPut<ScreenController>(
+      () => ScreenController(),
     );
   }
 }

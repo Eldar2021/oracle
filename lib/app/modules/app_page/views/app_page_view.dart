@@ -7,6 +7,7 @@ import '../controllers/app_page_controller.dart';
 
 class AppPageView extends GetView<AppPageController> {
   final AppPageController controller = Get.put(AppPageController());
+
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
@@ -15,8 +16,8 @@ class AppPageView extends GetView<AppPageController> {
       locale: Get.deviceLocale,
       getPages: AppPages.routes,
       theme: ThemeData.dark().copyWith(
-        appBarTheme: AppBarTheme(backgroundColor: MyColors.backgraundColor),
-        scaffoldBackgroundColor: MyColors.backgraundColor,
+        appBarTheme: AppBarTheme(backgroundColor: MyColors.backgroundColor),
+        scaffoldBackgroundColor: MyColors.backgroundColor,
         textTheme: TextTheme(),
         inputDecorationTheme: InputDecorationTheme(
           filled: true,
@@ -24,6 +25,9 @@ class AppPageView extends GetView<AppPageController> {
           border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(16.0),
           ),
+        ),
+        bottomNavigationBarTheme: BottomNavigationBarThemeData(
+          backgroundColor: MyColors.bottomNavBgColor,
         ),
       ),
       home: SplashScreenView(

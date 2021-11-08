@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:oracle/app/modules/home/views/home_view.dart';
+import 'package:oracle/app/modules/home/views/screen_view.dart';
 import 'package:oracle/app/modules/login/views/login_view.dart';
 
 class AppPageController extends GetxController {
-  RxBool token = false.obs;
-  Rx<Widget> home = HomeView().obs;
+  RxBool token = true.obs;
+  Rx<Widget> home = ScreenView().obs;
   Rx<Widget> login = LoginView().obs;
 
   @override

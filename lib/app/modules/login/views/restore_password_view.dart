@@ -35,9 +35,12 @@ class RestorePasswordView extends GetView<RestorePasswordController> {
                   text1: "На данный номер телефона или почту будет\n",
                   text2: "отправлена ссылка для восстановления ",
                   text3: "пароля\nс дальнейшей инструкцией",
-                  styletex1: Get.textTheme.caption!.copyWith(color: MyColors.grayTextColor),
-                  styletex2: Get.textTheme.caption!.copyWith(color: MyColors.linkTextColor, height: 1.8),
-                  styletex3: Get.textTheme.caption!.copyWith(color: MyColors.grayTextColor),
+                  styletex1: Get.textTheme.caption!
+                      .copyWith(color: MyColors.grayTextColor),
+                  styletex2: Get.textTheme.caption!
+                      .copyWith(color: MyColors.linkTextColor, height: 1.8),
+                  styletex3: Get.textTheme.caption!
+                      .copyWith(color: MyColors.grayTextColor),
                   function: () {},
                 ),
                 const SizedBox(height: 25.0),

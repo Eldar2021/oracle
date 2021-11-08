@@ -3,7 +3,7 @@ import 'package:get/get.dart';
 import 'package:oracle/app/modules/app_page/bindings/app_page_binding.dart';
 import 'package:oracle/app/modules/app_page/views/app_page_view.dart';
 import 'package:oracle/app/modules/home/bindings/home_binding.dart';
-import 'package:oracle/app/modules/home/views/home_view.dart';
+import 'package:oracle/app/modules/home/views/screen_view.dart';
 import 'package:oracle/app/modules/login/bindings/auth_phone_binding.dart';
 import 'package:oracle/app/modules/login/bindings/login_binding.dart';
 import 'package:oracle/app/modules/login/bindings/register_binding.dart';
@@ -23,7 +23,7 @@ class AppPages {
   static final routes = [
     GetPage(
       name: _Paths.HOME,
-      page: () => HomeView(),
+      page: () => ScreenView(),
       binding: HomeBinding(),
     ),
     GetPage(

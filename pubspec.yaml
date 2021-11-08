@@ -15,6 +15,8 @@ dependencies:
   splash_screen_view: ^3.0.0
   # flutter svg view
   flutter_svg: ^0.23.0+1
+  # rating view
+  flutter_rating_bar: ^4.0.0
 #-----------------
   flutter: 
     sdk: flutter
@@ -28,3 +30,8 @@ flutter:
   uses-material-design: true
   assets:
     - assets/icons/authenticate/
+    - assets/icons/bottom_nav/
+    - assets/icons/components/
+    - assets/icons/array/
+    - assets/icons/user/
+    - assets/images/user/
