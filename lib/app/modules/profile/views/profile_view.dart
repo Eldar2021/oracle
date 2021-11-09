@@ -1,10 +1,8 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
-import 'package:flutter_svg/flutter_svg.dart';
+import 'package:flutter_svg/svg.dart';
+
 import 'package:get/get.dart';
 import 'package:oracle/app/data/models/user_model/user_model.dart';
-import 'package:oracle/app/modules/home/controllers/profile_controller.dart';
 import 'package:oracle/generated/assets.dart';
 import 'package:oracle/widgets/custom_widgets/like_dislike_widget.dart';
 import 'package:oracle/widgets/custom_widgets/play_list_widget.dart';
@@ -14,6 +12,8 @@ import 'package:oracle/widgets/custom_widgets/user_description.dart';
 import 'package:oracle/widgets/custom_widgets/user_email_photo_list_widget.dart';
 import 'package:oracle/widgets/custom_widgets/user_ph_tl_wh_widget.dart';
 import 'package:oracle/widgets/custom_widgets/user_profile_photo.dart';
+
+import '../controllers/profile_controller.dart';
 
 class ProfileView extends GetView<ProfileController> {
   ProfileView({

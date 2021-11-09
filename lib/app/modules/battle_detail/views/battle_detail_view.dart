@@ -1,7 +1,13 @@
 import 'package:flutter/material.dart';
+
 import 'package:get/get.dart';
 import 'package:oracle/widgets/custom_widgets/battle_detaile_conatiner.dart';
 import 'package:oracle/widgets/custom_widgets/user_ph_tl_wh_widget.dart';
+
+
+import 'package:get/get.dart';
+
+
 import '../controllers/battle_detail_controller.dart';
 
 class BattleDetailView extends GetView<BattleDetailController> {
@@ -12,6 +18,7 @@ class BattleDetailView extends GetView<BattleDetailController> {
         title: Text('BattleDetailView'),
         centerTitle: true,
       ),
+
       body: Column(
         children: [
           BattleDetaileContainer(
@@ -28,11 +35,20 @@ class BattleDetailView extends GetView<BattleDetailController> {
           SizedBox(height: 20),
           UserPhoneTlWhatsApp(),
         ],
+
+      body: Center(
+        child: Text(
+          'BattleDetailView is working',
+          style: TextStyle(fontSize: 20),
+        ),
+
       ),
     );
   }
 }
 
+
 class BattleDetailController {
 }
+
 

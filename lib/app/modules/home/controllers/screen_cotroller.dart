@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:oracle/app/data/models/user_model/user_model.dart';
-import 'package:oracle/app/modules/home/views/battles_view.dart';
+import 'package:oracle/app/modules/battle/views/battle_view.dart';
 import 'package:oracle/app/modules/home/views/home_view.dart';
-import 'package:oracle/app/modules/home/views/plays_view.dart';
-import 'package:oracle/app/modules/home/views/profile_view.dart';
+import 'package:oracle/app/modules/play/views/play_view.dart';
+import 'package:oracle/app/modules/profile/views/profile_view.dart';
 
 class ScreenController extends GetxController {
 
@@ -12,8 +12,8 @@ class ScreenController extends GetxController {
 
   RxList<Widget> items = [
     HomeView(),
-    PlaysView(),
-    BattlesView(),
+    PlayView(),
+    BattleView(),
     ProfileView(user: userModel1),
   ].obs;
 

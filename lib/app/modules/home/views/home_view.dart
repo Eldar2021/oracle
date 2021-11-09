@@ -6,6 +6,7 @@ import 'package:oracle/app/modules/home/controllers/home_controller.dart';
 import 'package:oracle/app/routes/app_pages.dart';
 import 'package:oracle/generated/assets.dart';
 import 'package:oracle/widgets/custom_widgets/battle_list_view.dart';
+import 'package:oracle/widgets/custom_widgets/drawer_sidebar.dart';
 
 class HomeView extends GetView<HomeController> {
   final HomeController controller = Get.put(HomeController());
@@ -35,6 +36,13 @@ class HomeView extends GetView<HomeController> {
             }
           },
         ),
+      ),
+      drawer: NavBar(),
+
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          Get.toNamed(Routes.LOGIN);
+        },
       ),
     );
   }

@@ -1,5 +1,6 @@
 import 'package:get/get.dart';
-import 'package:oracle/app/modules/home/controllers/give_review_controller.dart';
+
+import '../controllers/give_review_controller.dart';
 
 class GiveReviewBinding extends Bindings {
   @override
