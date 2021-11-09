@@ -1,7 +1,9 @@
 import 'package:get/get.dart';
 
-class GiveReviewController extends GetxController {
+class BattleController extends GetxController {
+  //TODO: Implement BattleController
 
+  final count = 0.obs;
   @override
   void onInit() {
     super.onInit();
@@ -14,6 +16,5 @@ class GiveReviewController extends GetxController {
 
   @override
   void onClose() {}
-
-
+  void increment() => count.value++;
 }

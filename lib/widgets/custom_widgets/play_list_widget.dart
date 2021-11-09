@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:oracle/app/data/models/user_model/user_model.dart';
-import 'package:oracle/app/modules/home/controllers/profile_controller.dart';
+import 'package:oracle/app/modules/profile/controllers/profile_controller.dart';
 import 'package:oracle/constants/color_constants.dart';
 import 'package:oracle/generated/assets.dart';
 

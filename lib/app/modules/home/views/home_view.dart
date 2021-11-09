@@ -36,6 +36,11 @@ class HomeView extends GetView<HomeController> {
           },
         ),
       ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          Get.toNamed(Routes.LOGIN);
+        },
+      ),
     );
   }
 

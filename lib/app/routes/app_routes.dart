@@ -15,6 +15,8 @@ abstract class Routes {
   static const CATEGORY = _Paths.CATEGORY;
   static const FILTER = _Paths.FILTER;
   static const SORT = _Paths.SORT;
+  static const PLAY = _Paths.PLAY;
+  static const BATTLE = _Paths.BATTLE;
 }
 
 abstract class _Paths {
@@ -29,4 +31,6 @@ abstract class _Paths {
   static const CATEGORY = '/category';
   static const FILTER = '/filter';
   static const SORT = '/sort';
+  static const PLAY = '/play';
+  static const BATTLE = '/battle';
 }
