@@ -1,3 +1,5 @@
+
+// TODO Implement this library.
 import 'package:get/get.dart';
 
 class BattleDetailController extends GetxController {
@@ -18,3 +20,4 @@ class BattleDetailController extends GetxController {
   void onClose() {}
   void increment() => count.value++;
 }
+
