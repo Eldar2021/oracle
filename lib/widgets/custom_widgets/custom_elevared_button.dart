@@ -26,7 +26,7 @@ class CustomElevatedButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return ElevatedButton(
       child: Text("$text",
-          style: Get.textTheme.subtitle1!.copyWith(fontSize: fontSize ?? 0)),
+          style: Get.textTheme.subtitle1!.copyWith(fontSize: fontSize ?? null)),
       style: ElevatedButton.styleFrom(
         primary: bgColor,
         fixedSize: Size(width, height),

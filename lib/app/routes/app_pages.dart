@@ -5,7 +5,9 @@ import 'package:oracle/app/modules/app_page/views/app_page_view.dart';
 import 'package:oracle/app/modules/category/bindings/category_binding.dart';
 import 'package:oracle/app/modules/category/views/category_view.dart';
 import 'package:oracle/app/modules/filter/bindings/filter_binding.dart';
+import 'package:oracle/app/modules/filter/bindings/sort_binding.dart';
 import 'package:oracle/app/modules/filter/views/filter_view.dart';
+import 'package:oracle/app/modules/filter/views/sort_view.dart';
 import 'package:oracle/app/modules/home/bindings/give_reriew_binding.dart';
 import 'package:oracle/app/modules/home/bindings/home_binding.dart';
 import 'package:oracle/app/modules/home/views/give_review_view.dart';
@@ -71,6 +73,11 @@ class AppPages {
       name: _Paths.FILTER,
       page: () => FilterView(),
       binding: FilterBinding(),
+    ),
+    GetPage(
+      name: _Paths.SORT,
+      page: () => SortView(),
+      binding: SortBinding(),
     ),
   ];
 }

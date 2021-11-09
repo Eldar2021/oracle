@@ -14,6 +14,7 @@ abstract class Routes {
   static const GIVE_REVIEW = _Paths.GIVE_REVIEW;
   static const CATEGORY = _Paths.CATEGORY;
   static const FILTER = _Paths.FILTER;
+  static const SORT = _Paths.SORT;
 }
 
 abstract class _Paths {
@@ -27,4 +28,5 @@ abstract class _Paths {
   static const GIVE_REVIEW = '/give-review';
   static const CATEGORY = '/category';
   static const FILTER = '/filter';
+  static const SORT = '/sort';
 }

@@ -3,6 +3,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:oracle/app/modules/home/controllers/screen_cotroller.dart';
 import 'package:oracle/generated/assets.dart';
+import 'package:oracle/widgets/custom_widgets/drawer_sidebar.dart';
 
 class ScreenView extends GetView<ScreenController> {
   final ScreenController controller = Get.put(ScreenController());
@@ -10,7 +11,9 @@ class ScreenView extends GetView<ScreenController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      //appBar: AppBar(),
       body: Obx(() => controller.items[controller.pageIndex.value]),
+      drawer: NavBar(),
       bottomNavigationBar: Obx(
         () => BottomNavigationBar(
           items: [
