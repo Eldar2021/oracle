@@ -7,20 +7,25 @@ class Assets {
   static const String arrayBackX = 'assets/icons/array/backx.svg';
   static const String arraySolid = 'assets/icons/array/solid.svg';
   static const String arrayTrue = 'assets/icons/array/true.svg';
-  static const String authenticateFacebook = 'assets/icons/authenticate/facebook.svg';
-  static const String authenticateGoogle = 'assets/icons/authenticate/google.svg';
+  static const String authenticateFacebook =
+      'assets/icons/authenticate/facebook.svg';
+  static const String authenticateGoogle =
+      'assets/icons/authenticate/google.svg';
   static const String authenticatePhone = 'assets/icons/authenticate/phone.svg';
   static const String bottomNavBottom1 = 'assets/icons/bottom_nav/bottom1.svg';
   static const String bottomNavBottom2 = 'assets/icons/bottom_nav/bottom2.svg';
   static const String bottomNavBottom3 = 'assets/icons/bottom_nav/bottom3.svg';
   static const String bottomNavBottom4 = 'assets/icons/bottom_nav/bottom4.svg';
-  static const String componentsArrayShare = 'assets/icons/components/arrayShare.svg';
+  static const String componentsArrayShare =
+      'assets/icons/components/arrayShare.svg';
   static const String componentsConfirm = 'assets/icons/components/confirm.svg';
-  static const String componentsDefeatFlag = 'assets/icons/components/defeatFlag.svg';
+  static const String componentsDefeatFlag =
+      'assets/icons/components/defeatFlag.svg';
   static const String componentsDislike = 'assets/icons/components/dislike.svg';
   static const String componentsEyes = 'assets/icons/components/eyes.svg';
   static const String componentsFilter = 'assets/icons/components/filter.svg';
-  static const String componentsFlagStar = 'assets/icons/components/flagStar.svg';
+  static const String componentsFlagStar =
+      'assets/icons/components/flagStar.svg';
   static const String componentsLike = 'assets/icons/components/like.svg';
   static const String componentsPercent = 'assets/icons/components/percent.svg';
   static const String componentsRatingEmpty =
@@ -50,4 +55,5 @@ class Assets {
       "assets/icons/draver_nav/notification.svg";
   static const String drawerBackground = "assets/images/background/draver.png";
   static const String userAvatar = "assets/images/user/phote.png";
+  static const String dota2 = "assets/images/gameImages/dota2.png";
 }
