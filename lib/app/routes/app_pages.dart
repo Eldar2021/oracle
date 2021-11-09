@@ -5,6 +5,8 @@ import 'package:oracle/app/modules/app_page/bindings/app_page_binding.dart';
 import 'package:oracle/app/modules/app_page/views/app_page_view.dart';
 import 'package:oracle/app/modules/battle/bindings/battle_binding.dart';
 import 'package:oracle/app/modules/battle/views/battle_view.dart';
+import 'package:oracle/app/modules/battle_detail/bindings/battle_detail_binding.dart';
+import 'package:oracle/app/modules/battle_detail/views/battle_detail_view.dart';
 import 'package:oracle/app/modules/category/bindings/category_binding.dart';
 import 'package:oracle/app/modules/category/views/category_view.dart';
 import 'package:oracle/app/modules/filter/bindings/filter_binding.dart';
@@ -100,6 +102,11 @@ class AppPages {
       name: _Paths.BATTLE,
       page: () => BattleView(),
       binding: BattleBinding(),
+    ),
+    GetPage(
+      name: _Paths.BATTLE_DETAIL,
+      page: () => BattleDetailView(),
+      binding: BattleDetailBinding(),
     ),
   ];
 }
