@@ -35,20 +35,10 @@ class BattleDetailView extends GetView<BattleDetailController> {
           SizedBox(height: 20),
           UserPhoneTlWhatsApp(),
         ],
-
-      body: Center(
-        child: Text(
-          'BattleDetailView is working',
-          style: TextStyle(fontSize: 20),
-        ),
-
-      ),
-    );
+      )
+      );
   }
 }
 
-
 class BattleDetailController {
 }
-
-

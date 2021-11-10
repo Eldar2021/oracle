@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
+import 'package:oracle/app/modules/battle/views/battle_performer_view.dart';
 
 import '../controllers/battle_controller.dart';
 
@@ -12,12 +13,7 @@ class BattleView extends GetView<BattleController> {
         title: Text('BattleView'),
         centerTitle: true,
       ),
-      body: Center(
-        child: Text(
-          'BattleView is working',
-          style: TextStyle(fontSize: 20),
-        ),
-      ),
+      body: BattlePerfotmerView(),
     );
   }
 }
