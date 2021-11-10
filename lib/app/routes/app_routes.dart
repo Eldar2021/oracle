@@ -18,6 +18,8 @@ abstract class Routes {
   static const PLAY = _Paths.PLAY;
   static const BATTLE = _Paths.BATTLE;
   static const BATTLE_DETAIL = _Paths.BATTLE_DETAIL;
+  static const CREATE_BATTLE = _Paths.CREATE_BATTLE;
+  static const RESPON = _Paths.RESPON;
 }
 
 abstract class _Paths {
@@ -35,4 +37,6 @@ abstract class _Paths {
   static const PLAY = '/play';
   static const BATTLE = '/battle';
   static const BATTLE_DETAIL = '/battle-detail';
+  static const CREATE_BATTLE = '/create-battle';
+  static const RESPON = '/respon';
 }

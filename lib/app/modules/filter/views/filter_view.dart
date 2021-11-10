@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-
 import 'package:get/get.dart';
 import 'package:oracle/app/routes/app_pages.dart';
 import 'package:oracle/constants/color_constants.dart';
@@ -40,7 +39,9 @@ class FilterView extends GetView<FilterController> {
             controller: controller,
             text: "Все категории",
             icon: Assets.arrayArrayRight,
-            onTab: () {},
+            onTab: (val) {
+              Get.toNamed(Routes.CATEGORY);
+            },
           ),
           const SizedBox(height: 25),
           Text("Стоимость сражения", style: Get.textTheme.bodyText1),

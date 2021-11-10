@@ -3,6 +3,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:oracle/app/data/models/battle_model/battle_model.dart';
 import 'package:oracle/app/modules/home/controllers/home_controller.dart';
+import 'package:oracle/app/routes/app_pages.dart';
 import 'package:oracle/constants/color_constants.dart';
 import 'package:oracle/generated/assets.dart';
 
@@ -27,7 +28,9 @@ class BattlesListBuilder extends StatelessWidget {
 
   InkWell buildContainer(Battle battle) {
     return InkWell(
-      onTap: () {},
+      onTap: () {
+        Get.toNamed(Routes.BATTLE_DETAIL);
+      },
       child: Container(
         padding: EdgeInsets.only(top: 20, bottom: 20),
         decoration: BoxDecoration(

@@ -10,14 +10,16 @@ class LikeDislike extends StatelessWidget {
   const LikeDislike({
     Key? key,
     required this.user,
+    this.mainAxisAlignment = MainAxisAlignment.center,
   }) : super(key: key);
 
   final UserModel user;
+  final MainAxisAlignment mainAxisAlignment;
 
   @override
   Widget build(BuildContext context) {
     return Row(
-      mainAxisAlignment: MainAxisAlignment.center,
+      mainAxisAlignment: mainAxisAlignment,
       children: [
         SvgPicture.asset(Assets.componentsLike),
         const SizedBox(width: 5),

@@ -1,5 +1,6 @@
 import 'package:get/get.dart';
 
+import 'package:oracle/app/data/models/battle_model/battle_model.dart';
 import 'package:oracle/app/data/models/user_model/user_model.dart';
 import 'package:oracle/app/modules/app_page/bindings/app_page_binding.dart';
 import 'package:oracle/app/modules/app_page/views/app_page_view.dart';
@@ -9,6 +10,8 @@ import 'package:oracle/app/modules/battle_detail/bindings/battle_detail_binding.
 import 'package:oracle/app/modules/battle_detail/views/battle_detail_view.dart';
 import 'package:oracle/app/modules/category/bindings/category_binding.dart';
 import 'package:oracle/app/modules/category/views/category_view.dart';
+import 'package:oracle/app/modules/create_battle/bindings/create_battle_binding.dart';
+import 'package:oracle/app/modules/create_battle/views/create_battle_view.dart';
 import 'package:oracle/app/modules/filter/bindings/filter_binding.dart';
 import 'package:oracle/app/modules/filter/bindings/sort_binding.dart';
 import 'package:oracle/app/modules/filter/views/filter_view.dart';
@@ -29,6 +32,8 @@ import 'package:oracle/app/modules/play/bindings/play_binding.dart';
 import 'package:oracle/app/modules/play/views/play_view.dart';
 import 'package:oracle/app/modules/profile/bindings/profile_binding.dart';
 import 'package:oracle/app/modules/profile/views/profile_view.dart';
+import 'package:oracle/app/modules/respon/bindings/respon_binding.dart';
+import 'package:oracle/app/modules/respon/views/respon_view.dart';
 
 part 'app_routes.dart';
 
@@ -105,8 +110,18 @@ class AppPages {
     ),
     GetPage(
       name: _Paths.BATTLE_DETAIL,
-      page: () => BattleDetailView(),
+      page: () => BattleDetailView(battle: battle1),
       binding: BattleDetailBinding(),
+    ),
+    GetPage(
+      name: _Paths.CREATE_BATTLE,
+      page: () => CreateBattleView(),
+      binding: CreateBattleBinding(),
+    ),
+    GetPage(
+      name: _Paths.RESPON,
+      page: () => ResponView(),
+      binding: ResponBinding(),
     ),
   ];
 }
