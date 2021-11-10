@@ -3,9 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:oracle/app/data/models/battle_model/battle_model.dart';
 import 'package:oracle/constants/color_constants.dart';
+
 import '../controllers/battle_controller.dart';
-import 'i_customer_view.dart';
-import 'i_performer_view.dart';
+import 'i_customer_view 2.dart';
+import 'i_performer_view 2.dart';
 
 class BattleView extends GetView<BattleController> {
   const BattleView({this.listBattles}) : super();
