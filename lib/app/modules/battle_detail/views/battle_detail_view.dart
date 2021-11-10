@@ -27,11 +27,22 @@ class BattleDetailView extends GetView<BattleDetailController> {
           constraints: BoxConstraints(
             maxHeight: double.infinity,
           ),
+
+          SizedBox(height: 20),
+          UserPhoneTlWhatsApp(),
+        ],
+      )
+      );
+
           child: _buildBody(),
         ),
       ),
     );
+
   }
+
+
+class BattleDetailController {
 
   Column _buildBody() {
     return Column(
@@ -85,4 +96,5 @@ class BattleDetailView extends GetView<BattleDetailController> {
       centerTitle: true,
     );
   }
+
 }
