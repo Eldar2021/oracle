@@ -1,13 +1,18 @@
 import 'package:intl/intl.dart';
+import 'package:oracle/generated/assets.dart';
 
 class Battle {
-  String title;
-  String status;
-  String startDate;
-  String? rate;
-  int? getViewsCount;
-  int? getRepostsCount;
-  String getGameIcon;
+  final String title;
+  final String status;
+  final String startDate;
+  final String? rate;
+  final int? getViewsCount;
+  final int? getRepostsCount;
+  final String getGameIcon;
+  final String? category;
+  final String? description;
+  final String? createTime;
+  final String? formatBattle;
 
   Battle({
     required this.title,
@@ -17,17 +22,22 @@ class Battle {
     this.getViewsCount,
     this.getRepostsCount,
     required this.getGameIcon,
+    this.category,
+    this.description,
+    this.createTime,
+    this.formatBattle,
   });
 
   factory Battle.fromJson(Map<String, dynamic> json) => Battle(
-    title: json['title'],
-    status: json['status'],
-    startDate: DateFormat("H:m,  dd.MM.yy").format(DateTime.parse(json["start_date"])),
-    rate: json['rate']?? "",
-    getViewsCount: json['get_views_count']?? 0,
-    getRepostsCount: json['get_reposts_count']?? 0,
-    getGameIcon: json['get_game_icon'],
-  );
+        title: json['title'],
+        status: json['status'],
+        startDate: DateFormat("H:m,  dd.MM.yy")
+            .format(DateTime.parse(json["start_date"])),
+        rate: json['rate'] ?? "",
+        getViewsCount: json['get_views_count'] ?? 0,
+        getRepostsCount: json['get_reposts_count'] ?? 0,
+        getGameIcon: json['get_game_icon'],
+      );
 
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = new Map<String, dynamic>();
@@ -41,3 +51,18 @@ class Battle {
     return data;
   }
 }
+
+Battle battle1 = Battle(
+  title: "Dota 2, Играем на SF, мид до 2 смертей или до падения т1",
+  formatBattle: "1х1",
+  status: "Dota 2",
+  rate: "1000 com",
+  startDate: "20:00, 05.06.21",
+  createTime: "Создано сегодня, 13:10",
+  getGameIcon: Assets.dota2,
+  category: "Dota 2",
+  description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum",
+
+
+);

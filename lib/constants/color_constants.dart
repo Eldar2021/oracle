@@ -24,5 +24,6 @@ class MyColors{
   static const Color moneyTextColor = Color(0xffFFB156);
   static const Color viewsTextColor = Color(0xff949494);
   static const Color actionTextColor = Color(0xff52606D);
+  static const Color categoryTextColor = Color(0xffEB56C1);
 
 }

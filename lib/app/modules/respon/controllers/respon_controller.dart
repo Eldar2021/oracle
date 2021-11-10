@@ -1,6 +1,7 @@
 import 'package:get/get.dart';
 
-class BattleDetailController extends GetxController {
+class ResponController extends GetxController {
+  //TODO: Implement ResponController
 
   final count = 0.obs;
   @override
@@ -17,4 +18,3 @@ class BattleDetailController extends GetxController {
   void onClose() {}
   void increment() => count.value++;
 }
-
