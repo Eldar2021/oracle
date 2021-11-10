@@ -118,7 +118,7 @@ class FilterView extends GetView<FilterController> {
         onPressed: () {
           Get.back();
         },
-        icon: SvgPicture.asset(Assets.arrayBackX),
+        icon: SvgPicture.asset(Assets.arrayBackx),
       ),
       title: Text('Фильтр'),
       centerTitle: true,

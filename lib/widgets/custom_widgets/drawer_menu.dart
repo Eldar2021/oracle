@@ -15,7 +15,7 @@ class DrawerMenu extends StatelessWidget {
         Padding(
           padding: const EdgeInsets.only(top: 60.0, bottom: 50.0),
           child: ListTile(
-            leading: Image.asset(Assets.userAvatar),
+            leading: Image.asset(Assets.userDota),
             title: Row(
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
@@ -34,7 +34,7 @@ class DrawerMenu extends StatelessWidget {
             subtitle: Row(
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
-                SvgPicture.asset(Assets.moneySvg),
+                SvgPicture.asset(Assets.drawerNavMoney),
                 SizedBox(width: 5),
                 Text(
                   "Баланс 750 сом",
@@ -53,43 +53,43 @@ class DrawerMenu extends StatelessWidget {
           ),
         ),
         DrawerListTile(
-          leading: SvgPicture.asset(Assets.battleSvg),
+          leading: SvgPicture.asset(Assets.drawerNavBattle),
           title: "Создать сражение",
           style: Get.textTheme.subtitle2!.copyWith(height: 0.1),
           onTap: () {},
         ),
         DrawerListTile(
-          leading: SvgPicture.asset(Assets.myBattlesSvg),
+          leading: SvgPicture.asset(Assets.drawerNavBattle),
           title: "Мои сражения",
           style: Get.textTheme.subtitle2!.copyWith(height: 0.1),
           onTap: () {},
         ),
         DrawerListTile(
-          leading: SvgPicture.asset(Assets.notificationSvg),
+          leading: SvgPicture.asset(Assets.drawerNavNotification),
           title: "Уведомления",
           style: Get.textTheme.subtitle2!.copyWith(height: 0.1),
           onTap: () {},
         ),
         DrawerListTile(
-          leading: SvgPicture.asset(Assets.helpSvg),
+          leading: SvgPicture.asset(Assets.drawerNavHelp),
           title: "Помощь",
           style: Get.textTheme.subtitle2!.copyWith(height: 0.1),
           onTap: () {},
         ),
         DrawerListTile(
-          leading: SvgPicture.asset(Assets.answerSvg),
+          leading: SvgPicture.asset(Assets.drawerNavAnswers),
           title: "Вопросы и ответы",
           style: Get.textTheme.subtitle2!.copyWith(height: 0.1),
           onTap: () {},
         ),
         DrawerListTile(
-          leading: SvgPicture.asset(Assets.aboutUsSvg),
+          leading: SvgPicture.asset(Assets.drawerNavAbout),
           title: "О приложении",
           style: Get.textTheme.subtitle2!.copyWith(height: 0.1),
           onTap: () {},
         ),
         DrawerListTile(
-          leading: SvgPicture.asset(Assets.identitySvg),
+          leading: SvgPicture.asset(Assets.drawerNavIdentity),
           title: "Идентификация",
           style: Get.textTheme.subtitle2!.copyWith(height: 0.1),
           onTap: () {},
@@ -97,7 +97,7 @@ class DrawerMenu extends StatelessWidget {
         Padding(
           padding: const EdgeInsets.only(top: 0.0),
           child: DrawerListTile(
-            leading: SvgPicture.asset(Assets.exitSvg),
+            leading: SvgPicture.asset(Assets.drawerNavExit),
             title: "Выйти",
             style: Get.textTheme.subtitle2!.copyWith(height: 0.1),
             onTap: () {},

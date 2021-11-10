@@ -1,5 +1,4 @@
 import 'package:get/get.dart';
-
 import 'package:oracle/app/data/models/battle_model/battle_model.dart';
 import 'package:oracle/app/data/models/user_model/user_model.dart';
 import 'package:oracle/app/modules/app_page/bindings/app_page_binding.dart';
@@ -80,7 +79,7 @@ class AppPages {
     ),
     GetPage(
       name: _Paths.CATEGORY,
-      page: () => CategoryView(),
+      page: () => CategoryView(battle: battle1),
       binding: CategoryBinding(),
     ),
     GetPage(

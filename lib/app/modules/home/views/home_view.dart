@@ -32,7 +32,7 @@ class HomeView extends GetView<HomeController> {
             if (controller.battles.isEmpty) {
               return buildCircularProgress();
             } else {
-              return BattlesListBuilder(controller: controller);
+              return BattlesListBuilder(battleList: controller.battles);
             }
           },
         ),

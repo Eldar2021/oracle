@@ -6,18 +6,22 @@ class LinkText extends StatelessWidget {
     this.text1 = "",
     this.text2 = "",
     this.text3 = "",
+    this.text4 = "",
     required this.styletex1,
     required this.styletex2,
     required this.function,
     this.styletex3,
+    this.styletex4,
     Key? key,
   }) : super(key: key);
   final String text1;
   final String text2;
   final String? text3;
+  final String? text4;
   final TextStyle styletex1;
   final TextStyle styletex2;
   final TextStyle? styletex3;
+  final TextStyle? styletex4;
   final Function function;
 
   @override
@@ -36,6 +40,14 @@ class LinkText extends StatelessWidget {
               },
           ),
           TextSpan(style: styletex3, text: text3),
+          TextSpan(
+            style: styletex4,
+            text: text4?? "",
+            recognizer: TapGestureRecognizer()
+              ..onTap = () async{
+                function();
+              },
+          ),
         ],
       ),
     );

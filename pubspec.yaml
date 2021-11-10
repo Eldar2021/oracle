@@ -33,13 +33,13 @@ dev_dependencies:
 flutter:
   uses-material-design: true
   assets:
+    - assets/icons/array/
     - assets/icons/authenticate/
     - assets/icons/bottom_nav/
     - assets/icons/components/
-    - assets/icons/array/
+    - assets/icons/drawer_nav/
     - assets/icons/user/
-    - assets/icons/draver_nav/
-    - assets/images/user/
     - assets/images/background/
     - assets/images/gameImages/
+    - assets/images/user/
 

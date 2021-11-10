@@ -43,7 +43,7 @@ class TaskListBuilder extends StatelessWidget {
                 child: Column(
                   children: [
                     Text(battleTask.rate),
-                    SvgPicture.asset(Assets.componentsCoinSvg)
+                    SvgPicture.asset(Assets.componentsCoin)
                   ],
                 ),
               )

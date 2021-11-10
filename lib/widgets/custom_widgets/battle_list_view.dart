@@ -2,25 +2,33 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:oracle/app/data/models/battle_model/battle_model.dart';
-import 'package:oracle/app/modules/home/controllers/home_controller.dart';
 import 'package:oracle/app/routes/app_pages.dart';
 import 'package:oracle/constants/color_constants.dart';
 import 'package:oracle/generated/assets.dart';
+import 'package:oracle/widgets/custom_widgets/play_list_widget.dart';
 
 class BattlesListBuilder extends StatelessWidget {
   const BattlesListBuilder({
     Key? key,
-    required this.controller,
+    required this.battleList,
+    this.shrinkWrap = false,
+    this.primary,
+    this.status = false,
   }) : super(key: key);
 
-  final HomeController controller;
+  final List<Battle> battleList;
+  final bool shrinkWrap;
+  final bool? primary;
+  final bool status;
 
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
-      itemCount: controller.battles.length,
+      shrinkWrap: shrinkWrap,
+      primary: primary ?? null,
+      itemCount: battleList.length,
       itemBuilder: (context, index) {
-        Battle battle = controller.battles[index];
+        Battle battle = battleList[index];
         return buildContainer(battle);
       },
     );
@@ -95,39 +103,52 @@ class BattlesListBuilder extends StatelessWidget {
                     ],
                   ),
                   const SizedBox(height: 28.0),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Expanded(
-                        child: Row(
+                  status == false
+                      ? Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            SvgPicture.asset(Assets.componentsEyes),
-                            const SizedBox(width: 8.0),
-                            Text(
-                              "${battle.getViewsCount} просмотров",
-                              style: Get.textTheme.caption!.copyWith(
-                                color: MyColors.viewsTextColor,
+                            Expanded(
+                              child: Row(
+                                children: [
+                                  SvgPicture.asset(Assets.componentsEyes),
+                                  const SizedBox(width: 8.0),
+                                  Text(
+                                    "${battle.getViewsCount} просмотров",
+                                    style: Get.textTheme.caption!.copyWith(
+                                      color: MyColors.viewsTextColor,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                            Expanded(
+                              child: Row(
+                                children: [
+                                  SvgPicture.asset(Assets.componentsArrayShare),
+                                  const SizedBox(width: 8.0),
+                                  Text(
+                                    "${battle.getRepostsCount} предложений",
+                                    style: Get.textTheme.caption!.copyWith(
+                                      color: MyColors.viewsTextColor,
+                                    ),
+                                  ),
+                                ],
                               ),
                             ),
                           ],
-                        ),
-                      ),
-                      Expanded(
-                        child: Row(
-                          children: [
-                            SvgPicture.asset(Assets.componentsArrayShare),
-                            const SizedBox(width: 8.0),
-                            Text(
-                              "${battle.getRepostsCount} предложений",
-                              style: Get.textTheme.caption!.copyWith(
-                                color: MyColors.viewsTextColor,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ],
-                  ),
+                        )
+                      : battle.statusBattle != null
+                          ? RowItem(
+                              iconWidth: 16.0,
+                              icon: battle.statusBattle == "Отменен"
+                                  ? Assets.componentsStatusCancel
+                                  : battle.statusBattle == "Завершен"
+                                      ? Assets.componentsStatusCompleted
+                                      : Assets.backgroundStatusWating,
+                              text: battle.statusBattle ?? "",
+                              color: MyColors.whiteColor,
+                            )
+                          : Container(), //status
                 ],
               ),
             )

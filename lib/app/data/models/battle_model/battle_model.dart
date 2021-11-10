@@ -13,19 +13,21 @@ class Battle {
   final String? description;
   final String? createTime;
   final String? formatBattle;
+  final String? statusBattle;
 
   Battle({
     required this.title,
     required this.status,
     required this.startDate,
     this.rate,
-    this.getViewsCount,
-    this.getRepostsCount,
+    this.getViewsCount = 0,
+    this.getRepostsCount = 0,
     required this.getGameIcon,
     this.category,
     this.description,
     this.createTime,
     this.formatBattle,
+    this.statusBattle,
   });
 
   factory Battle.fromJson(Map<String, dynamic> json) => Battle(
@@ -52,17 +54,50 @@ class Battle {
   }
 }
 
+List<Battle> listBattle1 = [battle1, battle2, battle3];
+
 Battle battle1 = Battle(
   title: "Dota 2, Играем на SF, мид до 2 смертей или до падения т1",
+  formatBattle: "1х1",
+  statusBattle: "Отменен",
+  status: "Dota 2",
+  rate: "1000 com",
+  startDate: "20:00, 05.06.21",
+  createTime: "Создано сегодня, 13:10",
+  getGameIcon: Assets.gameImagesDota2,
+  category: "Dota 2",
+  description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum",
+
+
+);
+Battle battle2 = Battle(
+  title: "Dota 2, Играем на SF, мид до 2 смертей или до падения т1",
+  statusBattle: "Завершен",
   formatBattle: "1х1",
   status: "Dota 2",
   rate: "1000 com",
   startDate: "20:00, 05.06.21",
   createTime: "Создано сегодня, 13:10",
-  getGameIcon: Assets.dota2,
+  getGameIcon: Assets.gameImagesDota2,
   category: "Dota 2",
   description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum",
+  "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum",
+
+
+);
+Battle battle3 = Battle(
+  title: "Dota 2, Играем на SF, мид до 2 смертей или до падения т1",
+  formatBattle: "1х1",
+  statusBattle: "В ожидании",
+  status: "Dota 2",
+  rate: "1000 com",
+  startDate: "20:00, 05.06.21",
+  createTime: "Создано сегодня, 13:10",
+  getGameIcon: Assets.gameImagesDota2,
+  category: "Dota 2",
+  description:
+  "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum",
 
 
 );

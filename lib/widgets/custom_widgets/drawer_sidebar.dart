@@ -10,7 +10,7 @@ class NavBar extends StatelessWidget {
         decoration: BoxDecoration(
           image: DecorationImage(
             fit: BoxFit.cover,
-            image: AssetImage(Assets.drawerBackground),
+            image: AssetImage(Assets.backgroundDraver),
           ),
         ),
         child: DrawerMenu(),

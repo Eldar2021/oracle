@@ -14,7 +14,7 @@ import 'package:oracle/widgets/custom_widgets/task_list_builder.dart';
 import 'package:oracle/widgets/custom_widgets/user_ph_tl_wh_widget.dart';
 
 class BattleDetailView extends GetView<BattleDetailController> {
-  BattleDetailView({required this.battle});
+  const BattleDetailView({required this.battle});
 
   final Battle battle;
 
