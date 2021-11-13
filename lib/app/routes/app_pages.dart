@@ -35,8 +35,14 @@ import 'package:oracle/app/modules/login/views/register_view.dart';
 import 'package:oracle/app/modules/login/views/restore_password_view.dart';
 import 'package:oracle/app/modules/play/bindings/play_binding.dart';
 import 'package:oracle/app/modules/play/views/play_view.dart';
+import 'package:oracle/app/modules/profile/bindings/change_password_binding.dart';
+import 'package:oracle/app/modules/profile/bindings/personal_info_binding.dart';
 import 'package:oracle/app/modules/profile/bindings/profile_binding.dart';
+import 'package:oracle/app/modules/profile/bindings/settings_binding.dart';
+import 'package:oracle/app/modules/profile/views/changed_password_view.dart';
+import 'package:oracle/app/modules/profile/views/personal_information_view.dart';
 import 'package:oracle/app/modules/profile/views/profile_view.dart';
+import 'package:oracle/app/modules/profile/views/setting_view.dart';
 import 'package:oracle/app/modules/respon/bindings/respon_binding.dart';
 import 'package:oracle/app/modules/respon/views/respon_view.dart';
 
@@ -142,6 +148,21 @@ class AppPages {
       name: _Paths.SELECT_PERFORMER,
       page: () => SelectPerformerView(),
       binding: SelectPerformerBinding(),
+    ),
+    GetPage(
+      name: _Paths.SETTINGS,
+      page: () => SettingsView(),
+      binding: SettingsBinding(),
+    ),
+    GetPage(
+      name: _Paths.PERSONAL_INFO,
+      page: () => PersonalInfoView(),
+      binding: PersonalInfoBinding(),
+    ),
+    GetPage(
+      name: _Paths.CHANGE_PASSWORD,
+      page: () => ChangedPasswordView(),
+      binding: ChangePasswordBinding(),
     ),
   ];
 }

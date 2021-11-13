@@ -23,6 +23,9 @@ abstract class Routes {
   static const BATTLE_DETAIL_TAB_BAR = _Paths.BATTLE_DETAIL_TAB_BAR;
   static const BATTLE_DETAIL_STATUS = _Paths.BATTLE_DETAIL_STATUS;
   static const SELECT_PERFORMER = _Paths.SELECT_PERFORMER;
+  static const SETTINGS = _Paths.SETTINGS;
+  static const PERSONAL_INFO = _Paths.PERSONAL_INFO;
+  static const CHANGE_PASSWORD = _Paths.CHANGE_PASSWORD;
 }
 
 abstract class _Paths {
@@ -45,4 +48,7 @@ abstract class _Paths {
   static const BATTLE_DETAIL_TAB_BAR = '/battle-detail-tab-bar';
   static const BATTLE_DETAIL_STATUS = '/battle-detail-status';
   static const SELECT_PERFORMER = '/select-performer';
+  static const SETTINGS = '/settings';
+  static const PERSONAL_INFO = '/personal-info';
+  static const CHANGE_PASSWORD = '/change-password';
 }
