@@ -7,6 +7,7 @@ class MyColors{
   static const Color linkTextColor = Color(0xff0761DC);
   static const Color grayTextColor = Color(0xff767676);
   static const Color textFieldBgColor = Color(0xff272F37);
+  static const Color winContainerColor = Color(0xff5EA2FF);
   static const Color elevatedButtonBgColor = Color(0xff0761DC);
   static const Color bottomNavBgColor = Color(0xff11921);
   static const Color percentBgColor = Color(0xff00A3FF);

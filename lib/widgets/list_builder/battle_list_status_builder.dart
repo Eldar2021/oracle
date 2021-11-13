@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:oracle/app/data/models/battle_model/battle_model.dart';
 import 'package:oracle/app/routes/app_pages.dart';
@@ -7,19 +6,19 @@ import 'package:oracle/constants/color_constants.dart';
 import 'package:oracle/generated/assets.dart';
 import 'package:oracle/widgets/custom_widgets/play_list_widget.dart';
 
-class BattlesListBuilder extends StatelessWidget {
-  const BattlesListBuilder({
+class BattlesStatusListBuilder extends StatelessWidget {
+  const BattlesStatusListBuilder({
     Key? key,
     required this.battleList,
     this.shrinkWrap = false,
+    //required this.status,
     this.primary,
-    this.status = false,
   }) : super(key: key);
 
   final List<Battle> battleList;
   final bool shrinkWrap;
   final bool? primary;
-  final bool status;
+  //final String status;
 
   @override
   Widget build(BuildContext context) {
@@ -37,7 +36,7 @@ class BattlesListBuilder extends StatelessWidget {
   InkWell buildContainer(Battle battle) {
     return InkWell(
       onTap: () {
-        Get.toNamed(Routes.BATTLE_DETAIL);
+        Get.toNamed(Routes.BATTLE_DETAIL_STATUS);
       },
       child: Container(
         padding: EdgeInsets.only(top: 20, bottom: 20),
@@ -103,52 +102,16 @@ class BattlesListBuilder extends StatelessWidget {
                     ],
                   ),
                   const SizedBox(height: 28.0),
-                  status == false
-                      ? Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Expanded(
-                              child: Row(
-                                children: [
-                                  SvgPicture.asset(Assets.componentsEyes),
-                                  const SizedBox(width: 8.0),
-                                  Text(
-                                    "${battle.getViewsCount} просмотров",
-                                    style: Get.textTheme.caption!.copyWith(
-                                      color: MyColors.viewsTextColor,
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ),
-                            Expanded(
-                              child: Row(
-                                children: [
-                                  SvgPicture.asset(Assets.componentsArrayShare),
-                                  const SizedBox(width: 8.0),
-                                  Text(
-                                    "${battle.getRepostsCount} предложений",
-                                    style: Get.textTheme.caption!.copyWith(
-                                      color: MyColors.viewsTextColor,
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ),
-                          ],
-                        )
-                      : battle.statusBattle != null
-                          ? RowItem(
-                              iconWidth: 16.0,
-                              icon: battle.statusBattle == "Отменен"
-                                  ? Assets.componentsStatusCancel
-                                  : battle.statusBattle == "Завершен"
-                                      ? Assets.componentsStatusCompleted
-                                      : Assets.backgroundStatusWating,
-                              text: battle.statusBattle ?? "",
-                              color: MyColors.whiteColor,
-                            )
-                          : Container(), //status
+                  RowItem(
+                    iconWidth: 16.0,
+                    icon: battle.statusBattle == "Отменен"
+                        ? Assets.componentsStatusCancel
+                        : battle.statusBattle == "Завершен"
+                            ? Assets.componentsStatusCompleted
+                            : Assets.backgroundStatusWating,
+                    text: battle.statusBattle ?? "",
+                    color: MyColors.whiteColor,
+                  ), //status
                 ],
               ),
             )

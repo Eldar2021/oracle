@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 import 'package:oracle/app/data/models/battle_model/battle_model.dart';
-import 'package:oracle/widgets/custom_widgets/battle_list_view.dart';
+import 'package:oracle/widgets/list_builder/battle_list_builder.dart';
 import 'package:oracle/widgets/custom_widgets/category_name_row.dart';
 import 'package:oracle/widgets/custom_widgets/custom_elevared_button.dart';
 
