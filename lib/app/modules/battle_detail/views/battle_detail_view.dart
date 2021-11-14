@@ -4,19 +4,31 @@ import 'package:get/get.dart';
 import 'package:oracle/app/data/models/battle_model/battle_model.dart';
 import 'package:oracle/app/data/models/battle_task_model/battle_task_model.dart';
 import 'package:oracle/app/data/models/user_model/user_model.dart';
+import 'package:oracle/app/modules/battle_detail/battle_detail_widgets/battke_format_battle.dart';
+import 'package:oracle/app/modules/battle_detail/battle_detail_widgets/battle_customer.dart';
+import 'package:oracle/app/modules/battle_detail/battle_detail_widgets/battle_description.dart';
+import 'package:oracle/app/modules/battle_detail/battle_detail_widgets/battle_image_container.dart';
+import 'package:oracle/app/modules/battle_detail/battle_detail_widgets/battle_name_category.dart';
+import 'package:oracle/app/modules/battle_detail/battle_detail_widgets/battle_offset_count.dart';
+import 'package:oracle/app/modules/battle_detail/battle_detail_widgets/battle_rate.dart';
+import 'package:oracle/app/modules/battle_detail/battle_detail_widgets/battle_start_time.dart';
 import 'package:oracle/app/modules/battle_detail/controllers/battle_detail_controller.dart';
-import 'package:oracle/widgets/custom_widgets/battle_customer.dart';
-import 'package:oracle/widgets/custom_widgets/battle_descriptiop_rate.dart';
-import 'package:oracle/widgets/custom_widgets/battle_name_category.dart';
-import 'package:oracle/widgets/custom_widgets/battle_viewOffers_count.dart';
+import 'package:oracle/widgets/custom_widgets/custom_divider.dart';
 import 'package:oracle/widgets/custom_widgets/custom_elevared_button.dart';
 import 'package:oracle/widgets/custom_widgets/task_list_builder.dart';
 import 'package:oracle/widgets/custom_widgets/user_ph_tl_wh_widget.dart';
 
 class BattleDetailView extends GetView<BattleDetailController> {
-  const BattleDetailView({required this.battle});
+
+  const BattleDetailView({
+    required this.battle,
+    this.status,
+    this.isStatus = false,
+  });
 
   final Battle battle;
+  final String? status;
+  final bool isStatus;
 
   @override
   Widget build(BuildContext context) {
@@ -37,20 +49,25 @@ class BattleDetailView extends GetView<BattleDetailController> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Container(
-          width: Get.width,
-          height: Get.width * 0.5,
-          child: Image.asset(battle.getGameIcon, fit: BoxFit.cover),
-        ),
+        BattleImageContainer(battle: battle),
         Padding(
           padding: const EdgeInsets.all(20.0),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              BattleNameCategory(battle: battle),
               const SizedBox(height: 18.0),
-              BattleDescriptionRate(battle: battle),
+              BattleNameCategory(battle: battle),
               const SizedBox(height: 17.0),
+              BattleDescriptions(battle: battle),
+              const SizedBox(height: 30.0),
+              BattleStartTime(battle: battle),
+              const SizedBox(height: 10.0),
+              BattleRate(battle: battle),
+              const SizedBox(height: 10.0),
+              BattleFormatBattle(battle: battle),
+              const SizedBox(height: 20.0),
+              CustomDivider(),
+              const SizedBox(height: 20.0),
               BattleViewsOffersCount(battle: battle),
               const SizedBox(height: 52.0),
               Text("Заказчик"),
@@ -85,4 +102,5 @@ class BattleDetailView extends GetView<BattleDetailController> {
       centerTitle: true,
     );
   }
+
 }

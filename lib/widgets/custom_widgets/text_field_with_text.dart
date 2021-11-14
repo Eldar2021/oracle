@@ -16,7 +16,7 @@ class TextFieldWithText extends StatelessWidget {
         padding: EdgeInsets.only(left: 20, right: 20, top: 18, bottom: 18),
         margin: EdgeInsets.only(bottom: 10, top: 15),
         decoration: BoxDecoration(
-          color: MyColors.textFieldBgColor,
+          color: MyColors.buttonBgColor,
           borderRadius: BorderRadius.circular(16),
         ),
         child: Row(
