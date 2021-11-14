@@ -10,7 +10,7 @@ class TextFieldContainer extends StatelessWidget {
     required this.text,
     required this.onTab,
     this.icon,
-    this.bgColor = MyColors.textFieldBgColor,
+    this.bgColor = MyColors.buttonBgColor,
     this.selected,
     this.controller,
     Key? key,
@@ -35,7 +35,7 @@ class TextFieldContainer extends StatelessWidget {
           margin: EdgeInsets.only(bottom: 10),
           decoration: BoxDecoration(
             color: controller?.typeBattle.value == text
-                ? MyColors.elevatedButtonBgColor
+                ? MyColors.linkTextColor
                 : bgColor,
             borderRadius: BorderRadius.circular(16),
           ),

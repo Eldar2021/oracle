@@ -70,7 +70,7 @@ class DialogService {
           padding: EdgeInsets.only(top: 10, bottom: 10),
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(16.0),
-            color: MyColors.elevatedButtonBgColor,
+            color: MyColors.linkTextColor,
           ),
           child: Text(
             "Выйти",
@@ -88,7 +88,7 @@ class DialogService {
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(16.0),
             border: Border.all(
-              color: MyColors.elevatedButtonBgColor,
+              color: MyColors.linkTextColor,
             ),
           ),
           child: Text(

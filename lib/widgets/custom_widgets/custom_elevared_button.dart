@@ -9,7 +9,7 @@ class CustomElevatedButton extends StatelessWidget {
     this.width = 184,
     this.text = "Войти",
     this.borderRadius = 16.0,
-    this.bgColor = MyColors.elevatedButtonBgColor,
+    this.bgColor = MyColors.linkTextColor,
     this.fontSize,
     Key? key,
   }) : super(key: key);
