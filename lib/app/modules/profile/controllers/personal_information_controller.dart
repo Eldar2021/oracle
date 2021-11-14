@@ -19,7 +19,7 @@ class PersonalInfoController extends GetxController {
   final ImagePicker _picker = ImagePicker();
 
   imgFromGallery() async {
-    var image = await _picker.pickImage(source: ImageSource.gallery);
+    var image = await _picker.pickImage(source: ImageSource.camera);
     selectImage =  File(image!.path);
     photoUrl.value = "";
   }
