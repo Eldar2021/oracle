@@ -141,7 +141,6 @@ class AppPages {
       binding: ResponBinding(),
     ),
     GetPage(
-
       name: _Paths.BATTLE_FORMAT,
       page: () => BattleFormatView(),
       binding: BattleFormatBinding(),
@@ -155,7 +154,8 @@ class AppPages {
       name: _Paths.PUBLISH_GAME,
       page: () => PublishGameView(battle: battle1),
       binding: PublishGameBinding(),
-
+    ),
+    GetPage(
       name: _Paths.BATTLE_DETAIL_TAB_BAR,
       page: () => BattleDetailViewTabBar(battle: battle1),
       binding: BattleDetailTabBarBinding(),
@@ -184,7 +184,6 @@ class AppPages {
       name: _Paths.CHANGE_PASSWORD,
       page: () => ChangedPasswordView(),
       binding: ChangePasswordBinding(),
-
     ),
   ];
 }
