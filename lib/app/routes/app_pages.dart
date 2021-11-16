@@ -9,8 +9,14 @@ import 'package:oracle/app/modules/battle_detail/bindings/battle_detail_binding.
 import 'package:oracle/app/modules/battle_detail/views/battle_detail_view.dart';
 import 'package:oracle/app/modules/category/bindings/category_binding.dart';
 import 'package:oracle/app/modules/category/views/category_view.dart';
+import 'package:oracle/app/modules/create_battle/bindings/add_gamer_binding.dart';
+import 'package:oracle/app/modules/create_battle/bindings/battle_format_binding.dart';
 import 'package:oracle/app/modules/create_battle/bindings/create_battle_binding.dart';
+import 'package:oracle/app/modules/create_battle/bindings/publish_game_binding.dart';
+import 'package:oracle/app/modules/create_battle/views/add_gamer_view.dart';
+import 'package:oracle/app/modules/create_battle/views/battle_format_view.dart';
 import 'package:oracle/app/modules/create_battle/views/create_battle_view.dart';
+import 'package:oracle/app/modules/create_battle/views/publish_game_view.dart';
 import 'package:oracle/app/modules/filter/bindings/filter_binding.dart';
 import 'package:oracle/app/modules/filter/bindings/sort_binding.dart';
 import 'package:oracle/app/modules/filter/views/filter_view.dart';
@@ -121,6 +127,21 @@ class AppPages {
       name: _Paths.RESPON,
       page: () => ResponView(),
       binding: ResponBinding(),
+    ),
+    GetPage(
+      name: _Paths.BATTLE_FORMAT,
+      page: () => BattleFormatView(),
+      binding: BattleFormatBinding(),
+    ),
+    GetPage(
+      name: _Paths.ADD_GAMER,
+      page: () => AddGamerView(),
+      binding: AddGamerBinding(),
+    ),
+    GetPage(
+      name: _Paths.PUBLISH_GAME,
+      page: () => PublishGameView(battle: battle1),
+      binding: PublishGameBinding(),
     ),
   ];
 }

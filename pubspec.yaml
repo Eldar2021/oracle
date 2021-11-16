@@ -21,7 +21,9 @@ dependencies:
   dio: ^4.0.1
   # date time format
   intl: ^0.17.0
-#-----------------
+  # form field dropDown
+  select_form_field: ^2.2.0
+  #-----------------
   flutter:
     sdk: flutter
 
@@ -42,4 +44,3 @@ flutter:
     - assets/images/background/
     - assets/images/gameImages/
     - assets/images/user/
-
