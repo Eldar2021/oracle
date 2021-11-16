@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:oracle/app/data/models/battle_model/battle_model.dart';
-import 'package:oracle/widgets/custom_widgets/battle_list_view.dart';
+import 'package:oracle/widgets/list_builder/battle_list_builder.dart';
 import 'package:oracle/widgets/custom_widgets/is_empty_widget.dart';
 
 class IPerformer extends StatelessWidget {
@@ -30,7 +30,7 @@ class IPerformer extends StatelessWidget {
       child: BattlesListBuilder(
         battleList: listBattle!,
         shrinkWrap: true,
-        status: true,
+       // status: true,
         primary: false,
       ),
     );

@@ -41,7 +41,7 @@ class GiveReviewView extends GetView<GiveReviewController> {
                   children: [
                     CustomElevatedButton(
                       function: () {
-                        customDialog(
+                        DialogService.customDialog(
                           buttonText: "Вернуться назад",
                           function: () {},
                           description:

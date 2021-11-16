@@ -21,7 +21,7 @@ class AppPageView extends GetView<AppPageController> {
         textTheme: TextTheme(),
         inputDecorationTheme: InputDecorationTheme(
           filled: true,
-          fillColor: MyColors.textFieldBgColor,
+          fillColor: MyColors.buttonBgColor,
           border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(16.0),
           ),

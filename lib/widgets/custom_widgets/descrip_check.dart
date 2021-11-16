@@ -17,7 +17,7 @@ class DescriptionCheck extends StatelessWidget {
       children: [
         SvgPicture.asset(Assets.arrayTrue),
         const SizedBox(width: 12),
-        Text(text ?? "", style: Get.textTheme.bodyText2!),
+        Expanded(child: Text(text ?? "", style: Get.textTheme.bodyText2!)),
       ],
     );
   }

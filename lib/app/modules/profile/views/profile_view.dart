@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter_svg/svg.dart';
 
 import 'package:get/get.dart';
 import 'package:oracle/app/data/models/user_model/user_model.dart';
+import 'package:oracle/app/routes/app_pages.dart';
 import 'package:oracle/generated/assets.dart';
 import 'package:oracle/widgets/custom_widgets/like_dislike_widget.dart';
 import 'package:oracle/widgets/custom_widgets/play_list_widget.dart';
@@ -70,9 +72,17 @@ class ProfileView extends GetView<ProfileController> {
         children: [
           Text("${user.name}  ${user.nickName}"),
           SizedBox(width: 8),
-          SvgPicture.asset(Assets.componentsFlagStar)
+          SvgPicture.asset(Assets.componentsFlagStar),
         ],
       ),
+      actions: [
+        IconButton(
+          icon: SvgPicture.asset(Assets.componentsSetting),
+          onPressed: () {
+            Get.toNamed(Routes.SETTINGS);
+          },
+        ),
+      ],
       centerTitle: true,
     );
   }
