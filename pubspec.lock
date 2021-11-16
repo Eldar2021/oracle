@@ -240,6 +240,15 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "4.4.0"
+
+  select_form_field:
+    dependency: "direct main"
+    description:
+      name: select_form_field
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "2.2.0"
+
   plugin_platform_interface:
     dependency: transitive
     description:
@@ -247,6 +256,7 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "2.0.2"
+
   sky_engine:
     dependency: transitive
     description: flutter
