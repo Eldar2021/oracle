@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:oracle/app/data/models/user_model/user_model.dart';
+import 'package:oracle/app/routes/app_pages.dart';
 import 'package:oracle/generated/assets.dart';
 import 'package:oracle/widgets/custom_widgets/drawer_list_tile.dart';
 import 'custom_elevared_button.dart';
@@ -56,7 +57,9 @@ class DrawerMenu extends StatelessWidget {
           leading: SvgPicture.asset(Assets.drawerNavBattle),
           title: "Создать сражение",
           style: Get.textTheme.subtitle2!.copyWith(height: 0.1),
-          onTap: () {},
+          onTap: () {
+            Get.toNamed(Routes.CREATE_BATTLE);
+          },
         ),
         DrawerListTile(
           leading: SvgPicture.asset(Assets.drawerNavBattle),
