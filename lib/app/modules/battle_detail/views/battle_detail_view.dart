@@ -13,13 +13,13 @@ import 'package:oracle/app/modules/battle_detail/battle_detail_widgets/battle_of
 import 'package:oracle/app/modules/battle_detail/battle_detail_widgets/battle_rate.dart';
 import 'package:oracle/app/modules/battle_detail/battle_detail_widgets/battle_start_time.dart';
 import 'package:oracle/app/modules/battle_detail/controllers/battle_detail_controller.dart';
+import 'package:oracle/app/routes/app_pages.dart';
 import 'package:oracle/widgets/custom_widgets/custom_divider.dart';
 import 'package:oracle/widgets/custom_widgets/custom_elevared_button.dart';
 import 'package:oracle/widgets/custom_widgets/task_list_builder.dart';
 import 'package:oracle/widgets/custom_widgets/user_ph_tl_wh_widget.dart';
 
 class BattleDetailView extends GetView<BattleDetailController> {
-
   const BattleDetailView({
     required this.battle,
     this.status,
@@ -84,7 +84,9 @@ class BattleDetailView extends GetView<BattleDetailController> {
                 children: [
                   CustomElevatedButton(
                     text: "Откликнуться",
-                    function: () {},
+                    function: () {
+                      Get.toNamed(Routes.RESPOND_BATTLE);
+                    },
                   ),
                 ],
               ),
@@ -102,5 +104,4 @@ class BattleDetailView extends GetView<BattleDetailController> {
       centerTitle: true,
     );
   }
-
 }

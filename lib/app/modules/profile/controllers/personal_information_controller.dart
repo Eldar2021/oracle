@@ -2,7 +2,7 @@ import 'dart:io';
 
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
-import 'package:image_picker/image_picker.dart';
+// import 'package:image_picker/image_picker.dart';
 import 'package:oracle/generated/assets.dart';
 
 class PersonalInfoController extends GetxController {
@@ -16,11 +16,11 @@ class PersonalInfoController extends GetxController {
   var photoUrl = Assets.userPhote.obs;
   var selectImage;
 
-  final ImagePicker _picker = ImagePicker();
+  // final ImagePicker _picker = ImagePicker();
 
   imgFromGallery() async {
-    var image = await _picker.pickImage(source: ImageSource.gallery);
-    selectImage =  File(image!.path);
+    // var image = await _picker.pickImage(source: ImageSource.gallery);
+    // selectImage =  File(image!.path);
     photoUrl.value = "";
   }
 

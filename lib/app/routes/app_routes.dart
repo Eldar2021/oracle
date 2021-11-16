@@ -26,6 +26,8 @@ abstract class Routes {
   static const SETTINGS = _Paths.SETTINGS;
   static const PERSONAL_INFO = _Paths.PERSONAL_INFO;
   static const CHANGE_PASSWORD = _Paths.CHANGE_PASSWORD;
+  static const RESPOND_BATTLE = _Paths.RESPOND_BATTLE;
+  static const RESPOND_ADD_GAMER = _Paths.RESPOND_ADD_GAMER;
 }
 
 abstract class _Paths {
@@ -51,4 +53,6 @@ abstract class _Paths {
   static const SETTINGS = '/settings';
   static const PERSONAL_INFO = '/personal-info';
   static const CHANGE_PASSWORD = '/change-password';
+  static const RESPOND_BATTLE = '/respond-battle';
+  static const RESPOND_ADD_GAMER = '/respond-add_gamer';
 }
