@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:oracle/app/data/models/battle_model/battle_model.dart';
 import 'package:oracle/app/data/models/battle_task_model/battle_task_model.dart';
 import 'package:oracle/app/data/models/user_model/user_model.dart';
+import 'package:oracle/app/routes/app_pages.dart';
 import 'package:oracle/constants/color_constants.dart';
 import 'package:oracle/widgets/custom_widgets/custom_divider.dart';
 import 'package:oracle/widgets/custom_widgets/custom_elevared_button.dart';
@@ -73,7 +74,9 @@ class DetailBattle extends StatelessWidget {
                 children: [
                   CustomElevatedButton(
                     text: "Редактировать",
-                    function: () {},
+                    function: () {
+                      Get.toNamed(Routes.RESPOND_BATTLE);
+                    },
                   ),
                 ],
               ),

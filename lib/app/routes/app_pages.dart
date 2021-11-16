@@ -51,6 +51,10 @@ import 'package:oracle/app/modules/profile/views/profile_view.dart';
 import 'package:oracle/app/modules/profile/views/setting_view.dart';
 import 'package:oracle/app/modules/respon/bindings/respon_binding.dart';
 import 'package:oracle/app/modules/respon/views/respon_view.dart';
+import 'package:oracle/app/modules/respond/bindings/reslpond_battle_binding.dart';
+import 'package:oracle/app/modules/respond/bindings/respond_add_gamer_binding.dart';
+import 'package:oracle/app/modules/respond/views/respond_add_gamer_view.dart';
+import 'package:oracle/app/modules/respond/views/respond_battle_view.dart';
 
 part 'app_routes.dart';
 
@@ -184,6 +188,16 @@ class AppPages {
       name: _Paths.CHANGE_PASSWORD,
       page: () => ChangedPasswordView(),
       binding: ChangePasswordBinding(),
+    ),
+    GetPage(
+      name: _Paths.RESPOND_BATTLE,
+      page: () => RespondBattleView(),
+      binding: RespondBattleBinding(),
+    ),
+    GetPage(
+      name: _Paths.RESPOND_ADD_GAMER,
+      page: () => RespondAddGamerView(),
+      binding: RespondAddGamerBinding(),
     ),
   ];
 }
