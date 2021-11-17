@@ -1,6 +1,11 @@
 import 'package:get/get.dart';
+
 import 'package:oracle/app/data/models/battle_model/battle_model.dart';
 import 'package:oracle/app/data/models/user_model/user_model.dart';
+import 'package:oracle/app/modules/about/bindings/about_binding.dart';
+import 'package:oracle/app/modules/about/views/about_view.dart';
+import 'package:oracle/app/modules/answer/bindings/answer_binding.dart';
+import 'package:oracle/app/modules/answer/views/answer_view.dart';
 import 'package:oracle/app/modules/app_page/bindings/app_page_binding.dart';
 import 'package:oracle/app/modules/app_page/views/app_page_view.dart';
 import 'package:oracle/app/modules/battle/bindings/battle_binding.dart';
@@ -23,8 +28,14 @@ import 'package:oracle/app/modules/filter/views/filter_view.dart';
 import 'package:oracle/app/modules/filter/views/sort_view.dart';
 import 'package:oracle/app/modules/give_review/bindings/give_review_binding.dart';
 import 'package:oracle/app/modules/give_review/views/give_review_view.dart';
+import 'package:oracle/app/modules/help/bindings/help_binding.dart';
+import 'package:oracle/app/modules/help/views/help_view.dart';
 import 'package:oracle/app/modules/home/bindings/home_binding.dart';
+import 'package:oracle/app/modules/home/bindings/play_detail_binding.dart';
+import 'package:oracle/app/modules/home/views/play_detail_view.dart';
 import 'package:oracle/app/modules/home/views/screen_view.dart';
+import 'package:oracle/app/modules/identification/bindings/identification_binding.dart';
+import 'package:oracle/app/modules/identification/views/identification_view.dart';
 import 'package:oracle/app/modules/login/bindings/auth_phone_binding.dart';
 import 'package:oracle/app/modules/login/bindings/login_binding.dart';
 import 'package:oracle/app/modules/login/bindings/register_binding.dart';
@@ -33,6 +44,8 @@ import 'package:oracle/app/modules/login/views/auth_phone_view.dart';
 import 'package:oracle/app/modules/login/views/login_view.dart';
 import 'package:oracle/app/modules/login/views/register_view.dart';
 import 'package:oracle/app/modules/login/views/restore_password_view.dart';
+import 'package:oracle/app/modules/notification/bindings/notification_binding.dart';
+import 'package:oracle/app/modules/notification/views/notification_view.dart';
 import 'package:oracle/app/modules/play/bindings/play_binding.dart';
 import 'package:oracle/app/modules/play/views/play_view.dart';
 import 'package:oracle/app/modules/profile/bindings/change_password_binding.dart';
@@ -163,6 +176,36 @@ class AppPages {
       name: _Paths.CHANGE_PASSWORD,
       page: () => ChangedPasswordView(),
       binding: ChangePasswordBinding(),
+    ),
+    GetPage(
+      name: _Paths.ANSWER,
+      page: () => AnswerView(),
+      binding: AnswerBinding(),
+    ),
+    GetPage(
+      name: _Paths.NOTIFICATION,
+      page: () => NotificationView(),
+      binding: NotificationBinding(),
+    ),
+    GetPage(
+      name: _Paths.HELP,
+      page: () => HelpView(),
+      binding: HelpBinding(),
+    ),
+    GetPage(
+      name: _Paths.ABOUT,
+      page: () => AboutView(),
+      binding: AboutBinding(),
+    ),
+    GetPage(
+      name: _Paths.IDENTIFICATION,
+      page: () => IdentificationView(),
+      binding: IdentificationBinding(),
+    ),
+    GetPage(
+      name: _Paths.PLAY_DETAIL,
+      page: () => PlayDetailView(),
+      binding: PlayDetailBinding(),
     ),
   ];
 }

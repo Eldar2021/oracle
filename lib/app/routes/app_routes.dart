@@ -26,6 +26,12 @@ abstract class Routes {
   static const SETTINGS = _Paths.SETTINGS;
   static const PERSONAL_INFO = _Paths.PERSONAL_INFO;
   static const CHANGE_PASSWORD = _Paths.CHANGE_PASSWORD;
+  static const ANSWER = _Paths.ANSWER;
+  static const NOTIFICATION = _Paths.NOTIFICATION;
+  static const HELP = _Paths.HELP;
+  static const ABOUT = _Paths.ABOUT;
+  static const IDENTIFICATION = _Paths.IDENTIFICATION;
+  static const PLAY_DETAIL = _Paths.PLAY_DETAIL;
 }
 
 abstract class _Paths {
@@ -41,6 +47,7 @@ abstract class _Paths {
   static const FILTER = '/filter';
   static const SORT = '/sort';
   static const PLAY = '/play';
+  static const PLAY_DETAIL = '/play-detail';
   static const BATTLE = '/battle';
   static const BATTLE_DETAIL = '/battle-detail';
   static const CREATE_BATTLE = '/create-battle';
@@ -51,4 +58,9 @@ abstract class _Paths {
   static const SETTINGS = '/settings';
   static const PERSONAL_INFO = '/personal-info';
   static const CHANGE_PASSWORD = '/change-password';
+  static const ANSWER = '/answer';
+  static const NOTIFICATION = '/notification';
+  static const HELP = '/help';
+  static const ABOUT = '/about';
+  static const IDENTIFICATION = '/identification';
 }

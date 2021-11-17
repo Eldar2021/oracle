@@ -3,9 +3,11 @@ import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:oracle/constants/color_constants.dart';
 import 'package:oracle/generated/assets.dart';
-import 'package:oracle/widgets/custom_widgets/custom_elevared_button.dart';
+import 'package:loading_indicator/loading_indicator.dart';
+import '../widgets/custom_widgets/custom_elevared_button.dart';
 
 class DialogService {
+
   static void customDialog({
     String? icon,
     String? text,
@@ -102,4 +104,26 @@ class DialogService {
       ),
     );
   }
+
+  static void loadingDialog() {
+    Get.defaultDialog(
+      backgroundColor: MyColors.backgroundColor,
+      title: "",
+      content: Column(
+        children: [
+          SizedBox(
+            width: 50,
+            height: 50,
+            child: LoadingIndicator(
+              indicatorType: Indicator.lineSpinFadeLoader,
+              colors: [MyColors.ratingStarColor],
+            ),
+          ),
+          const SizedBox(height: 40.0),
+          Text("Идет проверка документов"),
+        ],
+      ),
+    );
+  }
+
 }

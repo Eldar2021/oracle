@@ -5,8 +5,8 @@ description: A new Flutter project.
 environment:
   sdk: ">=2.12.0 <3.0.0"
 
+#-----------------------
 dependencies:
-  #-----------------------
   # ios design
   cupertino_icons: ^1.0.2
   # get atate managment
@@ -23,7 +23,12 @@ dependencies:
   intl: ^0.17.0
   # image_picker:
   image_picker: ^0.8.4+4
+  # exapandable text for read more:
+  expandable: ^5.0.1
+  # prossing_indicator:
+  loading_indicator: ^3.0.2
 #-----------------
+
   flutter:
     sdk: flutter
 

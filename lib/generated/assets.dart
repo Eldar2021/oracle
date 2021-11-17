@@ -20,8 +20,10 @@ class Assets {
   static const String bottomNavBottom3 = 'assets/icons/bottom_nav/bottom3.svg';
   static const String bottomNavBottom4 = 'assets/icons/bottom_nav/bottom4.svg';
   static const String bottomNavVector = 'assets/icons/bottom_nav/Vector.svg';
+  static const String componentsAdd = 'assets/icons/components/add.svg';
   static const String componentsArrayShare = 'assets/icons/components/arrayShare.svg';
   static const String componentsBattleBg = 'assets/icons/components/battleBg.svg';
+  static const String componentsBgNotification = 'assets/icons/components/bgNotification.svg';
   static const String componentsCamera = 'assets/icons/components/camera.svg';
   static const String componentsCoin = 'assets/icons/components/coin.svg';
   static const String componentsConfirm = 'assets/icons/components/confirm.svg';
@@ -55,6 +57,7 @@ class Assets {
   static const String drawerNavMyBattles = 'assets/icons/drawer_nav/myBattles.svg';
   static const String drawerNavNotification = 'assets/icons/drawer_nav/notification.svg';
   static const String gameImagesDota2 = 'assets/images/gameImages/dota2.png';
+  static const String gameImagesOracle = 'assets/images/gameImages/oracle.png';
   static const String userDota = 'assets/images/user/dota.png';
   static const String userPhote = 'assets/images/user/phote.png';
   static const String userUserEmail = 'assets/icons/user/userEmail.svg';
