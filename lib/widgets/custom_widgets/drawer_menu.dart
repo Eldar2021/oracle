@@ -58,7 +58,7 @@ class DrawerMenu extends StatelessWidget {
           title: "Создать сражение",
           style: Get.textTheme.subtitle2!.copyWith(height: 0.1),
           onTap: () {
-            Get.toNamed(Routes.BATTLE);
+            Get.toNamed(Routes.CREATE_BATTLE);
           },
         ),
         DrawerListTile(

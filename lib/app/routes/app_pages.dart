@@ -20,8 +20,14 @@ import 'package:oracle/app/modules/battle_detail/views/battle_detail_view_tab_ba
 import 'package:oracle/app/modules/battle_detail/views/select_performer_view.dart';
 import 'package:oracle/app/modules/category/bindings/category_binding.dart';
 import 'package:oracle/app/modules/category/views/category_view.dart';
+import 'package:oracle/app/modules/create_battle/bindings/add_gamer_binding.dart';
+import 'package:oracle/app/modules/create_battle/bindings/battle_format_binding.dart';
 import 'package:oracle/app/modules/create_battle/bindings/create_battle_binding.dart';
+import 'package:oracle/app/modules/create_battle/bindings/publish_game_binding.dart';
+import 'package:oracle/app/modules/create_battle/views/add_gamer_view.dart';
+import 'package:oracle/app/modules/create_battle/views/battle_format_view.dart';
 import 'package:oracle/app/modules/create_battle/views/create_battle_view.dart';
+import 'package:oracle/app/modules/create_battle/views/publish_game_view.dart';
 import 'package:oracle/app/modules/filter/bindings/filter_binding.dart';
 import 'package:oracle/app/modules/filter/bindings/sort_binding.dart';
 import 'package:oracle/app/modules/filter/views/filter_view.dart';
@@ -58,6 +64,10 @@ import 'package:oracle/app/modules/profile/views/profile_view.dart';
 import 'package:oracle/app/modules/profile/views/setting_view.dart';
 import 'package:oracle/app/modules/respon/bindings/respon_binding.dart';
 import 'package:oracle/app/modules/respon/views/respon_view.dart';
+import 'package:oracle/app/modules/respond/bindings/reslpond_battle_binding.dart';
+import 'package:oracle/app/modules/respond/bindings/respond_add_gamer_binding.dart';
+import 'package:oracle/app/modules/respond/views/respond_add_gamer_view.dart';
+import 'package:oracle/app/modules/respond/views/respond_battle_view.dart';
 
 part 'app_routes.dart';
 
@@ -148,6 +158,21 @@ class AppPages {
       binding: ResponBinding(),
     ),
     GetPage(
+      name: _Paths.BATTLE_FORMAT,
+      page: () => BattleFormatView(),
+      binding: BattleFormatBinding(),
+    ),
+    GetPage(
+      name: _Paths.ADD_GAMER,
+      page: () => AddGamerView(),
+      binding: AddGamerBinding(),
+    ),
+    GetPage(
+      name: _Paths.PUBLISH_GAME,
+      page: () => PublishGameView(battle: battle1),
+      binding: PublishGameBinding(),
+    ),
+    GetPage(
       name: _Paths.BATTLE_DETAIL_TAB_BAR,
       page: () => BattleDetailViewTabBar(battle: battle1),
       binding: BattleDetailTabBarBinding(),
@@ -178,6 +203,7 @@ class AppPages {
       binding: ChangePasswordBinding(),
     ),
     GetPage(
+
       name: _Paths.ANSWER,
       page: () => AnswerView(),
       binding: AnswerBinding(),
@@ -206,6 +232,16 @@ class AppPages {
       name: _Paths.PLAY_DETAIL,
       page: () => PlayDetailView(),
       binding: PlayDetailBinding(),
+
+      name: _Paths.RESPOND_BATTLE,
+      page: () => RespondBattleView(),
+      binding: RespondBattleBinding(),
+    ),
+    GetPage(
+      name: _Paths.RESPOND_ADD_GAMER,
+      page: () => RespondAddGamerView(),
+      binding: RespondAddGamerBinding(),
+
     ),
   ];
 }

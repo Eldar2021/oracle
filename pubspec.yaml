@@ -21,6 +21,11 @@ dependencies:
   dio: ^4.0.1
   # date time format
   intl: ^0.17.0
+
+  # form field dropDown
+  select_form_field: ^2.2.0
+  #-----------------
+
   # image_picker:
   image_picker: ^0.8.4+4
   # exapandable text for read more:
@@ -49,4 +54,3 @@ flutter:
     - assets/images/background/
     - assets/images/gameImages/
     - assets/images/user/
-
