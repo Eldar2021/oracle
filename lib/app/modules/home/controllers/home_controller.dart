@@ -1,16 +1,18 @@
-import 'package:dio/dio.dart';
 import 'package:get/get.dart';
-import 'package:oracle/app/data/models/battle_model/battle_model.dart';
-import 'package:oracle/constants/api_url_constants.dart';
+import 'package:oracle/app/data/models/play_model/play_models.dart';
+import 'package:oracle/app/routes/app_pages.dart';
 
 class HomeController extends GetxController {
+  final RxList<Play> playList = RxList<Play>([]);
 
-  final RxList<Battle> battles = RxList<Battle>([]);
+  void goDetail(Play item) {
+    Get.toNamed(Routes.PLAY_DETAIL, arguments: [item]);
+  }
 
   @override
   void onInit() {
     super.onInit();
-    listBattles();
+    playList.value = plays;
   }
 
   @override
@@ -20,24 +22,4 @@ class HomeController extends GetxController {
 
   @override
   void onClose() {}
-
-  void listBattles()async{
-    battles.value = await getBattles();
-  }
-
-
-  Future<List<Battle>> getBattles() async {
-    Dio dio = Dio();
-    final response = await dio.get(Url.battleUrl);
-    if (response.statusCode == 200) {
-      final dynamic result = response.data;
-      Iterable list = result;
-      print(response);
-      return list.map((e) => Battle.fromJson(e)).toList();
-    } else {
-      throw Exception("your have error");
-    }
-  }
-
-
 }
