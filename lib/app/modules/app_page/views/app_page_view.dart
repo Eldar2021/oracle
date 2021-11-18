@@ -28,6 +28,10 @@ class AppPageView extends GetView<AppPageController> {
         ),
         bottomNavigationBarTheme: BottomNavigationBarThemeData(
           backgroundColor: MyColors.bottomNavBgColor,
+          selectedItemColor: MyColors.moneyTextColor,
+          selectedIconTheme: IconThemeData(color: MyColors.moneyTextColor),
+          selectedLabelStyle: TextStyle(fontSize: 13.0, height: 1.5),
+          unselectedLabelStyle: TextStyle(fontSize: 13.0, height: 1.5),
         ),
       ),
       home: SplashScreenView(

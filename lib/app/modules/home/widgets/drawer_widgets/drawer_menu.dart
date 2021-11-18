@@ -1,58 +1,22 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:oracle/app/data/models/user_model/user_model.dart';
 import 'package:oracle/app/routes/app_pages.dart';
 import 'package:oracle/generated/assets.dart';
-import 'package:oracle/widgets/custom_widgets/drawer_list_tile.dart';
-import 'custom_elevared_button.dart';
+import 'package:oracle/app/modules/home/widgets/drawer_widgets/drawer_list_tile.dart';
+import 'package:oracle/service/get_dialog_service.dart';
+import 'drawer_user_card.dart';
 
 class DrawerMenu extends StatelessWidget {
-
+  final UserModel userModel;
+  DrawerMenu({required this.userModel}): super();
   @override
   Widget build(BuildContext context) {
     return ListView(
       children: [
-        Padding(
-          padding: const EdgeInsets.only(top: 60.0, bottom: 50.0),
-          child: ListTile(
-            leading: Image.asset(Assets.userDota),
-            title: Row(
-              mainAxisAlignment: MainAxisAlignment.start,
-              children: [
-                Padding(
-                  padding: const EdgeInsets.only(top: 15.0),
-                  child: Text("${userModel1.name}",
-                      style: Get.textTheme.subtitle2!),
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(top: 15.0),
-                  child: Text("      •      ${userModel1.nickName}",
-                      style: Get.textTheme.subtitle2!),
-                )
-              ],
-            ),
-            subtitle: Row(
-              mainAxisAlignment: MainAxisAlignment.start,
-              children: [
-                SvgPicture.asset(Assets.drawerNavMoney),
-                SizedBox(width: 5),
-                Text(
-                  "Баланс 750 сом",
-                  style: Get.textTheme.caption,
-                ),
-                SizedBox(width: 5),
-                CustomElevatedButton(
-                  text: "Пополнить",
-                  fontSize: 9.0,
-                  function: () {},
-                  width: 80.0,
-                  height: 25.0,
-                ),
-              ],
-            ),
-          ),
-        ),
+        DrawerUserCard(userModel: userModel),
         DrawerListTile(
           leading: SvgPicture.asset(Assets.drawerNavBattle),
           title: "Создать сражение",
@@ -62,13 +26,15 @@ class DrawerMenu extends StatelessWidget {
           },
         ),
         DrawerListTile(
-          leading: SvgPicture.asset(Assets.drawerNavBattle),
+          leading: SvgPicture.asset(Assets.drawerNavNotification),
           title: "Мои сражения",
           style: Get.textTheme.subtitle2!.copyWith(height: 0.1),
-          onTap: () {},
+          onTap: () {
+            Get.toNamed(Routes.BATTLE);
+          },
         ),
         DrawerListTile(
-          leading: SvgPicture.asset(Assets.drawerNavNotification),
+          leading: SvgPicture.asset(Assets.componentsBgNotification, width: 15),
           title: "Уведомления",
           style: Get.textTheme.subtitle2!.copyWith(height: 0.1),
           onTap: () {
@@ -113,7 +79,9 @@ class DrawerMenu extends StatelessWidget {
             leading: SvgPicture.asset(Assets.drawerNavExit),
             title: "Выйти",
             style: Get.textTheme.subtitle2!.copyWith(height: 0.1),
-            onTap: () {},
+            onTap: () {
+              DialogService.customDialogExit();
+            },
           ),
         ),
       ],

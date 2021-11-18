@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:oracle/app/data/models/battle_model/battle_model.dart';
+import 'package:oracle/app/routes/app_pages.dart';
 import 'package:oracle/widgets/custom_widgets/is_empty_widget.dart';
 import 'package:oracle/widgets/list_builder/battle_list_status_builder.dart';
 
@@ -30,8 +32,10 @@ class ICustomer extends StatelessWidget {
       child: BattlesStatusListBuilder(
         battleList: listBattle!,
         shrinkWrap: true,
-        //status: true,
         primary: false,
+        function: (battle){
+          Get.toNamed(Routes.BATTLE_DETAIL_TAB_BAR, arguments: [battle]);
+        },
       ),
     );
   }

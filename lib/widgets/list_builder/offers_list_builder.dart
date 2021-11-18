@@ -50,7 +50,8 @@ class OffersListBuilder extends StatelessWidget {
                 CustomElevatedButton(
                   width: 210.0,
                   function: () {
-                    Get.toNamed(Routes.SELECT_PERFORMER);
+                    Get.toNamed(Routes.SELECT_PERFORMER,
+                        arguments: [offer.user, offer.money]);
                   },
                   text: "Выбрать исполнителем",
                 ),

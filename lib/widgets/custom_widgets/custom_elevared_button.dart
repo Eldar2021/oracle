@@ -28,6 +28,7 @@ class CustomElevatedButton extends StatelessWidget {
       child: Text("$text",
           style: Get.textTheme.subtitle1!.copyWith(fontSize: fontSize ?? null)),
       style: ElevatedButton.styleFrom(
+        padding: EdgeInsets.all(0.0),
         primary: bgColor,
         fixedSize: Size(width, height),
         shape: RoundedRectangleBorder(

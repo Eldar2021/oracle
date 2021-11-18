@@ -17,7 +17,7 @@ class BattleImageContainer extends StatelessWidget {
       height: Get.width * 0.5,
       child: Image.asset(
         battle.getGameIcon,
-        fit: BoxFit.cover,
+        fit: BoxFit.fill,
       ),
     );
   }

@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
+
 import 'package:get/get.dart';
-import 'package:oracle/app/modules/login/controllers/restore_password_controller.dart';
 import 'package:oracle/app/routes/app_pages.dart';
 import 'package:oracle/constants/color_constants.dart';
 import 'package:oracle/widgets/custom_widgets/custom_elevared_button.dart';
 import 'package:oracle/widgets/custom_widgets/link_text_widget.dart';
 
-class RestorePasswordView extends GetView<RestorePasswordController> {
-  final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
+import '../controllers/code_controller.dart';
 
+class CodeView extends GetView<CodeController> {
+  final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -26,13 +27,13 @@ class RestorePasswordView extends GetView<RestorePasswordController> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   //Spacer(),
-                  Text("Восстановление пароля", style: Get.textTheme.headline6),
+                  Text("Ввведите код", style: Get.textTheme.headline6),
                   const SizedBox(height: 30.0),
                   TextFormField(
-                    controller: controller.emailPhone.value,
+                    controller: controller.code.value,
                     keyboardType: TextInputType.emailAddress,
                     decoration: InputDecoration(
-                      hintText: "Ввведите номер телефона или эл. почту",
+                      hintText: "Ввведите код",
                     ),
                     validator: (val) {
                       if (val!.isEmpty) {
@@ -63,7 +64,7 @@ class RestorePasswordView extends GetView<RestorePasswordController> {
                       if (_formKey.currentState!.validate()) {
                         print('Form is valid');
                         controller.restore("eldar");
-                        Get.toNamed(Routes.CODE);
+                        Get.toNamed(Routes.SCREEN);
                       } else {
                         print('Form is invalid');
                       }

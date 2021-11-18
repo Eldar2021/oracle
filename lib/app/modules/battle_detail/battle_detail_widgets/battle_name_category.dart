@@ -16,7 +16,7 @@ class BattleNameCategory extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Text(battle.title, style: Get.textTheme.subtitle1),
+        Text(battle.title, style: Get.textTheme.subtitle1!.copyWith(height: 1.5)),
         const SizedBox(height: 10.0),
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,

@@ -8,7 +8,6 @@ class Assets {
   static const String arrayBackx = 'assets/icons/array/backx.svg';
   static const String arraySolid = 'assets/icons/array/solid.svg';
   static const String arrayTrue = 'assets/icons/array/true.svg';
-  static const String add = 'assets/icons/components/add.svg';
   static const String authenticateFacebook =
       'assets/icons/authenticate/facebook.svg';
   static const String authenticateGoogle =
@@ -24,19 +23,15 @@ class Assets {
   static const String bottomNavBottom2 = 'assets/icons/bottom_nav/bottom2.svg';
   static const String bottomNavBottom3 = 'assets/icons/bottom_nav/bottom3.svg';
   static const String bottomNavBottom4 = 'assets/icons/bottom_nav/bottom4.svg';
-  static const String bottomNavVector = 'assets/icons/bottom_nav/Vector.svg';
-
   static const String componentsAdd = 'assets/icons/components/add.svg';
-  static const String componentsArrayShare = 'assets/icons/components/arrayShare.svg';
-  static const String componentsBattleBg = 'assets/icons/components/battleBg.svg';
-  static const String componentsBgNotification = 'assets/icons/components/bgNotification.svg';
-
+  static const String componentsAddUserCrown =
+      'assets/icons/components/addUserCrown.svg';
   static const String componentsArrayShare =
       'assets/icons/components/arrayShare.svg';
-  static const String componentsUserAddCrown =
-      'assets/icons/components/addUserCrown.svg';
   static const String componentsBattleBg =
       'assets/icons/components/battleBg.svg';
+  static const String componentsBgNotification =
+      'assets/icons/components/bgNotification.svg';
   static const String componentsCamera = 'assets/icons/components/camera.svg';
   static const String componentsCoin = 'assets/icons/components/coin.svg';
   static const String componentsConfirm = 'assets/icons/components/confirm.svg';
@@ -65,6 +60,8 @@ class Assets {
       'assets/icons/components/statusCancel.svg';
   static const String componentsStatusCompleted =
       'assets/icons/components/statusCompleted.svg';
+  static const String componentsStatusWaiting =
+      'assets/icons/components/statusWaiting.svg';
   static const String componentsUser = 'assets/icons/components/user.svg';
   static const String componentsWinFlag = 'assets/icons/components/winFlag.svg';
   static const String drawerNavAbout = 'assets/icons/drawer_nav/about.svg';

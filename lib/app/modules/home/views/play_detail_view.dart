@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:oracle/app/modules/home/controllers/play_detail_controller.dart';
@@ -25,17 +26,17 @@ class PlayDetailView extends GetView<PlayDetailController> {
       children: [
         Container(
           width: Get.width,
-          height: Get.width * 0.5,
-          child: Image.asset(controller.play.img),
+          height: Get.width * 0.6,
+          child: Image.asset(controller.play.img, fit: BoxFit.fill),
         ),
         Padding(
-          padding: const EdgeInsets.all(20.0),
+          padding: const EdgeInsets.only(top: 10, right: 20, left: 20),
           child: Container(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 CategoryNameRow(play: controller.play),
-                const SizedBox(height: 60),
+                const SizedBox(height: 20),
                 BattlesListBuilder(
                   shrinkWrap: true,
                   primary: false,

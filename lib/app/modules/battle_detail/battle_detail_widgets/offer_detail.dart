@@ -23,7 +23,7 @@ class OffersDetail extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text("У вас 31 предложений"),
+              Text("У вас ${offers.length} предложений"),
               const SizedBox(height: 15.0),
               CustomDivider(),
               OffersListBuilder(offers: offers)

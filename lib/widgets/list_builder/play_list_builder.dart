@@ -15,6 +15,7 @@ class PlayListBuilder extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
+      physics: BouncingScrollPhysics(),
       itemCount: playList.length,
       itemBuilder: (context, index) {
         Play play = playList[index];
@@ -26,15 +27,15 @@ class PlayListBuilder extends StatelessWidget {
             children: [
               Container(
                 width: Get.width,
-                height: Get.width * 0.5,
-                child: Image.asset(play.img, fit: BoxFit.cover),
+                height: Get.width * 0.6,
+                child: Image.asset(play.img, fit: BoxFit.fill),
               ),
               Padding(
                 padding: const EdgeInsets.only(
                   left: 20.0,
                   right: 20.0,
                   bottom: 30.0,
-                  top: 10.0,
+                  top: 5.0,
                 ),
                 child: CategoryNameRow(play: play),
               ),

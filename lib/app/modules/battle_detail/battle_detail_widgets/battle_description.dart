@@ -15,7 +15,7 @@ class BattleDescriptions extends StatelessWidget {
   Widget build(BuildContext context) {
     return Text(
       battle.description ?? "",
-      style: Get.textTheme.caption!.copyWith(color: MyColors.grayWhiteColor),
+      style: Get.textTheme.caption!.copyWith(color: MyColors.grayWhiteColor, height: 1.3),
     );
   }
 }

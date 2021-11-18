@@ -6,6 +6,7 @@ abstract class Routes {
 
   static const HOME = _Paths.HOME;
   static const APP_PAGE = _Paths.APP_PAGE;
+  static const SCREEN = _Paths.SCREEN;
   static const LOGIN = _Paths.LOGIN;
   static const AUTH_PHONE = _Paths.AUTH_PHONE;
   static const REGISTER = _Paths.REGISTER;
@@ -39,18 +40,15 @@ abstract class Routes {
   static const IDENTIFICATION = _Paths.IDENTIFICATION;
   static const PLAY_DETAIL = _Paths.PLAY_DETAIL;
 
-
   static const RESPOND_BATTLE = _Paths.RESPOND_BATTLE;
   static const RESPOND_ADD_GAMER = _Paths.RESPOND_ADD_GAMER;
-
-
-
-
+  static const CODE = _Paths.CODE;
 }
 
 abstract class _Paths {
   static const HOME = '/home';
   static const APP_PAGE = '/app-page';
+  static const SCREEN = '/screen';
   static const LOGIN = '/login';
   static const AUTH_PHONE = '/auth-phone';
   static const REGISTER = '/register';
@@ -84,8 +82,7 @@ abstract class _Paths {
   static const ABOUT = '/about';
   static const IDENTIFICATION = '/identification';
 
-
   static const RESPOND_BATTLE = '/respond-battle';
   static const RESPOND_ADD_GAMER = '/respond-add_gamer';
-
+  static const CODE = '/code';
 }

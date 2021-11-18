@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:oracle/app/data/models/battle_model/battle_model.dart';
-import 'package:oracle/widgets/list_builder/battle_list_builder.dart';
+import 'package:oracle/app/routes/app_pages.dart';
 import 'package:oracle/widgets/custom_widgets/is_empty_widget.dart';
+import 'package:oracle/widgets/list_builder/battle_list_status_builder.dart';
 
 class IPerformer extends StatelessWidget {
   const IPerformer({
@@ -27,11 +29,13 @@ class IPerformer extends StatelessWidget {
 
   Container _listBattleIsNotEmpty() {
     return Container(
-      child: BattlesListBuilder(
+      child: BattlesStatusListBuilder(
         battleList: listBattle!,
         shrinkWrap: true,
-       // status: true,
         primary: false,
+        function: (battle){
+          Get.toNamed(Routes.BATTLE_DETAIL_STATUS, arguments: [battle]);
+        },
       ),
     );
   }

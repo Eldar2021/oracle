@@ -1,8 +1,19 @@
+import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
+import 'package:oracle/service/hive_sevice.dart';
 
 class AuthPhoneController extends GetxController {
+  final HiveService hiveService = HiveService();
 
-  final count = 0.obs;
+  final Rx<TextEditingController> phone = TextEditingController().obs;
+  final Rx<TextEditingController> password = TextEditingController().obs;
+
+  void addToken(String token) async {
+    await hiveService.addToken(token);
+    print(phone.value.text);
+    print(password.value.text);
+  }
+
   @override
   void onInit() {
     super.onInit();
@@ -15,5 +26,4 @@ class AuthPhoneController extends GetxController {
 
   @override
   void onClose() {}
-  void increment() => count.value++;
 }

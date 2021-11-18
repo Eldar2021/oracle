@@ -2,16 +2,17 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:oracle/service/hive_sevice.dart';
 
-class RestorePasswordController extends GetxController {
+class CodeController extends GetxController {
   final HiveService hiveService = HiveService();
 
-  final Rx<TextEditingController> emailPhone = TextEditingController().obs;
+  final Rx<TextEditingController> code = TextEditingController().obs;
 
   void restore(String token) async {
     await hiveService.addToken(token);
-    print(emailPhone.value.text);
+    print(code.value.text);
   }
 
+  final count = 0.obs;
   @override
   void onInit() {
     super.onInit();
@@ -24,4 +25,5 @@ class RestorePasswordController extends GetxController {
 
   @override
   void onClose() {}
+  void increment() => count.value++;
 }

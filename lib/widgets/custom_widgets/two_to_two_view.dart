@@ -19,7 +19,7 @@ class TwoToTwoView extends StatelessWidget {
         padding: const EdgeInsets.all(20.0),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [Text("Добавить игрока"), SvgPicture.asset(Assets.add)],
+          children: [Text("Добавить игрока"), SvgPicture.asset(Assets.componentsAdd)],
         ),
       ),
     );
