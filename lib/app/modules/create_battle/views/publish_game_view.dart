@@ -7,10 +7,12 @@ import 'package:oracle/app/modules/battle_detail/battle_detail_widgets/battle_cu
 import 'package:oracle/app/modules/battle_detail/battle_detail_widgets/battle_name_category.dart';
 import 'package:oracle/app/modules/battle_detail/battle_detail_widgets/battle_offset_count.dart';
 import 'package:oracle/app/modules/create_battle/controllers/publish_game_controller.dart';
+import 'package:oracle/app/routes/app_pages.dart';
 import 'package:oracle/widgets/custom_widgets/battle_customer.dart';
 import 'package:oracle/widgets/custom_widgets/battle_descriptiop_rate.dart';
 import 'package:oracle/widgets/custom_widgets/battle_name_category.dart';
 import 'package:oracle/widgets/custom_widgets/battle_viewOffers_count.dart';
+import 'package:oracle/widgets/custom_widgets/custom_elevared_button.dart';
 import 'package:oracle/widgets/custom_widgets/user_ph_tl_wh_widget.dart';
 
 class PublishGameView extends GetView<PublishGameController> {
@@ -60,6 +62,14 @@ class PublishGameView extends GetView<PublishGameController> {
               const SizedBox(height: 30.0),
               UserPhoneTlWhatsApp(),
               const SizedBox(height: 40.0),
+              Center(
+                child: CustomElevatedButton(
+                  function: () {
+                    Get.toNamed(Routes.PAY_BALANCE);
+                  },
+                  text: "Опубликовать",
+                ),
+              ),
             ],
           ),
         ),

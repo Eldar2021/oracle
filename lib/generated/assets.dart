@@ -82,4 +82,6 @@ class Assets {
       'assets/icons/user/userStreamProfile.svg';
   static const String userUserTl = 'assets/icons/user/userTl.svg';
   static const String userUserWhatsApp = 'assets/icons/user/userWhatsApp.svg';
+  static const String elsom = 'assets/images/background/elsom.png';
+  static const String pay24 = 'assets/images/background/pay24.png';
 }

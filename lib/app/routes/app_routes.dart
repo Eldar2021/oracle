@@ -34,9 +34,7 @@ abstract class Routes {
 
   static const RESPOND_BATTLE = _Paths.RESPOND_BATTLE;
   static const RESPOND_ADD_GAMER = _Paths.RESPOND_ADD_GAMER;
-
-
-
+  static const PAY_BALANCE = _Paths.PAY_BALANCE;
 }
 
 abstract class _Paths {
@@ -69,6 +67,6 @@ abstract class _Paths {
   static const CHANGE_PASSWORD = '/change-password';
 
   static const RESPOND_BATTLE = '/respond-battle';
-  static const RESPOND_ADD_GAMER = '/respond-add_gamer';
-
+  static const RESPOND_ADD_GAMER = '/respond-add-gamer';
+  static const PAY_BALANCE = '/pay-balance';
 }
