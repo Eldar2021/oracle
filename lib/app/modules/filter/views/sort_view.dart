@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:oracle/app/modules/filter/controllers/filter_controller.dart';
-import 'package:oracle/widgets/custom_widgets/selected_container.dart';
+import 'package:oracle/app/modules/filter/widgets/selected_container.dart';
 
 class SortView extends GetView<FilterController> {
   @override

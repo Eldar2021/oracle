@@ -7,13 +7,13 @@ import 'package:oracle/app/modules/login/views/login_view.dart';
 import 'package:oracle/app/routes/app_pages.dart';
 import 'package:oracle/generated/assets.dart';
 import 'package:oracle/widgets/custom_widgets/like_dislike_widget.dart';
-import 'package:oracle/widgets/custom_widgets/play_list_widget.dart';
+import 'package:oracle/widgets/list_builder/play_list_widget.dart';
 import 'package:oracle/widgets/custom_widgets/rating_copleted_widget.dart';
-import 'package:oracle/widgets/custom_widgets/review_list_widget.dart';
-import 'package:oracle/widgets/custom_widgets/user_description.dart';
-import 'package:oracle/widgets/custom_widgets/user_email_photo_list_widget.dart';
-import 'package:oracle/widgets/custom_widgets/user_ph_tl_wh_widget.dart';
-import 'package:oracle/widgets/custom_widgets/user_profile_photo.dart';
+import 'package:oracle/widgets/list_builder/review_list_widget.dart';
+import 'package:oracle/app/modules/profile/widgets/user_description.dart';
+import 'package:oracle/app/modules/profile/widgets/user_email_photo_list_widget.dart';
+import 'package:oracle/app/modules/profile/widgets/user_ph_tl_wh_widget.dart';
+import 'package:oracle/app/modules/profile/widgets/user_profile_photo.dart';
 import '../controllers/profile_controller.dart';
 
 class ProfileView extends GetView<ProfileController> {

@@ -3,7 +3,6 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:oracle/constants/color_constants.dart';
 import 'package:oracle/generated/assets.dart';
-import 'package:oracle/widgets/custom_widgets/link_text_widget.dart';
 
 class UserContainer extends StatelessWidget {
   const UserContainer({Key? key, required this.userName}) : super(key: key);

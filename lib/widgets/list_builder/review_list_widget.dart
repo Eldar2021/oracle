@@ -4,7 +4,7 @@ import 'package:oracle/app/data/models/user_model/user_model.dart';
 import 'package:oracle/app/routes/app_pages.dart';
 import 'package:oracle/constants/color_constants.dart';
 
-import 'custom_elevared_button.dart';
+import '../custom_widgets/custom_elevared_button.dart';
 
 class ReviewsList extends StatelessWidget {
   const ReviewsList({

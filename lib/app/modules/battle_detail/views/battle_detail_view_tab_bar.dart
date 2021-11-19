@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 import 'package:oracle/app/data/models/offers_model/offers_model.dart';
@@ -11,13 +10,13 @@ import 'package:oracle/constants/color_constants.dart';
 import 'package:oracle/widgets/custom_widgets/clored_tab_bar.dart';
 
 class BattleDetailViewTabBar extends GetView<BattleDetailTabBarController> {
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: DefaultTabController(
         length: 2,
         child: NestedScrollView(
+          controller: controller.scrollController,
           headerSliverBuilder: (context, value) {
             return [
               _buildSliverAppBar(),
@@ -31,10 +30,9 @@ class BattleDetailViewTabBar extends GetView<BattleDetailTabBarController> {
 
   SliverAppBar _buildSliverAppBar() {
     return SliverAppBar(
-      systemOverlayStyle: SystemUiOverlayStyle(
-        statusBarColor: MyColors.backgroundColor,
+      flexibleSpace: FlexibleSpaceBar(
+        background: BattleImageContainer(battle: controller.battle),
       ),
-      flexibleSpace: BattleImageContainer(battle: controller.battle),
       expandedHeight: Get.width * 0.7,
       floating: true,
       pinned: true,
@@ -44,12 +42,13 @@ class BattleDetailViewTabBar extends GetView<BattleDetailTabBarController> {
           indicatorColor: MyColors.moneyTextColor,
           tabs: [
             Padding(
-              padding: const EdgeInsets.only(bottom: 10.0),
+              padding: const EdgeInsets.only(bottom: 15.0, top: 10),
               child: Text("Детали сражения"),
             ),
             Padding(
-              padding: const EdgeInsets.only(bottom: 10.0),
-              child: Text("Предложения (${controller.battle.offers?.length?? 0})"),
+              padding: const EdgeInsets.only(bottom: 15.0, top: 10),
+              child: Text(
+                  "Предложения (${controller.battle.offers?.length ?? 0})"),
             ),
           ],
         ),
@@ -60,7 +59,10 @@ class BattleDetailViewTabBar extends GetView<BattleDetailTabBarController> {
   TabBarView _buildBody() {
     return TabBarView(
       children: [
-        DetailBattle(battle: controller.battle),
+        DetailBattle(
+          battle: controller.battle,
+          controller: controller,
+        ),
         OffersDetail(offers: offers),
       ],
     );

@@ -10,11 +10,10 @@ import 'package:oracle/app/modules/battle_detail/battle_detail_widgets/battle_of
 import 'package:oracle/app/modules/battle_detail/battle_detail_widgets/battle_rate.dart';
 import 'package:oracle/app/modules/battle_detail/battle_detail_widgets/battle_start_time.dart';
 import 'package:oracle/app/modules/battle_detail/controllers/battle_detail_controller.dart';
-import 'package:oracle/app/routes/app_pages.dart';
 import 'package:oracle/widgets/custom_widgets/custom_divider.dart';
 import 'package:oracle/widgets/custom_widgets/custom_elevared_button.dart';
-import 'package:oracle/widgets/custom_widgets/task_list_builder.dart';
-import 'package:oracle/widgets/custom_widgets/user_ph_tl_wh_widget.dart';
+import 'package:oracle/widgets/list_builder/task_list_builder.dart';
+import 'package:oracle/app/modules/profile/widgets/user_ph_tl_wh_widget.dart';
 
 class BattleDetailView extends GetView<BattleDetailController> {
   @override
@@ -22,6 +21,7 @@ class BattleDetailView extends GetView<BattleDetailController> {
     return Scaffold(
       appBar: _buildAppBar(),
       body: SingleChildScrollView(
+        controller: controller.scrollController,
         child: ConstrainedBox(
           constraints: BoxConstraints(
             maxHeight: double.infinity,
@@ -29,7 +29,24 @@ class BattleDetailView extends GetView<BattleDetailController> {
           child: _buildBody(),
         ),
       ),
+      floatingActionButton: _buildFloat(),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
     );
+  }
+
+  Obx _buildFloat() {
+    return Obx(() {
+      return AnimatedOpacity(
+        opacity: controller.visible.value == true ? 1.0 : 0.0,
+        duration: const Duration(milliseconds: 600),
+        child: CustomElevatedButton(
+          text: "Откликнуться",
+          function: () {
+            controller.respond();
+          },
+        ),
+      );
+    });
   }
 
   Column _buildBody() {
@@ -65,18 +82,6 @@ class BattleDetailView extends GetView<BattleDetailController> {
               const SizedBox(height: 40.0),
               Text("Похожие задания"),
               TaskListBuilder(battleTaskList: controller.battle.tasks ?? []),
-              const SizedBox(height: 40.0),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  CustomElevatedButton(
-                    text: "Откликнуться",
-                    function: () {
-                      Get.toNamed(Routes.RESPOND_BATTLE);
-                    },
-                  ),
-                ],
-              ),
               const SizedBox(height: 40.0),
             ],
           ),

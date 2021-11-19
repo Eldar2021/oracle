@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:oracle/service/get_dialog_service.dart';
 import 'package:oracle/widgets/custom_widgets/custom_elevared_button.dart';
-import 'package:oracle/widgets/custom_widgets/get_review_widget.dart';
+import 'package:oracle/app/modules/give_review/widgets/get_review_widget.dart';
 
 import '../controllers/give_review_controller.dart';
 

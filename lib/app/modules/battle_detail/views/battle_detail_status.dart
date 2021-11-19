@@ -16,8 +16,8 @@ import 'package:oracle/app/modules/battle_detail/controllers/battle_detail_statu
 import 'package:oracle/constants/color_constants.dart';
 import 'package:oracle/generated/assets.dart';
 import 'package:oracle/widgets/custom_widgets/custom_divider.dart';
-import 'package:oracle/widgets/custom_widgets/user_ph_tl_wh_widget.dart';
-import 'package:oracle/widgets/custom_widgets/win_defeated_container.dart';
+import 'package:oracle/app/modules/profile/widgets/user_ph_tl_wh_widget.dart';
+import 'package:oracle/app/modules/battle_detail/battle_detail_widgets/win_defeated_container.dart';
 
 class BattleDetailStatusView extends GetView<BattleDetailStatusController> {
 

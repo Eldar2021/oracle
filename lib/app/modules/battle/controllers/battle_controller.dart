@@ -5,9 +5,7 @@ import 'package:oracle/service/hive_sevice.dart';
 class BattleController extends GetxController {
   final HiveService hiveService = HiveService();
   late final List<Battle>? listBattles;
-
   final count = 0.obs;
-
   final RxBool drawer = true.obs;
 
   Future<bool> getToken() async {
