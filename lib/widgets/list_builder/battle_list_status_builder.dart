@@ -10,15 +10,15 @@ class BattlesStatusListBuilder extends StatelessWidget {
   const BattlesStatusListBuilder({
     Key? key,
     required this.battleList,
+    required this.function,
     this.shrinkWrap = false,
-    //required this.status,
     this.primary,
   }) : super(key: key);
 
   final List<Battle> battleList;
   final bool shrinkWrap;
   final bool? primary;
-  //final String status;
+  final Function function;
 
   @override
   Widget build(BuildContext context) {
@@ -36,7 +36,7 @@ class BattlesStatusListBuilder extends StatelessWidget {
   InkWell buildContainer(Battle battle) {
     return InkWell(
       onTap: () {
-        Get.toNamed(Routes.BATTLE_DETAIL_STATUS);
+        function(battle);
       },
       child: Container(
         padding: EdgeInsets.only(top: 20, bottom: 20),
@@ -52,8 +52,8 @@ class BattlesStatusListBuilder extends StatelessWidget {
               flex: 1,
               child: ClipRRect(
                 borderRadius: BorderRadius.circular(16.0),
-                child: Image.network(
-                  "https://picsum.photos/200/300",
+                child: Image.asset(
+                  battle.getGameIcon,
                   width: 42,
                   height: 42,
                   fit: BoxFit.cover,
@@ -108,7 +108,7 @@ class BattlesStatusListBuilder extends StatelessWidget {
                         ? Assets.componentsStatusCancel
                         : battle.statusBattle == "Завершен"
                             ? Assets.componentsStatusCompleted
-                            : Assets.backgroundStatusWating,
+                            : Assets.componentsStatusWaiting,
                     text: battle.statusBattle ?? "",
                     color: MyColors.whiteColor,
                   ), //status

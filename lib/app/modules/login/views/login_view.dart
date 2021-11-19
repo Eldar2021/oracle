@@ -1,14 +1,13 @@
 import 'package:flutter/material.dart';
-
 import 'package:get/get.dart';
 import 'package:oracle/app/routes/app_pages.dart';
 import 'package:oracle/constants/color_constants.dart';
 import 'package:oracle/widgets/custom_widgets/authenticate_button_widget.dart';
 import 'package:oracle/widgets/custom_widgets/link_text_widget.dart';
-
 import '../controllers/login_controller.dart';
 
 class LoginView extends GetView<LoginController> {
+  final LoginController controller = Get.put(LoginController());
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -26,17 +25,7 @@ class LoginView extends GetView<LoginController> {
                 Get.toNamed(Routes.AUTH_PHONE);
               },
             ),
-            AuthenticateButton(
-              icon: "assets/icons/authenticate/facebook.svg",
-              text: "Войти через Facebook",
-              onTab: () {},
-            ),
-            AuthenticateButton(
-              icon: "assets/icons/authenticate/google.svg",
-              text: "Войти через Google",
-              onTab: () {},
-            ),
-            const SizedBox(height: 15.0),
+            const SizedBox(height: 25.0),
             LinkText(
               text1: "Нажимая «Войти» вы соглашаетесь с ",
               text2: "правилами и условиями",
@@ -78,10 +67,16 @@ class LoginView extends GetView<LoginController> {
               },
             ),
             const SizedBox(height: 50.0),
-            Text(
-              "Пропустить вход",
-              style: Get.textTheme.bodyText1!.copyWith(
-                color: MyColors.grayTextColor,
+            InkWell(
+              onTap: () async{
+                controller.clearToken();
+                Get.toNamed(Routes.SCREEN);
+              },
+              child: Text(
+                "Пропустить вход",
+                style: Get.textTheme.bodyText1!.copyWith(
+                  color: MyColors.grayTextColor,
+                ),
               ),
             ),
           ],

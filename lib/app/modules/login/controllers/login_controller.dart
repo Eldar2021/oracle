@@ -1,8 +1,17 @@
 import 'package:get/get.dart';
+import 'package:oracle/service/hive_sevice.dart';
 
 class LoginController extends GetxController {
+  final HiveService hiveService = HiveService();
 
-  final count = 0.obs;
+  void getToken(String token) async {
+    hiveService.addToken(token);
+  }
+
+  void clearToken() async {
+    hiveService.clearToken();
+  }
+
   @override
   void onInit() {
     super.onInit();
@@ -15,5 +24,4 @@ class LoginController extends GetxController {
 
   @override
   void onClose() {}
-  void increment() => count.value++;
 }

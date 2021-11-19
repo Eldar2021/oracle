@@ -1,10 +1,14 @@
 import 'package:get/get.dart';
+import 'package:oracle/app/data/models/user_model/user_model.dart';
 
 class SelectPerformerController extends GetxController {
+  late final UserModel user;
+  late final double rate;
 
-  final count = 0.obs;
   @override
   void onInit() {
+    user = Get.arguments[0];
+    rate = Get.arguments[1];
     super.onInit();
   }
 
@@ -15,5 +19,4 @@ class SelectPerformerController extends GetxController {
 
   @override
   void onClose() {}
-  void increment() => count.value++;
 }

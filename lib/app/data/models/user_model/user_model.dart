@@ -10,6 +10,7 @@ class UserModel {
   final double? winRate;
   final int? like;
   final int? dislike;
+  final int? money;
   final String phone;
   final String whatsApp;
   final String telegram;
@@ -17,14 +18,15 @@ class UserModel {
   final double? ratingPoliteness;
   final double? ratingPunctuality;
   final double? ratingAdequacy;
-  final List<Review>? reviews;
   final String? email;
   final String? profile;
+  final List<Review>? reviews;
   final List<Play>? plays;
 
   UserModel({
     required this.name,
     this.nickName,
+    this.money =0,
     required this.photoProfile,
     this.battles,
     this.wins,
@@ -88,6 +90,7 @@ UserModel userModel1 = UserModel(
   battles: 47,
   wins: 28,
   defeats: 19,
+  money: 750,
   winRate: (47 / 47 + 28) * 100,
   like: 19,
   dislike: 1,
@@ -96,7 +99,7 @@ UserModel userModel1 = UserModel(
   ratingPunctuality: 5.0,
   email: "eldiiaralmazbekov@gmail.com",
   profile: "eldiiar",
-  // reviews: reviews1,
+  //reviews: reviews1,
   //plays: plays1,
 );
 List<Play> plays1 = [play1, play2, play3, play4];

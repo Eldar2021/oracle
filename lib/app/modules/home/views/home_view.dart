@@ -2,11 +2,12 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
+import 'package:oracle/app/data/models/user_model/user_model.dart';
 import 'package:oracle/app/modules/home/controllers/home_controller.dart';
 import 'package:oracle/app/routes/app_pages.dart';
 import 'package:oracle/generated/assets.dart';
-import 'package:oracle/widgets/list_builder/battle_list_builder.dart';
-import 'package:oracle/widgets/custom_widgets/drawer_sidebar.dart';
+import 'package:oracle/app/modules/home/widgets/drawer_widgets/drawer_sidebar.dart';
+import 'package:oracle/widgets/list_builder/play_list_builder.dart';
 
 class HomeView extends GetView<HomeController> {
   final HomeController controller = Get.put(HomeController());
@@ -22,26 +23,28 @@ class HomeView extends GetView<HomeController> {
               Get.toNamed(Routes.FILTER);
             },
             icon: SvgPicture.asset(Assets.componentsFilter),
-          )
+          ),
         ],
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(20.0),
-        child: Obx(
-          () {
-            if (controller.battles.isEmpty) {
-              return buildCircularProgress();
-            } else {
-              return BattlesListBuilder(battleList: controller.battles);
-            }
-          },
-        ),
+      body: Obx(
+        () {
+          if (controller.playList.isEmpty) {
+            return buildCircularProgress();
+          } else {
+            return PlayListBuilder(playList: controller.playList);
+          }
+        },
       ),
-      drawer: NavBar(),
-
+      drawer: Obx(() {
+        controller.getToken();
+        return NavBar(drawer: controller.drawer.value, userModel: userModel1);
+      }),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {
+        onPressed: () async {
           Get.toNamed(Routes.LOGIN);
+          // UrlService.launchWhatsApp("+996990039301", "");
+          // UrlService.launchURL("https://www.youtube.com/");
+          // UrlService.launchTelegram("ak_bulak");
         },
       ),
     );

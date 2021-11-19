@@ -1,9 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:oracle/app/data/models/battle_model/battle_model.dart';
-import 'package:oracle/app/data/models/battle_task_model/battle_task_model.dart';
-import 'package:oracle/app/data/models/user_model/user_model.dart';
 import 'package:oracle/app/modules/battle_detail/battle_detail_widgets/battke_format_battle.dart';
 import 'package:oracle/app/modules/battle_detail/battle_detail_widgets/battle_customer.dart';
 import 'package:oracle/app/modules/battle_detail/battle_detail_widgets/battle_description.dart';
@@ -20,16 +17,6 @@ import 'package:oracle/widgets/custom_widgets/task_list_builder.dart';
 import 'package:oracle/widgets/custom_widgets/user_ph_tl_wh_widget.dart';
 
 class BattleDetailView extends GetView<BattleDetailController> {
-  const BattleDetailView({
-    required this.battle,
-    this.status,
-    this.isStatus = false,
-  });
-
-  final Battle battle;
-  final String? status;
-  final bool isStatus;
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -49,35 +36,35 @@ class BattleDetailView extends GetView<BattleDetailController> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        BattleImageContainer(battle: battle),
+        BattleImageContainer(battle: controller.battle),
         Padding(
-          padding: const EdgeInsets.all(20.0),
+          padding: const EdgeInsets.only(
+              left: 20.0, right: 20.0, top: 10, bottom: 20.0),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const SizedBox(height: 18.0),
-              BattleNameCategory(battle: battle),
-              const SizedBox(height: 17.0),
-              BattleDescriptions(battle: battle),
+              BattleNameCategory(battle: controller.battle),
+              const SizedBox(height: 15.0),
+              BattleDescriptions(battle: controller.battle),
               const SizedBox(height: 30.0),
-              BattleStartTime(battle: battle),
+              BattleStartTime(battle: controller.battle),
               const SizedBox(height: 10.0),
-              BattleRate(battle: battle),
+              BattleRate(battle: controller.battle),
               const SizedBox(height: 10.0),
-              BattleFormatBattle(battle: battle),
+              BattleFormatBattle(battle: controller.battle),
               const SizedBox(height: 20.0),
               CustomDivider(),
               const SizedBox(height: 20.0),
-              BattleViewsOffersCount(battle: battle),
+              BattleViewsOffersCount(battle: controller.battle),
               const SizedBox(height: 52.0),
               Text("Заказчик"),
               const SizedBox(height: 17.0),
-              BattleCustomer(user: userModel1),
+              BattleCustomer(user: controller.battle.customer),
               const SizedBox(height: 30.0),
               UserPhoneTlWhatsApp(),
               const SizedBox(height: 40.0),
               Text("Похожие задания"),
-              TaskListBuilder(battleTaskList: battleTaskList1),
+              TaskListBuilder(battleTaskList: controller.battle.tasks ?? []),
               const SizedBox(height: 40.0),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,

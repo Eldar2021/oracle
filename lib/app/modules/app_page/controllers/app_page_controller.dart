@@ -4,7 +4,7 @@ import 'package:oracle/app/modules/home/views/screen_view.dart';
 import 'package:oracle/app/modules/login/views/login_view.dart';
 
 class AppPageController extends GetxController {
-  RxBool token = true.obs;
+  RxBool token = false.obs;
   // Rx<Widget> home = CategoryView(battle: battle1).obs;
   Rx<Widget> home = ScreenView().obs;
   Rx<Widget> login = LoginView().obs;

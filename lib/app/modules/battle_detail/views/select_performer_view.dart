@@ -7,8 +7,6 @@ import 'package:oracle/widgets/custom_widgets/descrip_check.dart';
 import 'package:oracle/widgets/custom_widgets/link_text_widget.dart';
 
 class SelectPerformerView extends GetView<SelectPerformerController> {
-  const SelectPerformerView({Key? key}) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -40,7 +38,7 @@ class SelectPerformerView extends GetView<SelectPerformerController> {
         Center(
           child: LinkText(
             text1: "Выбрать пользователя ",
-            text2: "Леха Lewa О.\n",
+            text2: "${controller.user.name}\n",
             text3: "исполнителем?",
             styletex1: Get.textTheme.bodyText1!,
             styletex2: Get.textTheme.bodyText1!
@@ -54,7 +52,7 @@ class SelectPerformerView extends GetView<SelectPerformerController> {
           children: [
             Text("Стоимость сражения:"),
             Text(
-              "3000 com",
+              "${controller.rate} сом",
               style: Get.textTheme.bodyText1!
                   .copyWith(color: MyColors.moneyTextColor),
             ),
@@ -62,7 +60,7 @@ class SelectPerformerView extends GetView<SelectPerformerController> {
         ),
         const SizedBox(
           height: 30,
-          child: Divider(color: MyColors.whiteColor),
+          child: Divider(color: MyColors.grayTextColor),
         ),
         const SizedBox(height: 20),
         Text(

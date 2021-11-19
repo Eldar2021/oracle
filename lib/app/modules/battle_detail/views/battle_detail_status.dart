@@ -2,7 +2,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
-import 'package:oracle/app/data/models/battle_model/battle_model.dart';
 import 'package:oracle/app/data/models/user_model/user_model.dart';
 import 'package:oracle/app/modules/battle_detail/battle_detail_widgets/battle_customer.dart';
 import 'package:oracle/app/modules/battle_detail/battle_detail_widgets/battle_description.dart';
@@ -21,15 +20,9 @@ import 'package:oracle/widgets/custom_widgets/user_ph_tl_wh_widget.dart';
 import 'package:oracle/widgets/custom_widgets/win_defeated_container.dart';
 
 class BattleDetailStatusView extends GetView<BattleDetailStatusController> {
-  const BattleDetailStatusView({
-    required this.battle,
-    this.status,
-    this.isStatus = false,
-  });
 
-  final Battle battle;
-  final String? status;
-  final bool isStatus;
+  //final String? status;
+  //final bool isStatus;
 
   @override
   Widget build(BuildContext context) {
@@ -50,30 +43,30 @@ class BattleDetailStatusView extends GetView<BattleDetailStatusController> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        BattleImageContainer(battle: battle),
+        BattleImageContainer(battle: controller.battle),
         Padding(
           padding: const EdgeInsets.all(20.0),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               const SizedBox(height: 18.0),
-              BattleNameCategory(battle: battle),
+              BattleNameCategory(battle: controller.battle),
               const SizedBox(height: 17.0),
-              BattleDescriptions(battle: battle),
+              BattleDescriptions(battle: controller.battle),
               const SizedBox(height: 30.0),
-              BattleStartTime(battle: battle),
+              BattleStartTime(battle: controller.battle),
               const SizedBox(height: 10.0),
-              BattleRate(battle: battle),
+              BattleRate(battle: controller.battle),
               const SizedBox(height: 10.0),
-              BattleStatus(battle: battle),
+              BattleStatus(battle: controller.battle),
               const SizedBox(height: 10.0),
-              battle.statusBattle == "Завершен"
-                  ? BattleWinnerRow(battle: battle)
+              controller.battle.statusBattle == "Завершен"
+                  ? BattleWinnerRow(battle: controller.battle)
                   : Container(),
               const SizedBox(height: 20.0),
               CustomDivider(),
               const SizedBox(height: 20.0),
-              BattleViewsOffersCount(battle: battle),
+              BattleViewsOffersCount(battle: controller.battle),
               const SizedBox(height: 52.0),
               Text("Заказчик"),
               const SizedBox(height: 17.0),
@@ -81,9 +74,9 @@ class BattleDetailStatusView extends GetView<BattleDetailStatusController> {
               const SizedBox(height: 30.0),
               UserPhoneTlWhatsApp(),
               const SizedBox(height: 40.0),
-              battle.statusBattle == "Завершен"
+              controller.battle.statusBattle == "Завершен"
                   ? _battleWinner()
-                  : battle.statusBattle == "В ожидании"
+                  : controller.battle.statusBattle == "В ожидании"
                       ? _battleNov()
                       : Container(),
               const SizedBox(height: 40.0),
@@ -102,12 +95,12 @@ class BattleDetailStatusView extends GetView<BattleDetailStatusController> {
           Text("Сражение"),
           const SizedBox(height: 20),
           _winnerDefeatedCompleted(
-            user1: battle.winner ?? "",
-            user2: battle.defeated ?? "",
-            rate1: battle.winRate,
-            rate2: battle.defeatedRate,
-            winner: battle.winner,
-            winnerRate: battle.winRate,
+            user1: controller.battle.winner ?? "",
+            user2: controller.battle.defeated ?? "",
+            rate1: controller.battle.winRate,
+            rate2: controller.battle.defeatedRate,
+            winner: controller.battle.winner,
+            winnerRate: controller.battle.winRate,
           ),
         ],
       ),
@@ -122,8 +115,8 @@ class BattleDetailStatusView extends GetView<BattleDetailStatusController> {
           Text("Сражение"),
           const SizedBox(height: 20),
           _winnerDefeatedCompleted(
-            user1: battle.winner ?? "",
-            user2: battle.defeated ?? "",
+            user1: controller.battle.winner ?? "",
+            user2: controller.battle.defeated ?? "",
           ),
         ],
       ),
@@ -151,8 +144,7 @@ class BattleDetailStatusView extends GetView<BattleDetailStatusController> {
                     name: user1,
                     rate: rate1 ?? "0",
                   ),
-                  _horizontalDivider(),
-                  //CustomDivider()
+                  //_horizontalDivider(),
                 ],
               ),
               const SizedBox(height: 50),
@@ -163,13 +155,13 @@ class BattleDetailStatusView extends GetView<BattleDetailStatusController> {
                     name: user2,
                     rate: rate2 ?? "0",
                   ),
-                  _horizontalDivider(),
+                  //_horizontalDivider(),
                 ],
               ),
             ],
           ),
         ),
-        _verticalDivider(),
+        //_verticalDivider(),
         Expanded(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.end,
@@ -182,7 +174,7 @@ class BattleDetailStatusView extends GetView<BattleDetailStatusController> {
               Center(
                 child: Row(
                   children: [
-                    _horizontalDivider(),
+                    //_horizontalDivider(),
                     WinDefeatedContainer(
                       bgColor: MyColors.winContainerColor,
                       name: winner ?? "-",
@@ -200,29 +192,29 @@ class BattleDetailStatusView extends GetView<BattleDetailStatusController> {
     );
   }
 
-  SizedBox _verticalDivider() {
-    return SizedBox(
-      height: Get.height * 0.138,
-      width: 3,
-      child: VerticalDivider(
-        color: MyColors.whiteColor,
-        width: 2,
-        thickness: 1.0,
-      ),
-    );
-  }
-
-  SizedBox _horizontalDivider() {
-    return SizedBox(
-      height: 3,
-      width: 21,
-      child: Divider(
-        color: MyColors.whiteColor,
-        height: 2,
-        thickness: 1.0,
-      ),
-    );
-  }
+  // SizedBox _verticalDivider() {
+  //   return SizedBox(
+  //     // height: Get.height * 0.138,
+  //     // width: 3,
+  //     // child: VerticalDivider(
+  //     //   color: MyColors.whiteColor,
+  //     //   width: 2,
+  //     //   thickness: 1.0,
+  //     // ),
+  //   );
+  // }
+  //
+  // SizedBox _horizontalDivider() {
+  //   return SizedBox(
+  //     // height: 3,
+  //     // width: 21,
+  //     // child: Divider(
+  //     //   color: MyColors.whiteColor,
+  //     //   height: 2,
+  //     //   thickness: 1.0,
+  //     // ),
+  //   );
+  // }
 
   AppBar _buildAppBar() {
     return AppBar(

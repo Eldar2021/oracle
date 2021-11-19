@@ -5,10 +5,8 @@ import 'package:oracle/app/modules/create_battle/controllers/battle_format_contr
 import 'package:oracle/app/modules/create_battle/views/add_gamer_view.dart';
 import 'package:oracle/app/routes/app_pages.dart';
 import 'package:oracle/constants/color_constants.dart';
-import 'package:oracle/generated/assets.dart';
 import 'package:oracle/widgets/custom_widgets/custom_elevared_button.dart';
 import 'package:oracle/widgets/custom_widgets/link_text_widget.dart';
-import 'package:oracle/widgets/custom_widgets/text_field_container.dart';
 import 'package:oracle/widgets/custom_widgets/two_to_two_view.dart';
 import 'package:oracle/widgets/custom_widgets/user_container.dart';
 import 'package:select_form_field/select_form_field.dart';
@@ -40,6 +38,7 @@ class BattleFormatView extends GetView<BattleFormatController> {
       'label': '5x5',
     },
   ];
+
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(

@@ -13,7 +13,7 @@ class CustomDivider extends StatelessWidget {
       height: 2,
       width: Get.width,
       child: Divider(
-        color: MyColors.whiteColor,
+        color: MyColors.grayTextColor,
         height: 1,
         thickness: 1.0,
       ),

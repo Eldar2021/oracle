@@ -1,6 +1,10 @@
 import 'package:get/get.dart';
+
 import 'package:oracle/app/data/models/battle_model/battle_model.dart';
-import 'package:oracle/app/data/models/user_model/user_model.dart';
+import 'package:oracle/app/modules/about/bindings/about_binding.dart';
+import 'package:oracle/app/modules/about/views/about_view.dart';
+import 'package:oracle/app/modules/answer/bindings/answer_binding.dart';
+import 'package:oracle/app/modules/answer/views/answer_view.dart';
 import 'package:oracle/app/modules/app_page/bindings/app_page_binding.dart';
 import 'package:oracle/app/modules/app_page/views/app_page_view.dart';
 import 'package:oracle/app/modules/battle/bindings/battle_binding.dart';
@@ -15,6 +19,8 @@ import 'package:oracle/app/modules/battle_detail/views/battle_detail_view_tab_ba
 import 'package:oracle/app/modules/battle_detail/views/select_performer_view.dart';
 import 'package:oracle/app/modules/category/bindings/category_binding.dart';
 import 'package:oracle/app/modules/category/views/category_view.dart';
+import 'package:oracle/app/modules/login/bindings/code_binding.dart';
+import 'package:oracle/app/modules/login/views/code_view.dart';
 import 'package:oracle/app/modules/create_battle/bindings/add_gamer_binding.dart';
 import 'package:oracle/app/modules/create_battle/bindings/battle_format_binding.dart';
 import 'package:oracle/app/modules/create_battle/bindings/create_battle_binding.dart';
@@ -31,8 +37,15 @@ import 'package:oracle/app/modules/filter/views/filter_view.dart';
 import 'package:oracle/app/modules/filter/views/sort_view.dart';
 import 'package:oracle/app/modules/give_review/bindings/give_review_binding.dart';
 import 'package:oracle/app/modules/give_review/views/give_review_view.dart';
+import 'package:oracle/app/modules/help/bindings/help_binding.dart';
+import 'package:oracle/app/modules/help/views/help_view.dart';
 import 'package:oracle/app/modules/home/bindings/home_binding.dart';
+import 'package:oracle/app/modules/home/bindings/play_detail_binding.dart';
+import 'package:oracle/app/modules/home/bindings/screen_binding.dart';
+import 'package:oracle/app/modules/home/views/play_detail_view.dart';
 import 'package:oracle/app/modules/home/views/screen_view.dart';
+import 'package:oracle/app/modules/identification/bindings/identification_binding.dart';
+import 'package:oracle/app/modules/identification/views/identification_view.dart';
 import 'package:oracle/app/modules/login/bindings/auth_phone_binding.dart';
 import 'package:oracle/app/modules/login/bindings/login_binding.dart';
 import 'package:oracle/app/modules/login/bindings/register_binding.dart';
@@ -41,6 +54,8 @@ import 'package:oracle/app/modules/login/views/auth_phone_view.dart';
 import 'package:oracle/app/modules/login/views/login_view.dart';
 import 'package:oracle/app/modules/login/views/register_view.dart';
 import 'package:oracle/app/modules/login/views/restore_password_view.dart';
+import 'package:oracle/app/modules/notification/bindings/notification_binding.dart';
+import 'package:oracle/app/modules/notification/views/notification_view.dart';
 import 'package:oracle/app/modules/play/bindings/play_binding.dart';
 import 'package:oracle/app/modules/play/views/play_view.dart';
 import 'package:oracle/app/modules/profile/bindings/change_password_binding.dart';
@@ -75,6 +90,11 @@ class AppPages {
       name: _Paths.APP_PAGE,
       page: () => AppPageView(),
       binding: AppPageBinding(),
+    ),
+    GetPage(
+      name: _Paths.SCREEN,
+      page: () => ScreenView(),
+      binding: ScreenBinding(),
     ),
     GetPage(
       name: _Paths.LOGIN,
@@ -118,7 +138,7 @@ class AppPages {
     ),
     GetPage(
       name: _Paths.PROFILE,
-      page: () => ProfileView(user: userModel1),
+      page: () => ProfileView(),
       binding: ProfileBinding(),
     ),
     GetPage(
@@ -133,7 +153,7 @@ class AppPages {
     ),
     GetPage(
       name: _Paths.BATTLE_DETAIL,
-      page: () => BattleDetailView(battle: battle1, isStatus: true),
+      page: () => BattleDetailView(),
       binding: BattleDetailBinding(),
     ),
     GetPage(
@@ -163,12 +183,12 @@ class AppPages {
     ),
     GetPage(
       name: _Paths.BATTLE_DETAIL_TAB_BAR,
-      page: () => BattleDetailViewTabBar(battle: battle1),
+      page: () => BattleDetailViewTabBar(),
       binding: BattleDetailTabBarBinding(),
     ),
     GetPage(
       name: _Paths.BATTLE_DETAIL_STATUS,
-      page: () => BattleDetailStatusView(battle: battle1),
+      page: () => BattleDetailStatusView(),
       binding: BattleDetailStatusBinding(),
     ),
     GetPage(
@@ -192,6 +212,36 @@ class AppPages {
       binding: ChangePasswordBinding(),
     ),
     GetPage(
+      name: _Paths.ANSWER,
+      page: () => AnswerView(),
+      binding: AnswerBinding(),
+    ),
+    GetPage(
+      name: _Paths.NOTIFICATION,
+      page: () => NotificationView(),
+      binding: NotificationBinding(),
+    ),
+    GetPage(
+      name: _Paths.HELP,
+      page: () => HelpView(),
+      binding: HelpBinding(),
+    ),
+    GetPage(
+      name: _Paths.ABOUT,
+      page: () => AboutView(),
+      binding: AboutBinding(),
+    ),
+    GetPage(
+      name: _Paths.IDENTIFICATION,
+      page: () => IdentificationView(),
+      binding: IdentificationBinding(),
+    ),
+    GetPage(
+      name: _Paths.PLAY_DETAIL,
+      page: () => PlayDetailView(),
+      binding: PlayDetailBinding(),
+    ),
+    GetPage(
       name: _Paths.RESPOND_BATTLE,
       page: () => RespondBattleView(),
       binding: RespondBattleBinding(),
@@ -205,6 +255,11 @@ class AppPages {
       name: _Paths.PAY_BALANCE,
       page: () => PayBalanceView(),
       binding: PayBalanceBinding(),
+      ),
+   GetPage(
+      name: _Paths.CODE,
+      page: () => CodeView(),
+      binding: CodeBinding(),
     ),
   ];
 }

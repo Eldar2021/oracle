@@ -21,6 +21,7 @@ class BattlesListBuilder extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
+      physics: BouncingScrollPhysics(),
       shrinkWrap: shrinkWrap,
       primary: primary ?? null,
       itemCount: battleList.length,
@@ -34,13 +35,13 @@ class BattlesListBuilder extends StatelessWidget {
   InkWell buildContainer(Battle battle) {
     return InkWell(
       onTap: () {
-        Get.toNamed(Routes.BATTLE_DETAIL_TAB_BAR);
+        Get.toNamed(Routes.BATTLE_DETAIL, arguments: [battle]);
       },
       child: Container(
         padding: EdgeInsets.only(top: 20, bottom: 20),
         decoration: BoxDecoration(
           border: Border(
-            bottom: BorderSide(color: MyColors.whiteColor, width: 1),
+            bottom: BorderSide(color: MyColors.grayTextColor, width: 1),
           ),
         ),
         child: Row(
@@ -50,8 +51,8 @@ class BattlesListBuilder extends StatelessWidget {
               flex: 1,
               child: ClipRRect(
                 borderRadius: BorderRadius.circular(16.0),
-                child: Image.network(
-                  "https://picsum.photos/200/300",
+                child: Image.asset(
+                  battle.getGameIcon,
                   width: 42,
                   height: 42,
                   fit: BoxFit.cover,
@@ -64,7 +65,7 @@ class BattlesListBuilder extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(battle.title, style: Get.textTheme.subtitle1),
+                  Text(battle.title, style: Get.textTheme.subtitle1!.copyWith(height: 1.4)),
                   const SizedBox(height: 12),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,

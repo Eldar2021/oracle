@@ -6,6 +6,7 @@ abstract class Routes {
 
   static const HOME = _Paths.HOME;
   static const APP_PAGE = _Paths.APP_PAGE;
+  static const SCREEN = _Paths.SCREEN;
   static const LOGIN = _Paths.LOGIN;
   static const AUTH_PHONE = _Paths.AUTH_PHONE;
   static const REGISTER = _Paths.REGISTER;
@@ -32,14 +33,23 @@ abstract class Routes {
   static const PERSONAL_INFO = _Paths.PERSONAL_INFO;
   static const CHANGE_PASSWORD = _Paths.CHANGE_PASSWORD;
 
+  static const ANSWER = _Paths.ANSWER;
+  static const NOTIFICATION = _Paths.NOTIFICATION;
+  static const HELP = _Paths.HELP;
+  static const ABOUT = _Paths.ABOUT;
+  static const IDENTIFICATION = _Paths.IDENTIFICATION;
+  static const PLAY_DETAIL = _Paths.PLAY_DETAIL;
+
   static const RESPOND_BATTLE = _Paths.RESPOND_BATTLE;
   static const RESPOND_ADD_GAMER = _Paths.RESPOND_ADD_GAMER;
   static const PAY_BALANCE = _Paths.PAY_BALANCE;
+  static const CODE = _Paths.CODE;
 }
 
 abstract class _Paths {
   static const HOME = '/home';
   static const APP_PAGE = '/app-page';
+  static const SCREEN = '/screen';
   static const LOGIN = '/login';
   static const AUTH_PHONE = '/auth-phone';
   static const REGISTER = '/register';
@@ -50,6 +60,7 @@ abstract class _Paths {
   static const FILTER = '/filter';
   static const SORT = '/sort';
   static const PLAY = '/play';
+  static const PLAY_DETAIL = '/play-detail';
   static const BATTLE = '/battle';
   static const BATTLE_DETAIL = '/battle-detail';
   static const CREATE_BATTLE = '/create-battle';
@@ -66,7 +77,15 @@ abstract class _Paths {
   static const PERSONAL_INFO = '/personal-info';
   static const CHANGE_PASSWORD = '/change-password';
 
+  static const ANSWER = '/answer';
+  static const NOTIFICATION = '/notification';
+  static const HELP = '/help';
+  static const ABOUT = '/about';
+  
+  static const IDENTIFICATION = '/identification';
   static const RESPOND_BATTLE = '/respond-battle';
   static const RESPOND_ADD_GAMER = '/respond-add-gamer';
   static const PAY_BALANCE = '/pay-balance';
+  static const RESPOND_ADD_GAMER = '/respond-add_gamer';
+  static const CODE = '/code';
 }
