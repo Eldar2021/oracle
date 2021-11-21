@@ -2,7 +2,7 @@ import 'package:oracle/app/modules/create_battle/controllers/add_gamer_controlle
 import 'package:oracle/app/modules/create_battle/controllers/battle_format_controller.dart';
 import 'package:oracle/widgets/custom_widgets/cash_containter.dart';
 import 'package:oracle/widgets/custom_widgets/custom_elevared_button.dart';
-import 'package:oracle/widgets/custom_widgets/text_field_container.dart';
+import 'package:oracle/app/modules/filter/widgets/text_field_container.dart';
 import 'package:oracle/widgets/custom_widgets/three_to_three.dart';
 import 'package:oracle/widgets/custom_widgets/two_to_two_view.dart';
 import 'package:oracle/app/data/models/user_model/user_model.dart';

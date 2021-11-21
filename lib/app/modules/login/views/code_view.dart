@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-
 import 'package:get/get.dart';
 import 'package:oracle/app/routes/app_pages.dart';
 import 'package:oracle/constants/color_constants.dart';
+import 'package:oracle/constants/custom_url.dart';
+import 'package:oracle/service/url_service.dart';
 import 'package:oracle/widgets/custom_widgets/custom_elevared_button.dart';
 import 'package:oracle/widgets/custom_widgets/link_text_widget.dart';
-
 import '../controllers/code_controller.dart';
 
 class CodeView extends GetView<CodeController> {
@@ -54,7 +54,9 @@ class CodeView extends GetView<CodeController> {
                         .copyWith(color: MyColors.linkTextColor, height: 1.8),
                     styletex3: Get.textTheme.caption!
                         .copyWith(color: MyColors.grayTextColor),
-                    function: () {},
+                    function: () {
+                      UrlService.launchURL(CustomUrl.policy);
+                    },
                   ),
                   const SizedBox(height: 25.0),
                   CustomElevatedButton(

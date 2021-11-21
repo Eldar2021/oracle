@@ -5,7 +5,7 @@ import 'package:oracle/app/routes/app_pages.dart';
 import 'package:oracle/constants/color_constants.dart';
 import 'package:oracle/generated/assets.dart';
 import 'package:oracle/widgets/custom_widgets/custom_elevared_button.dart';
-import 'package:oracle/widgets/custom_widgets/text_field_with_text.dart';
+import 'package:oracle/app/modules/filter/widgets/text_field_with_text.dart';
 
 class RespondBattleView extends StatelessWidget {
   const RespondBattleView({Key? key}) : super(key: key);

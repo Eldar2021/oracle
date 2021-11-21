@@ -20,10 +20,6 @@ import 'package:oracle/app/modules/profile/widgets/user_ph_tl_wh_widget.dart';
 import 'package:oracle/app/modules/battle_detail/battle_detail_widgets/win_defeated_container.dart';
 
 class BattleDetailStatusView extends GetView<BattleDetailStatusController> {
-
-  //final String? status;
-  //final bool isStatus;
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -70,9 +66,13 @@ class BattleDetailStatusView extends GetView<BattleDetailStatusController> {
               const SizedBox(height: 52.0),
               Text("Заказчик"),
               const SizedBox(height: 17.0),
-              BattleCustomer(user: userModel1),
+              BattleCustomer(user: controller.battle.customer),
               const SizedBox(height: 30.0),
-              UserPhoneTlWhatsApp(),
+              UserPhoneTlWhatsApp(
+                ph: controller.battle.customer.phone,
+                tl: controller.battle.customer.telegram,
+                wh: controller.battle.customer.whatsApp,
+              ),
               const SizedBox(height: 40.0),
               controller.battle.statusBattle == "Завершен"
                   ? _battleWinner()
@@ -135,34 +135,36 @@ class BattleDetailStatusView extends GetView<BattleDetailStatusController> {
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         Expanded(
+          flex: 3,
           child: Column(
             children: [
-              Row(
-                children: [
-                  WinDefeatedContainer(
-                    bgColor: MyColors.winContainerColor,
-                    name: user1,
-                    rate: rate1 ?? "0",
-                  ),
-                  //_horizontalDivider(),
-                ],
+              WinDefeatedContainer(
+                borderColor: MyColors.linkTextColor,
+                bgColor: MyColors.winContainerColor,
+                name: user1,
+                rate: rate1 ?? "0",
               ),
               const SizedBox(height: 50),
-              Row(
-                children: [
-                  WinDefeatedContainer(
-                    bgColor: MyColors.buttonBgColor,
-                    name: user2,
-                    rate: rate2 ?? "0",
-                  ),
-                  //_horizontalDivider(),
-                ],
+              WinDefeatedContainer(
+                borderColor: MyColors.redColor,
+                bgColor: MyColors.winContainerColor,
+                name: user2,
+                rate: rate2 ?? "0",
               ),
             ],
           ),
         ),
+        Expanded(
+          flex: 1,
+          child: SvgPicture.asset(
+            Assets.arrayDivider,
+            color: MyColors.whiteColor,
+            fit: BoxFit.fill,
+          ),
+        ),
         //_verticalDivider(),
         Expanded(
+          flex: 3,
           child: Column(
             mainAxisAlignment: MainAxisAlignment.end,
             crossAxisAlignment: CrossAxisAlignment.center,
@@ -172,16 +174,11 @@ class BattleDetailStatusView extends GetView<BattleDetailStatusController> {
                   : SizedBox(height: 17.0),
               const SizedBox(height: 7.0),
               Center(
-                child: Row(
-                  children: [
-                    //_horizontalDivider(),
-                    WinDefeatedContainer(
-                      bgColor: MyColors.winContainerColor,
-                      name: winner ?? "-",
-                      rate: winnerRate ?? "",
-                    ),
-                    //CustomDivider()
-                  ],
+                child: WinDefeatedContainer(
+                  borderColor: MyColors.whiteColor,
+                  bgColor: MyColors.winContainerColor,
+                  name: winner ?? "-",
+                  rate: winnerRate ?? "",
                 ),
               ),
               const SizedBox(height: 24.0),
@@ -191,30 +188,6 @@ class BattleDetailStatusView extends GetView<BattleDetailStatusController> {
       ],
     );
   }
-
-  // SizedBox _verticalDivider() {
-  //   return SizedBox(
-  //     // height: Get.height * 0.138,
-  //     // width: 3,
-  //     // child: VerticalDivider(
-  //     //   color: MyColors.whiteColor,
-  //     //   width: 2,
-  //     //   thickness: 1.0,
-  //     // ),
-  //   );
-  // }
-  //
-  // SizedBox _horizontalDivider() {
-  //   return SizedBox(
-  //     // height: 3,
-  //     // width: 21,
-  //     // child: Divider(
-  //     //   color: MyColors.whiteColor,
-  //     //   height: 2,
-  //     //   thickness: 1.0,
-  //     // ),
-  //   );
-  // }
 
   AppBar _buildAppBar() {
     return AppBar(

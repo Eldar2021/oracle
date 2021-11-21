@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
-import 'package:oracle/app/data/models/user_model/user_model.dart';
 import 'package:oracle/app/modules/login/views/login_view.dart';
 import 'package:oracle/app/routes/app_pages.dart';
 import 'package:oracle/generated/assets.dart';
@@ -17,14 +16,15 @@ import 'package:oracle/app/modules/profile/widgets/user_profile_photo.dart';
 import '../controllers/profile_controller.dart';
 
 class ProfileView extends GetView<ProfileController> {
-  final ProfileController controller = Get.put(ProfileController());
+  final bool isToken;
+
+  ProfileView({this.isToken = false}) : super();
 
   @override
   Widget build(BuildContext context) {
     return Obx(
       () {
-        controller.getToken();
-        return controller.drawer.value == true
+        return controller.isToken.value == true
             ? Scaffold(
                 appBar: buildAppBar(),
                 body: SingleChildScrollView(
@@ -47,20 +47,27 @@ class ProfileView extends GetView<ProfileController> {
       padding: const EdgeInsets.all(20.0),
       child: Column(
         children: [
-          UserProfilePhoto(user: controller.user!),
+          UserProfilePhoto(user: controller.user),
           const SizedBox(height: 20),
-          LikeDislike(user: controller.user!),
+          LikeDislike(user: controller.user),
           const SizedBox(height: 30),
-          UserPhoneTlWhatsApp(),
+          UserPhoneTlWhatsApp(
+            ph: controller.user.phone,
+            tl: controller.user.telegram,
+            wh: controller.user.whatsApp,
+          ),
           const SizedBox(height: 30),
-          UserDescription(user: controller.user!),
+          UserDescription(user: controller.user),
           const SizedBox(height: 60),
-          RatingsCompleted(user: controller.user!),
+          RatingsCompleted(user: controller.user),
           const SizedBox(height: 50),
-          ReviewsList(reviews: reviews2),
+          ReviewsList(
+            reviews: controller.user.reviews ?? [],
+            controller: controller,
+          ),
           const SizedBox(height: 40),
           UserEmailPhoneList(),
-          PlaysList(controller: controller, plays: plays1),
+          PlaysList(controller: controller, plays: controller.user.plays ?? []),
         ],
       ),
     );
@@ -71,18 +78,20 @@ class ProfileView extends GetView<ProfileController> {
       title: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Text("${controller.user!.name}  ${controller.user!.nickName}"),
+          Text("${controller.user.name}  ${controller.user.nickName}"),
           SizedBox(width: 8),
           SvgPicture.asset(Assets.componentsFlagStar),
         ],
       ),
       actions: [
-        IconButton(
-          icon: SvgPicture.asset(Assets.componentsSetting),
-          onPressed: () {
-            Get.toNamed(Routes.SETTINGS);
-          },
-        ),
+        isToken == false
+            ? Container()
+            : IconButton(
+                icon: SvgPicture.asset(Assets.componentsSetting),
+                onPressed: () {
+                  Get.toNamed(Routes.SETTINGS);
+                },
+              ),
       ],
       centerTitle: true,
     );

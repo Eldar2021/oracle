@@ -46,29 +46,6 @@ class Battle {
     this.tasks,
   });
 
-  // factory Battle.fromJson(Map<String, dynamic> json) => Battle(
-  //       title: json['title'],
-  //       status: json['status'],
-  //       startDate: DateFormat("H:m,  dd.MM.yy")
-  //           .format(DateTime.parse(json["start_date"])),
-  //       rate: json['rate'] ?? "",
-  //       getViewsCount: json['get_views_count'] ?? 0,
-  //       getRepostsCount: json['get_reposts_count'] ?? 0,
-  //       getGameIcon: json['get_game_icon'],
-  //
-  //     );
-  //
-  // Map<String, dynamic> toJson() {
-  //   final Map<String, dynamic> data = new Map<String, dynamic>();
-  //   data['title'] = this.title;
-  //   data['status'] = this.status;
-  //   data['start_date'] = this.startDate;
-  //   data['rate'] = this.rate;
-  //   data['get_views_count'] = this.getViewsCount;
-  //   data['get_reposts_count'] = this.getRepostsCount;
-  //   data['get_game_icon'] = this.getGameIcon;
-  //   return data;
-  // }
 }
 
 List<Battle> listBattle1 = [battle1, battle2, battle3];
@@ -106,6 +83,10 @@ Battle battle2 = Battle(
   getGameIcon: Assets.gameImagesDota2,
   category: "Dota 2",
   customer: userModel1,
+  winner: "Азим appass1nato Д.",
+  winRate: "2",
+  defeated: "Кайрат TROn К.",
+  defeatedRate: "1",
   offers: offers,
   description:
   "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum",
@@ -119,6 +100,10 @@ Battle battle3 = Battle(
   status: "Dota 2",
   tasks: battleTaskList1,
   customer: userModel1,
+  winner: "Азим appass1nato Д.",
+  winRate: "2",
+  defeated: "Кайрат TROn К.",
+  defeatedRate: "1",
   offers: offers,
   rate: "1000 com",
   startDate: "20:00, 05.06.21",

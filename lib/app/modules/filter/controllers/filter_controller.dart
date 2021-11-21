@@ -1,9 +1,41 @@
+import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 
 class FilterController extends GetxController {
-  final count = 0.obs;
-  final RxString typeBattle = "1х1".obs;
-  final RxString typeSort = "По актуальности".obs;
+  final RxString typeSort = "Сортировать".obs;
+  final RxList categories = <String>[].obs;
+  final RxList typeBattles = <String>[].obs;
+  final Rx<TextEditingController> minRate = TextEditingController().obs;
+  final Rx<TextEditingController> maxRate = TextEditingController().obs;
+
+  void addCategory(String category) {
+    categories.add(category);
+  }
+
+  void removeCategory(String category) {
+    categories.remove(category);
+  }
+
+  void addFormatBattle(String battle) {
+    typeBattles.add(battle);
+  }
+
+  void removedFormatBattle(String battle) {
+    typeBattles.remove(battle);
+  }
+
+  void selectedSort(String sort) async {
+    typeSort.value = sort;
+  }
+
+  void clear() {
+    typeBattles.clear();
+    categories.clear();
+    minRate.value.text = "";
+    maxRate.value.text = "";
+    typeSort.value = "Сортировать";
+  }
+
   @override
   void onInit() {
     super.onInit();
@@ -16,13 +48,4 @@ class FilterController extends GetxController {
 
   @override
   void onClose() {}
-
-  void increment() => count.value++;
-
-  void selectedBattle(String battle) async {
-    typeBattle.value = battle;
-  }
-  void selectedSort(String sort)async{
-    typeSort.value = sort;
-  }
 }

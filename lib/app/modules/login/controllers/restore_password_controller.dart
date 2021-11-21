@@ -1,14 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:oracle/service/hive_sevice.dart';
+import 'package:oracle/app/routes/app_pages.dart';
 
 class RestorePasswordController extends GetxController {
-  final HiveService hiveService = HiveService();
-
   final Rx<TextEditingController> emailPhone = TextEditingController().obs;
 
   void restore(String token) async {
-    await hiveService.addToken(token);
+    Get.toNamed(Routes.CODE);
     print(emailPhone.value.text);
   }
 

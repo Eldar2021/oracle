@@ -78,7 +78,11 @@ class BattleDetailView extends GetView<BattleDetailController> {
               const SizedBox(height: 17.0),
               BattleCustomer(user: controller.battle.customer),
               const SizedBox(height: 30.0),
-              UserPhoneTlWhatsApp(),
+              UserPhoneTlWhatsApp(
+                ph: controller.battle.customer.phone,
+                tl: controller.battle.customer.telegram,
+                wh: controller.battle.customer.whatsApp,
+              ),
               const SizedBox(height: 40.0),
               Text("Похожие задания"),
               TaskListBuilder(battleTaskList: controller.battle.tasks ?? []),

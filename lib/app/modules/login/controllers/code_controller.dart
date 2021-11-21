@@ -1,18 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:oracle/service/hive_sevice.dart';
+import '../../app_page/controllers/app_page_controller.dart';
 
 class CodeController extends GetxController {
-  final HiveService hiveService = HiveService();
+  final AppPageController appController = Get.find();
 
   final Rx<TextEditingController> code = TextEditingController().obs;
 
   void restore(String token) async {
-    await hiveService.addToken(token);
-    print(code.value.text);
+    appController.addToken(token);
   }
 
-  final count = 0.obs;
   @override
   void onInit() {
     super.onInit();
@@ -25,5 +23,4 @@ class CodeController extends GetxController {
 
   @override
   void onClose() {}
-  void increment() => count.value++;
 }

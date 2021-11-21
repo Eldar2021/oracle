@@ -66,7 +66,11 @@ class DetailBattle extends StatelessWidget {
         const SizedBox(height: 17.0),
         BattleCustomer(user: userModel1),
         const SizedBox(height: 30.0),
-        UserPhoneTlWhatsApp(),
+        UserPhoneTlWhatsApp(
+          ph: battle.customer.phone,
+          tl: battle.customer.telegram,
+          wh: battle.customer.whatsApp,
+        ),
         const SizedBox(height: 40.0),
         Container(
           width: Get.width,

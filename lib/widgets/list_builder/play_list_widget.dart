@@ -22,70 +22,72 @@ class PlaysList extends StatelessWidget {
       child: plays.isEmpty
           ? Container()
           : Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
+                SizedBox(height: 20.0),
                 Text("Игры"),
                 ListView.builder(
-                    shrinkWrap: true,
-                    primary: false,
-                    itemCount: plays.length,
-                    itemBuilder: (context, index) {
-                      Play play = plays[index];
-                      return Container(
-                        decoration: BoxDecoration(
-                          border: Border(
-                            bottom: BorderSide(
-                                color: MyColors.whiteColor, width: 1),
+                  shrinkWrap: true,
+                  primary: false,
+                  itemCount: plays.length,
+                  itemBuilder: (context, index) {
+                    Play play = plays[index];
+                    return Container(
+                      decoration: BoxDecoration(
+                        border: Border(
+                          bottom:
+                              BorderSide(color: MyColors.whiteColor, width: 1),
+                        ),
+                      ),
+                      child: Row(
+                        children: [
+                          Expanded(
+                            flex: 1,
+                            child: Image.asset(play.photoProfile),
                           ),
-                        ),
-                        child: Row(
-                          children: [
-                            Expanded(
-                              flex: 1,
-                              child: Image.asset(play.photoProfile),
+                          Expanded(
+                            flex: 3,
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(play.name, style: Get.textTheme.subtitle1),
+                                const SizedBox(height: 5),
+                                Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    RowItem(
+                                      icon: Assets.bottomNavBottom3,
+                                      text: "${play.battles}",
+                                      color: MyColors.whiteColor,
+                                    ),
+                                    RowItem(
+                                      icon: Assets.componentsWinFlag,
+                                      text: "${play.wins}",
+                                      color: MyColors.winFlagColor,
+                                    ),
+                                    RowItem(
+                                      icon: Assets.componentsDefeatFlag,
+                                      text: "${play.defeats}",
+                                      color: MyColors.defeatFlagColor,
+                                    ),
+                                    RowItem(
+                                      icon: Assets.componentsPercent,
+                                      color: controller
+                                          .percentColor(play.winRate ?? 0),
+                                      text: "${play.winRate?.round() ?? 0}",
+                                    ),
+                                    SizedBox(width: 20)
+                                  ],
+                                )
+                              ],
                             ),
-                            Expanded(
-                              flex: 3,
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Text(play.name,
-                                      style: Get.textTheme.subtitle1),
-                                  const SizedBox(height: 5),
-                                  Row(
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.spaceBetween,
-                                    children: [
-                                      RowItem(
-                                        icon: Assets.bottomNavBottom3,
-                                        text: "${play.battles}",
-                                        color: MyColors.whiteColor,
-                                      ),
-                                      RowItem(
-                                        icon: Assets.componentsWinFlag,
-                                        text: "${play.wins}",
-                                        color: MyColors.winFlagColor,
-                                      ),
-                                      RowItem(
-                                        icon: Assets.componentsDefeatFlag,
-                                        text: "${play.defeats}",
-                                        color: MyColors.defeatFlagColor,
-                                      ),
-                                      RowItem(
-                                        icon: Assets.componentsPercent,
-                                        color: controller
-                                            .percentColor(play.winRate ?? 0),
-                                        text: "${play.winRate?.round() ?? 0}",
-                                      ),
-                                      SizedBox(width: 20)
-                                    ],
-                                  )
-                                ],
-                              ),
-                            ),
-                          ],
-                        ),
-                      );
-                    })
+                          ),
+                        ],
+                      ),
+                    );
+                  },
+                )
               ],
             ),
     );

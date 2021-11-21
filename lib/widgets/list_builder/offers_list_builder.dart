@@ -36,7 +36,11 @@ class OffersListBuilder extends StatelessWidget {
                   .copyWith(color: MyColors.grayTextColor),
             ),
             const SizedBox(height: 30.0),
-            UserPhoneTlWhatsApp(),
+            UserPhoneTlWhatsApp(
+              ph: offer.user.phone,
+              tl: offer.user.telegram,
+              wh: offer.user.whatsApp,
+            ),
             const SizedBox(height: 15.0),
             Text(
               offer.time,

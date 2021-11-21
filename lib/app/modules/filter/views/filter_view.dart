@@ -6,9 +6,8 @@ import 'package:oracle/app/routes/app_pages.dart';
 import 'package:oracle/constants/color_constants.dart';
 import 'package:oracle/generated/assets.dart';
 import 'package:oracle/widgets/custom_widgets/custom_elevared_button.dart';
-import 'package:oracle/widgets/custom_widgets/text_field_container.dart';
-import 'package:oracle/widgets/custom_widgets/text_field_with_text.dart';
-
+import '../widgets/text_field_container.dart';
+import '../widgets/text_field_with_text.dart';
 import '../controllers/filter_controller.dart';
 
 class FilterView extends GetView<FilterController> {
@@ -35,24 +34,33 @@ class FilterView extends GetView<FilterController> {
         children: [
           Text("Категории", style: Get.textTheme.bodyText1),
           const SizedBox(height: 15),
-          TextFieldContainer(
-            controller: controller,
-            text: "Все категории",
-            icon: Assets.arrayArrayRight,
-            onTab: (val) {
-              Get.toNamed(Routes.CATEGORY);
-            },
-          ),
+          Obx(() {
+            return TextFieldContainer(
+              controller: controller,
+              text: controller.categories.isEmpty
+                  ? "Все категории"
+                  : "Выбрано ${controller.categories.length} категории",
+              icon: Assets.arrayArrayRight,
+              onTab: (val) {
+                Get.toNamed(Routes.CATEGORY);
+              },
+              onDoubleTap: (text) {},
+            );
+          }),
           const SizedBox(height: 25),
           Text("Стоимость сражения", style: Get.textTheme.bodyText1),
           Row(
             children: [
-              TextFieldWithText(text: "от"),
+              TextFieldWithText(
+                controller: controller.minRate.value,
+                text: "от",
+              ),
               Padding(
                 padding: const EdgeInsets.only(left: 10, right: 10, top: 5),
                 child: SvgPicture.asset(Assets.arraySolid),
               ),
               TextFieldWithText(
+                controller: controller.maxRate.value,
                 text: "до",
               ),
             ],
@@ -63,23 +71,32 @@ class FilterView extends GetView<FilterController> {
           TextFieldContainer(
             controller: controller,
             text: "1х1",
-            onTab: (text) {
-              controller.selectedBattle(text);
+            onTab: (text) async{
+              controller.addFormatBattle(text);
+            },
+            onDoubleTap: (text) async{
+              controller.removedFormatBattle(text);
             },
           ),
           TextFieldContainer(
             controller: controller,
             text: "3х3",
-            onTab: (text) {
-              controller.selectedBattle(text);
+            onTab: (text) async{
+              controller.addFormatBattle(text);
+            },
+            onDoubleTap: (text) async{
+              controller.removedFormatBattle(text);
             },
           ),
           TextFieldContainer(
             controller: controller,
             selected: true,
             text: "5х5",
-            onTab: (text) {
-              controller.selectedBattle(text);
+            onTab: (text) async{
+              controller.addFormatBattle(text);
+            },
+            onDoubleTap: (text) async {
+              controller.removedFormatBattle(text);
             },
           ),
           const SizedBox(height: 15),
@@ -93,6 +110,7 @@ class FilterView extends GetView<FilterController> {
               onTab: (val) {
                 Get.toNamed(Routes.SORT);
               },
+              onDoubleTap: (text) {},
             );
           }),
           const SizedBox(height: 40),
@@ -124,7 +142,9 @@ class FilterView extends GetView<FilterController> {
       centerTitle: true,
       actions: [
         TextButton(
-          onPressed: () {},
+          onPressed: () {
+            controller.clear();
+          },
           child: Text(
             "Очистить",
             style: Get.textTheme.bodyText2!.copyWith(

@@ -1,15 +1,11 @@
 import 'package:get/get.dart';
-import 'package:oracle/service/hive_sevice.dart';
+import '../../app_page/controllers/app_page_controller.dart';
 
 class LoginController extends GetxController {
-  final HiveService hiveService = HiveService();
-
-  void getToken(String token) async {
-    hiveService.addToken(token);
-  }
+  final AppPageController appController = Get.find();
 
   void clearToken() async {
-    hiveService.clearToken();
+    appController.clearToken();
   }
 
   @override

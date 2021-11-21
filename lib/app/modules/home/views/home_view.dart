@@ -10,22 +10,10 @@ import 'package:oracle/app/modules/home/widgets/drawer_widgets/drawer_sidebar.da
 import 'package:oracle/widgets/list_builder/play_list_builder.dart';
 
 class HomeView extends GetView<HomeController> {
-  final HomeController controller = Get.put(HomeController());
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        centerTitle: true,
-        actions: [
-          IconButton(
-            onPressed: () {
-              Get.toNamed(Routes.FILTER);
-            },
-            icon: SvgPicture.asset(Assets.componentsFilter),
-          ),
-        ],
-      ),
+      appBar: _buildAppBar(),
       body: Obx(
         () {
           if (controller.playList.isEmpty) {
@@ -36,17 +24,32 @@ class HomeView extends GetView<HomeController> {
         },
       ),
       drawer: Obx(() {
-        controller.getToken();
+       // controller.getToken();
         return NavBar(drawer: controller.drawer.value, userModel: userModel1);
       }),
       floatingActionButton: FloatingActionButton(
         onPressed: () async {
+          // Get.toNamed(Routes.PROFILE, arguments: [userModel1]);
           Get.toNamed(Routes.LOGIN);
           // UrlService.launchWhatsApp("+996990039301", "");
           // UrlService.launchURL("https://www.youtube.com/");
           // UrlService.launchTelegram("ak_bulak");
         },
       ),
+    );
+  }
+
+  AppBar _buildAppBar() {
+    return AppBar(
+      centerTitle: true,
+      actions: [
+        IconButton(
+          onPressed: () {
+            Get.toNamed(Routes.FILTER);
+          },
+          icon: SvgPicture.asset(Assets.componentsFilter),
+        ),
+      ],
     );
   }
 

@@ -2,12 +2,29 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:oracle/app/modules/home/views/screen_view.dart';
 import 'package:oracle/app/modules/login/views/login_view.dart';
+import 'package:oracle/service/hive_sevice.dart';
 
 class AppPageController extends GetxController {
-  RxBool token = true.obs;
-  // Rx<Widget> home = CategoryView(battle: battle1).obs;
-  Rx<Widget> home = ScreenView().obs;
-  Rx<Widget> login = LoginView().obs;
+  final HiveService hiveService = HiveService();
+  final RxBool token = false.obs;
+
+  void addToken(String token) async {
+    changeTokenTrue();
+    await hiveService.addToken(token);
+  }
+
+  void clearToken() async {
+    changeTokenFalse();
+    await hiveService.clearToken();
+  }
+
+  void changeTokenTrue() {
+    token.value = true;
+  }
+
+  void changeTokenFalse() {
+    token.value = false;
+  }
 
   @override
   void onInit() {
@@ -17,18 +34,18 @@ class AppPageController extends GetxController {
   @override
   void onReady() {
     super.onReady();
-  } 
+  }
 
   @override
   void onClose() {}
 
   Widget initialRoute() {
     if (token.value == false) {
-      return login.value;
-    } else if(token.value == true) {
-       return home.value;
-    }else{
-       return home.value;
+      return LoginView();
+    } else if (token.value == true) {
+      return ScreenView();
+    } else {
+      return ScreenView();
     }
   }
 }

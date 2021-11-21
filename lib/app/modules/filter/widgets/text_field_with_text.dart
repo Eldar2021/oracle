@@ -5,9 +5,13 @@ import 'package:oracle/constants/color_constants.dart';
 class TextFieldWithText extends StatelessWidget {
   const TextFieldWithText({
     required this.text,
+    required this.controller,
+    this.type = TextInputType.number,
     Key? key,
   }) : super(key: key);
   final String text;
+  final TextEditingController controller;
+  final TextInputType type;
 
   @override
   Widget build(BuildContext context) {
@@ -28,6 +32,8 @@ class TextFieldWithText extends StatelessWidget {
             Expanded(
               flex: 4,
               child: TextField(
+                keyboardType: type,
+                controller: controller,
                 decoration: new InputDecoration.collapsed(
                   hintText: "",
                 ),

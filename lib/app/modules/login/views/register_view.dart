@@ -115,7 +115,6 @@ class RegisterView extends GetView<RegisterController> {
                       } else if (_formKey.currentState!.validate()) {
                         print('Form is valid');
                         controller.register("eldar");
-                        Get.toNamed(Routes.SCREEN);
                       } else {
                         print('Form is invalid');
                       }

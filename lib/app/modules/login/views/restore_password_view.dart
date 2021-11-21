@@ -63,7 +63,6 @@ class RestorePasswordView extends GetView<RestorePasswordController> {
                       if (_formKey.currentState!.validate()) {
                         print('Form is valid');
                         controller.restore("eldar");
-                        Get.toNamed(Routes.CODE);
                       } else {
                         print('Form is invalid');
                       }

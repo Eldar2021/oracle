@@ -26,21 +26,25 @@ class DrawerUserCard extends StatelessWidget {
           children: [
             Text("${userModel.name}",
                 style: Get.textTheme.subtitle2!),
-            Text("   •   ${userModel.nickName}",
+            Text("  •  ${userModel.nickName}",
                 style: Get.textTheme.subtitle2)
           ],
         ),
         subtitle: Row(
-          mainAxisAlignment: MainAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            SizedBox(height: 35),
-            SvgPicture.asset(Assets.drawerNavMoney),
-            SizedBox(width: 5),
-            Text(
-              "Баланс ${userModel.money} сом",
-              style: Get.textTheme.caption,
+            Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                SizedBox(height: 35),
+                SvgPicture.asset(Assets.drawerNavMoney),
+                SizedBox(width: 5),
+                Text(
+                  "Баланс ${userModel.money} сом",
+                  style: Get.textTheme.caption,
+                ),
+              ],
             ),
-            SizedBox(width: 15),
             DrawerButton(),
           ],
         ),

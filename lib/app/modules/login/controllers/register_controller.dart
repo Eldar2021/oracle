@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:oracle/service/hive_sevice.dart';
+import 'package:oracle/app/routes/app_pages.dart';
 
 class RegisterController extends GetxController {
-  final HiveService hiveService = HiveService();
-
   final Rx<TextEditingController> phone = TextEditingController().obs;
   final Rx<TextEditingController> email = TextEditingController().obs;
   final Rx<TextEditingController> nickName = TextEditingController().obs;
@@ -12,7 +10,7 @@ class RegisterController extends GetxController {
   final Rx<TextEditingController> repeatPassword = TextEditingController().obs;
 
   void register(String token) async {
-    await hiveService.addToken(token);
+    Get.toNamed(Routes.CODE);
     print(phone.value.text);
     print(email.value.text);
     print(nickName.value.text);
@@ -20,7 +18,6 @@ class RegisterController extends GetxController {
     print(repeatPassword.value.text);
   }
 
-  final count = 0.obs;
   @override
   void onInit() {
     super.onInit();
@@ -33,5 +30,4 @@ class RegisterController extends GetxController {
 
   @override
   void onClose() {}
-  void increment() => count.value++;
 }

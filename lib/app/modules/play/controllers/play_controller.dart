@@ -2,8 +2,7 @@ import 'package:get/get.dart';
 import 'package:oracle/app/data/models/battle_model/battle_model.dart';
 
 class PlayController extends GetxController {
-  final RxList<Battle> battles = RxList<Battle>([]);
-
+  final battles = RxList<Battle>([]);
   @override
   void onInit() {
     super.onInit();

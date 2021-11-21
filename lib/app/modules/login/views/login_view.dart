@@ -3,6 +3,8 @@ import 'package:get/get.dart';
 import 'package:oracle/app/routes/app_pages.dart';
 import 'package:oracle/constants/color_constants.dart';
 import 'package:oracle/app/modules/login/widgets/authenticate_button_widget.dart';
+import 'package:oracle/constants/custom_url.dart';
+import 'package:oracle/service/url_service.dart';
 import 'package:oracle/widgets/custom_widgets/link_text_widget.dart';
 import '../controllers/login_controller.dart';
 
@@ -39,7 +41,7 @@ class LoginView extends GetView<LoginController> {
               styletex3: Get.textTheme.caption!
                   .copyWith(color: MyColors.grayTextColor),
               function: () {
-                print("eldar");
+                UrlService.launchURL(CustomUrl.policy);
               },
             ),
             const SizedBox(height: 75.0),

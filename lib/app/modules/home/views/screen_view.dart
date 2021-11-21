@@ -3,6 +3,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:oracle/app/data/models/user_model/user_model.dart';
 import 'package:oracle/app/modules/home/controllers/screen_cotroller.dart';
+import 'package:oracle/app/routes/app_pages.dart';
 import 'package:oracle/constants/color_constants.dart';
 import 'package:oracle/generated/assets.dart';
 import 'package:oracle/app/modules/home/widgets/drawer_widgets/drawer_sidebar.dart';
@@ -13,10 +14,11 @@ class ScreenView extends GetView<ScreenController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      //appBar: AppBar(),
-      body: Obx((){
-        return controller.items[controller.pageIndex.value];
-      }),
+      body: Navigator(
+        key: Get.nestedKey(0),
+        initialRoute: Routes.HOME,
+        onGenerateRoute: controller.onGenerateRoute,
+      ),
       drawer: NavBar(userModel: userModel1),
       bottomNavigationBar: Obx(
         () => BottomNavigationBar(
@@ -46,9 +48,9 @@ class ScreenView extends GetView<ScreenController> {
               label: 'Профиль',
             ),
           ],
-          currentIndex: controller.pageIndex.value,
-          onTap: (val) async {
-            controller.bottomPageController(val);
+          currentIndex: controller.currentIndex.value,
+          onTap: (val) {
+            controller.changePage(val);
           },
           type: BottomNavigationBarType.fixed,
         ),

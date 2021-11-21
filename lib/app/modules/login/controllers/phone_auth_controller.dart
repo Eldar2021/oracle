@@ -1,17 +1,15 @@
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
-import 'package:oracle/service/hive_sevice.dart';
+import '../../app_page/controllers/app_page_controller.dart';
 
 class AuthPhoneController extends GetxController {
-  final HiveService hiveService = HiveService();
+  final AppPageController appController = Get.find();
 
   final Rx<TextEditingController> phone = TextEditingController().obs;
   final Rx<TextEditingController> password = TextEditingController().obs;
 
   void addToken(String token) async {
-    await hiveService.addToken(token);
-    print(phone.value.text);
-    print(password.value.text);
+    appController.addToken(token);
   }
 
   @override

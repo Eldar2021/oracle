@@ -1,7 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:oracle/constants/custom_url.dart';
 import 'package:oracle/generated/assets.dart';
+import 'package:oracle/service/url_service.dart';
 import '../controllers/about_controller.dart';
 
 class AboutView extends GetView<AboutController> {
@@ -43,7 +45,12 @@ class AboutView extends GetView<AboutController> {
           style: Get.textTheme.subtitle1!.copyWith(height: 1.5),
         ),
         const SizedBox(height: 10.0),
-        Image.asset(Assets.gameImagesOracle, width: Get.width * 0.3),
+        InkWell(
+          onTap: () {
+            UrlService.launchURL(CustomUrl.oracle);
+          },
+          child: Image.asset(Assets.gameImagesOracle, width: Get.width * 0.3),
+        ),
         const SizedBox(height: 80.0),
       ],
     );

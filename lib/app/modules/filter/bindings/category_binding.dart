@@ -1,12 +1,11 @@
 import 'package:get/get.dart';
-
-import '../controllers/category_controller.dart';
+import '../controllers/filter_controller.dart';
 
 class CategoryBinding extends Bindings {
   @override
   void dependencies() {
-    Get.lazyPut<CategoryController>(
-      () => CategoryController(),
+    Get.lazyPut<FilterController>(
+      () => FilterController(),
     );
   }
 }

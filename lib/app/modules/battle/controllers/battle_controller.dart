@@ -1,21 +1,18 @@
 import 'package:get/get.dart';
-import 'package:oracle/app/data/models/battle_model/battle_model.dart';
+import '../../../data/models/battle_model/battle_model.dart';
+import '../../app_page/controllers/app_page_controller.dart';
 import 'package:oracle/service/hive_sevice.dart';
 
 class BattleController extends GetxController {
   final HiveService hiveService = HiveService();
-  late final List<Battle>? listBattles;
-  final count = 0.obs;
-  final RxBool drawer = true.obs;
+  final AppPageController appController = Get.find();
 
-  Future<bool> getToken() async {
-    bool token = await hiveService.yesOrNoToken();
-    drawer.value = token;
-    return token;
-  }
+  late final List<Battle>? listBattles;
+  final RxBool isToken = true.obs;
 
   @override
   void onInit() {
+    isToken.value = appController.token.value;
     try {
       listBattles = Get.arguments[0];
     } catch (e) {
@@ -32,5 +29,4 @@ class BattleController extends GetxController {
   @override
   void onClose() {}
 
-  void increment() => count.value++;
 }

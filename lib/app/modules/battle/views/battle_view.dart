@@ -8,14 +8,12 @@ import 'i_customer_view.dart';
 import 'i_performer_view.dart';
 
 class BattleView extends GetView<BattleController> {
-  final BattleController controller = Get.put(BattleController());
 
   @override
   Widget build(BuildContext context) {
     return Obx(
       () {
-        controller.getToken();
-        return controller.drawer == true
+        return controller.isToken == true
             ? DefaultTabController(
                 length: 2,
                 child: Scaffold(

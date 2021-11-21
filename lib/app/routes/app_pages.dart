@@ -17,8 +17,8 @@ import 'package:oracle/app/modules/battle_detail/views/battle_detail_status.dart
 import 'package:oracle/app/modules/battle_detail/views/battle_detail_view.dart';
 import 'package:oracle/app/modules/battle_detail/views/battle_detail_view_tab_bar.dart';
 import 'package:oracle/app/modules/battle_detail/views/select_performer_view.dart';
-import 'package:oracle/app/modules/category/bindings/category_binding.dart';
-import 'package:oracle/app/modules/category/views/category_view.dart';
+import 'package:oracle/app/modules/filter/bindings/category_binding.dart';
+import 'package:oracle/app/modules/filter/views/category_view.dart';
 import 'package:oracle/app/modules/login/bindings/code_binding.dart';
 import 'package:oracle/app/modules/login/views/code_view.dart';
 import 'package:oracle/app/modules/create_battle/bindings/add_gamer_binding.dart';
@@ -121,7 +121,7 @@ class AppPages {
     ),
     GetPage(
       name: _Paths.CATEGORY,
-      page: () => CategoryView(battle: battle1),
+      page: () => CategoryView(),
       binding: CategoryBinding(),
     ),
     GetPage(
