@@ -107,6 +107,27 @@ class DialogService {
     );
   }
 
+  static void respondSuccess(){
+    Get.defaultDialog(
+      backgroundColor: MyColors.backgroundColor,
+      title: "",
+      content: Column(
+        children: [
+          SizedBox(
+            width: 50,
+            height: 50,
+            child: LoadingIndicator(
+              indicatorType: Indicator.lineSpinFadeLoader,
+              colors: [MyColors.ratingStarColor],
+            ),
+          ),
+          const SizedBox(height: 40.0),
+          Text("Ийгилуктуу аяктады"),
+        ],
+      ),
+    );
+  }
+
   static void loadingDialog() {
     Get.defaultDialog(
       backgroundColor: MyColors.backgroundColor,

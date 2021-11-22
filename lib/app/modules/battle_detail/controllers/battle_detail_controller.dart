@@ -25,11 +25,11 @@ class BattleDetailController extends GetxController {
     });
   }
 
-  void respond() async {
+  void respond(Battle battle) async {
     if (appPageController.token.value == false) {
       SnackBarService.noTokenSnackBar();
     } else {
-      Get.toNamed(Routes.RESPOND_BATTLE);
+      Get.toNamed(Routes.RESPOND_BATTLE, arguments: [battle]);
     }
   }
 

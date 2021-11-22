@@ -29,8 +29,8 @@ class PlayerReviewsList extends StatelessWidget {
           reviews.isEmpty
               ? Container()
               : Obx(() {
-            return _buildListView();
-          }),
+                  return _buildListView();
+                }),
           const SizedBox(height: 40),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -56,25 +56,25 @@ class PlayerReviewsList extends StatelessWidget {
         Text("${reviews.isEmpty ? "Пока нету отзывов" : "Отзывы"}"),
         controller.changeReview.value == false
             ? InkWell(
-          onTap: () {
-            controller.changeReviewsPlus(reviews.length);
-          },
-          child: Text(
-            "${reviews.isEmpty ? "" : "Смотртеть все отзывы"}",
-            style: Get.textTheme.bodyText1!
-                .copyWith(color: MyColors.grayTextColor),
-          ),
-        )
+                onTap: () {
+                  controller.changeReviewsPlus(reviews.length);
+                },
+                child: Text(
+                  "${reviews.isEmpty ? "" : "Смотртеть все отзывы"}",
+                  style: Get.textTheme.bodyText1!
+                      .copyWith(color: MyColors.grayTextColor),
+                ),
+              )
             : InkWell(
-          onTap: () {
-            controller.changeReviewsMinus(reviews.length > 2 ? 2 : 1);
-          },
-          child: Text(
-            "${reviews.isEmpty ? "" : "Смотртеть 2 отзывы"}",
-            style: Get.textTheme.bodyText1!
-                .copyWith(color: MyColors.grayTextColor),
-          ),
-        ),
+                onTap: () {
+                  controller.changeReviewsMinus(reviews.length > 2 ? 2 : 1);
+                },
+                child: Text(
+                  "${reviews.isEmpty ? "" : "Смотртеть 2 отзывы"}",
+                  style: Get.textTheme.bodyText1!
+                      .copyWith(color: MyColors.grayTextColor),
+                ),
+              ),
       ],
     );
   }
@@ -86,8 +86,8 @@ class PlayerReviewsList extends StatelessWidget {
       itemCount: controller.changeReview.value == true
           ? controller.reviews.value
           : controller.changeReview.value == false && reviews.length > 2
-          ? 2
-          : reviews.length,
+              ? 2
+              : reviews.length,
       itemBuilder: (context, index) {
         Review review = reviews[index];
         return ListTile(

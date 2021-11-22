@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:oracle/app/data/models/battle_model/battle_model.dart';
-import 'package:oracle/app/routes/app_pages.dart';
 import 'package:oracle/constants/color_constants.dart';
 import 'package:oracle/generated/assets.dart';
 import 'package:oracle/widgets/list_builder/user_play_list_widget.dart';
@@ -42,7 +41,7 @@ class BattlesStatusListBuilder extends StatelessWidget {
         padding: EdgeInsets.only(top: 20, bottom: 20),
         decoration: BoxDecoration(
           border: Border(
-            bottom: BorderSide(color: MyColors.whiteColor, width: 1),
+            bottom: BorderSide(color: MyColors.grayTextColor, width: 1),
           ),
         ),
         child: Row(

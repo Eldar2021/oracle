@@ -1,5 +1,5 @@
 import 'package:get/get.dart';
-import 'package:oracle/app/modules/respond/controllers/respond_battle_controller.dart';
+import '../controllers/respond_battle_controller.dart';
 
 
 class RespondBattleBinding extends Bindings {

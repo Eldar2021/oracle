@@ -5,9 +5,10 @@ import 'package:oracle/generated/assets.dart';
 
 class Battle {
   final String title;
+  final String id;
   final String status;
   final String startDate;
-  final String? rate;
+  final double? rate;
   final int? getViewsCount;
   final int? getRepostsCount;
   final String getGameIcon;
@@ -26,6 +27,7 @@ class Battle {
 
   Battle({
     required this.title,
+    required this.id,
     required this.status,
     required this.startDate,
     required this.customer,
@@ -54,9 +56,10 @@ List<Battle> listBattle2 = [battle1, battle2];
 Battle battle1 = Battle(
   title: "Dota 2, Играем на SF, мид до 2 смертей или до падения т1",
   formatBattle: "1х1",
+  id: "5545612",
   statusBattle: "Завершен",
   status: "Dota 2",
-  rate: "1000 com",
+  rate: 1000,
   startDate: "20:00, 05.06.21",
   createTime: "Создано сегодня, 13:10",
   getGameIcon: Assets.gameImagesDota2,
@@ -76,9 +79,10 @@ Battle battle1 = Battle(
 Battle battle2 = Battle(
   title: "Dota 2, Играем на SF, мид до 2 смертей или до падения т1",
   statusBattle: "В ожидании",
+  id: "6545612",
   formatBattle: "2х2",
   status: "Dota 2",
-  rate: "1000 com",
+  rate: 500,
   startDate: "20:00, 05.06.21",
   createTime: "Создано сегодня, 13:10",
   getGameIcon: Assets.gameImagesDota2,
@@ -97,6 +101,7 @@ Battle battle2 = Battle(
 Battle battle3 = Battle(
   title: "Dota 2, Играем на SF, мид до 2 смертей или до падения т1",
   formatBattle: "3х3",
+  id: "4545612",
   statusBattle: "Отменен",
   status: "Dota 2",
   tasks: battleTaskList1,
@@ -106,7 +111,7 @@ Battle battle3 = Battle(
   defeated: "Кайрат TROn К.",
   defeatedRate: "1",
   offers: offers,
-  rate: "1000 com",
+  rate: 750,
   startDate: "20:00, 05.06.21",
   createTime: "Создано сегодня, 13:10",
   getGameIcon: Assets.gameImagesDota2,

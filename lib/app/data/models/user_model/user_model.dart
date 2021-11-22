@@ -10,7 +10,7 @@ class UserModel {
   final double? winRate;
   final int? like;
   final int? dislike;
-  final int? money;
+  final double? money;
   final String phone;
   final String whatsApp;
   final String telegram;
@@ -27,7 +27,7 @@ class UserModel {
   UserModel({
     required this.name,
     this.nickName,
-    this.money =0,
+    this.money = 0,
     this.identification = false,
     required this.photoProfile,
     this.battles,
@@ -80,6 +80,48 @@ class Review {
   });
 }
 
+List<UserModel> users1 = [
+  userModel1,
+  userModel2,
+  userModel1,
+  userModel2,
+  userModel1,
+  userModel2,
+  userModel1,
+  userModel2,
+  userModel1,
+  userModel2,
+  userModel1,
+  userModel2,
+  userModel1,
+  userModel2,
+  userModel1,
+  userModel2,
+  userModel1,
+  userModel2,
+  userModel1,
+  userModel2,
+  userModel1,
+  userModel2,
+  userModel1,
+  userModel2,
+  userModel1,
+  userModel2,
+  userModel1,
+  userModel2,
+  userModel1,
+  userModel2,
+  userModel1,
+  userModel2,
+  userModel1,
+  userModel2,
+  userModel1,
+  userModel2,
+  userModel1,
+  userModel2,
+  userModel1,
+  userModel2,
+];
 UserModel userModel1 = UserModel(
   name: "Азим Д.",
   photoProfile: Assets.userPhote,
@@ -101,7 +143,7 @@ UserModel userModel1 = UserModel(
   ratingPunctuality: 5.0,
   email: "eldiiaralmazbekov@gmail.com",
   profile: "eldiiar",
-  identification:  true
+  identification: true,
   //reviews: reviews1,
   //plays: plays1,
 );
@@ -113,7 +155,7 @@ UserModel userModel2 = UserModel(
   whatsApp: "+996990039301",
   telegram: "ak_bulak",
   description:
-  """Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum""",
+      """Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum""",
   nickName: "appass1nato",
   battles: 47,
   wins: 28,
@@ -146,7 +188,6 @@ Review review2 = Review(
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat",
   time: "15:15, 08.06.21г",
 );
-
 Play play1 = Play(
   name: "Dota 2",
   photoProfile: Assets.userDota,

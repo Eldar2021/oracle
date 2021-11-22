@@ -44,7 +44,7 @@ class UserPlaysList extends StatelessWidget {
     return Container(
       decoration: BoxDecoration(
         border: Border(
-          bottom: BorderSide(color: MyColors.whiteColor, width: 1),
+          bottom: BorderSide(color: MyColors.grayTextColor, width: 1),
         ),
       ),
       child: Row(

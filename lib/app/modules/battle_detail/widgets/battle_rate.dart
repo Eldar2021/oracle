@@ -18,7 +18,7 @@ class BattleRate extends StatelessWidget {
         Text("Ставка:", style: Get.textTheme.bodyText2),
         const SizedBox(width: 10),
         Text(
-          battle.rate ?? "0",
+          "${battle.rate ?? "0"}",
           style: Get.textTheme.bodyText2!.copyWith(
             color: MyColors.moneyTextColor,
           ),

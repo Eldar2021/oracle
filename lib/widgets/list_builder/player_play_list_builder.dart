@@ -22,21 +22,21 @@ class PlayerPlaysList extends StatelessWidget {
       child: plays.isEmpty
           ? Container()
           : Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          SizedBox(height: 20.0),
-          Text("Игры"),
-          ListView.builder(
-            shrinkWrap: true,
-            primary: false,
-            itemCount: plays.length,
-            itemBuilder: (context, index) {
-              Play play = plays[index];
-              return _buildContainer(play);
-            },
-          )
-        ],
-      ),
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                SizedBox(height: 20.0),
+                Text("Игры"),
+                ListView.builder(
+                  shrinkWrap: true,
+                  primary: false,
+                  itemCount: plays.length,
+                  itemBuilder: (context, index) {
+                    Play play = plays[index];
+                    return _buildContainer(play);
+                  },
+                )
+              ],
+            ),
     );
   }
 
@@ -44,7 +44,7 @@ class PlayerPlaysList extends StatelessWidget {
     return Container(
       decoration: BoxDecoration(
         border: Border(
-          bottom: BorderSide(color: MyColors.whiteColor, width: 1),
+          bottom: BorderSide(color: MyColors.grayTextColor, width: 1),
         ),
       ),
       child: Row(

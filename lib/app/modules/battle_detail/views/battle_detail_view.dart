@@ -42,7 +42,7 @@ class BattleDetailView extends GetView<BattleDetailController> {
         child: CustomElevatedButton(
           text: "Откликнуться",
           function: () {
-            controller.respond();
+            controller.respond(controller.battle);
           },
         ),
       );

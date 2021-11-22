@@ -1,5 +1,4 @@
 import 'package:get/get.dart';
-
 import 'package:oracle/app/data/models/battle_model/battle_model.dart';
 import 'package:oracle/app/modules/about/bindings/about_binding.dart';
 import 'package:oracle/app/modules/about/views/about_view.dart';
