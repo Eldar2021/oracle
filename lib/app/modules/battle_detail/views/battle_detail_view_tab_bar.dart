@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 import 'package:oracle/app/data/models/offers_model/offers_model.dart';
-import 'package:oracle/app/modules/battle_detail/battle_detail_widgets/battle_image_container.dart';
-import 'package:oracle/app/modules/battle_detail/battle_detail_widgets/detail_battle.dart';
-import 'package:oracle/app/modules/battle_detail/battle_detail_widgets/offer_detail.dart';
-import 'package:oracle/app/modules/battle_detail/controllers/battle_detail_tab_bar_controller.dart';
+import '../widgets/battle_image_container.dart';
+import '../widgets/detail_battle.dart';
+import '../widgets/offer_detail.dart';
+import '../controllers/battle_detail_tab_bar_controller.dart';
 import 'package:oracle/constants/color_constants.dart';
 import 'package:oracle/widgets/custom_widgets/clored_tab_bar.dart';
 

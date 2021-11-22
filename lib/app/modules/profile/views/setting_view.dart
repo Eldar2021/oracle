@@ -36,7 +36,9 @@ class SettingsView extends GetView<SettingsController> {
               text: "Выйти из профиля",
               icon: Assets.drawerNavExit,
               function: () {
-                DialogService.customDialogExit();
+                DialogService.customDialogExit(exit: (){
+                  controller.exit();
+                });
               },
             ),
           ],

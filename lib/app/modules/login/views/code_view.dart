@@ -66,7 +66,6 @@ class CodeView extends GetView<CodeController> {
                       if (_formKey.currentState!.validate()) {
                         print('Form is valid');
                         controller.restore("eldar");
-                        Get.toNamed(Routes.SCREEN);
                       } else {
                         print('Form is invalid');
                       }

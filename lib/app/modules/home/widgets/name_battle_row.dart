@@ -3,7 +3,7 @@ import 'package:get/get.dart';
 import 'package:oracle/app/data/models/play_model/play_models.dart';
 import 'package:oracle/constants/color_constants.dart';
 import 'package:oracle/generated/assets.dart';
-import 'package:oracle/widgets/list_builder/play_list_widget.dart';
+import 'package:oracle/widgets/list_builder/user_play_list_widget.dart';
 
 class CategoryNameRow extends StatelessWidget {
   const CategoryNameRow({

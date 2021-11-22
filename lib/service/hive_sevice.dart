@@ -29,36 +29,37 @@ class HiveService {
     await openBox.clear();
   }
 
-  Future<void> addToken(String token) async {
-    final openBox = await Hive.openBox("tokenBox");
-    openBox.put("tokenBox", token);
-  }
-
-  Future<void> getToken() async {
-    final openBox = await Hive.openBox("tokenBox");
-    openBox.get("tokenBox");
-  }
-
-  Future<bool> yesOrNoToken() async {
-    try {
-      final openBox = await Hive.openBox("tokenBox");
-      String token = openBox.get("tokenBox");
-      if (token == "") {
-        return false;
-      } else if (token != "") {
-        return true;
-      } else if (token == null) {
-        return false;
-      } else {
-        return true;
-      }
-    } catch (e) {
-      return false;
-    }
-  }
-
-  Future<void> clearToken() async {
-    final openBox = await Hive.openBox("tokenBox");
-    openBox.clear();
-  }
+  // Future<void> addToken(String token) async {
+  //   final openBox = await Hive.openBox("tokenBox");
+  //   openBox.put("tokenBox", token);
+  // }
+  //
+  // Future<void> getToken() async {
+  //   final openBox = await Hive.openBox("tokenBox");
+  //   openBox.get("tokenBox");
+  // }
+  //
+  // Future<bool> yesOrNoToken() async {
+  //   try {
+  //     final openBox = await Hive.openBox("tokenBox");
+  //     String token = openBox.get("tokenBox");
+  //     print("token is hive = $token");
+  //     if (token == "") {
+  //       return false;
+  //     } else if (token != "") {
+  //       return true;
+  //     } else if (token == null) {
+  //       return false;
+  //     } else {
+  //       return true;
+  //     }
+  //   } catch (e) {
+  //     return false;
+  //   }
+  // }
+  //
+  // Future<void> clearToken() async {
+  //   final openBox = await Hive.openBox("tokenBox");
+  //   openBox.clear();
+  // }
 }

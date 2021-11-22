@@ -5,7 +5,6 @@ import 'package:get/get.dart';
 import 'package:image_picker/image_picker.dart';
 
 class IdentificationController extends GetxController {
-
   Rx<TextEditingController> name = TextEditingController().obs;
   Rx<TextEditingController> numberPassport = TextEditingController().obs;
   Rx<TextEditingController> pin = TextEditingController().obs;
@@ -24,19 +23,27 @@ class IdentificationController extends GetxController {
   imgFromGalleryPassportCancel() async {
     isPassport.value = false;
   }
+
   imgFromGalleryAddressCancel() async {
     isAddress.value = false;
   }
 
-  imgFromGalleryPassport() async {
-    var image = await _picker.pickImage(source: ImageSource.gallery);
-    selectImagePassport =  File(image!.path);
+  imgFromGalleryPassport(bool type) async {
+    var image = type == true
+        ? await _picker.pickImage(source: ImageSource.gallery)
+        : await _picker.pickImage(source: ImageSource.camera);
+    selectImagePassport = File(image!.path);
     isPassport.value = true;
+    Get.back();
   }
-  imgFromGalleryAddress() async {
-    var image = await _picker.pickImage(source: ImageSource.gallery);
-    selectImageAddress =  File(image!.path);
+
+  imgFromGalleryAddress(bool type) async {
+    var image = type == true
+        ? await _picker.pickImage(source: ImageSource.gallery)
+        : await _picker.pickImage(source: ImageSource.camera);
+    selectImageAddress = File(image!.path);
     isAddress.value = true;
+    Get.back();
   }
 
   @override
@@ -51,5 +58,4 @@ class IdentificationController extends GetxController {
 
   @override
   void onClose() {}
-
 }

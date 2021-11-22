@@ -72,7 +72,7 @@ class LoginView extends GetView<LoginController> {
             InkWell(
               onTap: () async{
                 controller.clearToken();
-                Get.toNamed(Routes.SCREEN);
+                Get.offAllNamed(Routes.SCREEN);
               },
               child: Text(
                 "Пропустить вход",

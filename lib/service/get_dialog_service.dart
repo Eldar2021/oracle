@@ -44,7 +44,9 @@ class DialogService {
     );
   }
 
-  static void customDialogExit() {
+  static void customDialogExit({
+  required Function exit,
+  }) {
     Get.defaultDialog(
       title: "",
       backgroundColor: MyColors.backgroundColor,
@@ -65,7 +67,7 @@ class DialogService {
       confirmTextColor: MyColors.whiteColor,
       confirm: InkWell(
         onTap: () {
-          print("Выйти");
+          exit();
         },
         child: Container(
           width: 120.0,
@@ -82,7 +84,7 @@ class DialogService {
       ),
       cancel: InkWell(
         onTap: () {
-          print("Отменить");
+          Get.back();
         },
         child: Container(
           width: 120.0,

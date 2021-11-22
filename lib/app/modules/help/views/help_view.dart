@@ -5,6 +5,7 @@ import 'package:oracle/widgets/custom_widgets/custom_elevared_button.dart';
 import '../controllers/help_controller.dart';
 
 class HelpView extends GetView<HelpController> {
+  final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -23,43 +24,67 @@ class HelpView extends GetView<HelpController> {
     );
   }
 
-  Column _buildBody() {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Text(
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididun?",
-          style: Get.textTheme.subtitle1!.copyWith(height: 1.5),
-        ),
-        SizedBox(height: 15.0),
-        Text(
-          "Lut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu ",
-          style: Get.textTheme.caption!.copyWith(color: MyColors.grayTextColor),
-        ),
-        SizedBox(height: 35.0),
-        Text("Электронная почта"),
-        SizedBox(height: 10.0),
-        TextFormField(
-          decoration: InputDecoration(hintText: "Эл. почта"),
-        ),
-        SizedBox(height: 25.0),
-        Text("Электронная почта"),
-        SizedBox(height: 10.0),
-        TextFormField(
-          maxLines: 7,
-          decoration: InputDecoration(
-            hintText: "Оишите проблему более подробно",
+  Form _buildBody() {
+    return Form(
+      key: _formKey,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididun?",
+            style: Get.textTheme.subtitle1!.copyWith(height: 1.5),
           ),
-        ),
-        SizedBox(height: 20.0),
-        Center(
-          child: CustomElevatedButton(
-            text: "Отпраить",
-            function: () {},
+          SizedBox(height: 15.0),
+          Text(
+            "Lut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu ",
+            style: Get.textTheme.caption!.copyWith(color: MyColors.grayTextColor),
           ),
-        ),
-        SizedBox(height: 40.0),
-      ],
+          SizedBox(height: 35.0),
+          Text("Электронная почта"),
+          SizedBox(height: 10.0),
+          TextFormField(
+            decoration: InputDecoration(hintText: "Эл. почта"),
+            validator: (val){
+              if(val!.isEmpty){
+                return "";
+              }else{
+                return null;
+              }
+            },
+          ),
+          SizedBox(height: 25.0),
+          Text("Электронная почта"),
+          SizedBox(height: 10.0),
+          TextFormField(
+            maxLines: 7,
+            decoration: InputDecoration(
+              hintText: "Оишите проблему более подробно",
+            ),
+            validator: (val){
+              if(val!.isEmpty){
+                return "";
+              }else{
+                return null;
+              }
+            },
+          ),
+          SizedBox(height: 20.0),
+          Center(
+            child: CustomElevatedButton(
+              text: "Отпраить",
+              function: () {
+                if (_formKey.currentState!.validate()) {
+                  print('Form is valid');
+                  Get.back();
+                } else {
+                  print('Form is invalid');
+                }
+              },
+            ),
+          ),
+          SizedBox(height: 40.0),
+        ],
+      ),
     );
   }
 

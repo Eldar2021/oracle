@@ -22,11 +22,13 @@ class UserModel {
   final String? profile;
   final List<Review>? reviews;
   final List<Play>? plays;
+  final bool identification;
 
   UserModel({
     required this.name,
     this.nickName,
     this.money =0,
+    this.identification = false,
     required this.photoProfile,
     this.battles,
     this.wins,
@@ -99,6 +101,7 @@ UserModel userModel1 = UserModel(
   ratingPunctuality: 5.0,
   email: "eldiiaralmazbekov@gmail.com",
   profile: "eldiiar",
+  identification:  true
   //reviews: reviews1,
   //plays: plays1,
 );

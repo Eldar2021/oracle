@@ -1,12 +1,12 @@
 import 'package:get/get.dart';
 import 'package:oracle/app/data/models/battle_model/battle_model.dart';
 
-class BattleDetailStatusController extends GetxController {
-  late final Battle battle;
+class FilterPlaysViewController extends GetxController {
+  final battles = RxList<Battle>([]);
 
   @override
   void onInit() {
-    battle = Get.arguments[0];
+    battles.value = Get.arguments[0];
     super.onInit();
   }
 

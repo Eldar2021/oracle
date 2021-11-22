@@ -4,7 +4,7 @@ import 'package:oracle/app/data/models/battle_model/battle_model.dart';
 import 'package:oracle/app/routes/app_pages.dart';
 import 'package:oracle/constants/color_constants.dart';
 import 'package:oracle/generated/assets.dart';
-import 'package:oracle/widgets/list_builder/play_list_widget.dart';
+import 'package:oracle/widgets/list_builder/user_play_list_widget.dart';
 
 class BattlesStatusListBuilder extends StatelessWidget {
   const BattlesStatusListBuilder({

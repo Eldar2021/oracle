@@ -5,8 +5,12 @@ class PlayController extends GetxController {
   final battles = RxList<Battle>([]);
   @override
   void onInit() {
+    try{
+      battles.value = Get.arguments[0];
+    }catch(e){
+      listBattles();
+    }
     super.onInit();
-    listBattles();
   }
 
   @override

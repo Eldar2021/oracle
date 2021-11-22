@@ -36,6 +36,8 @@ dependencies:
   # cached_value:
   hive: ^2.0.4
   hive_flutter: ^1.1.0
+  # token cached
+  get_storage: ^2.0.3
 #-----------------
 
   flutter:

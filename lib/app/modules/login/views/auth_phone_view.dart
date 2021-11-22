@@ -62,8 +62,7 @@ class AuthPhoneView extends GetView<AuthPhoneController> {
                     function: () async{
                       if (_formKey.currentState!.validate()) {
                         print('Form is valid');
-                        controller.addToken("eldar");
-                        Get.toNamed(Routes.SCREEN);
+                        controller.authenticate("eldar");
                       } else {
                         print('Form is invalid');
                       }

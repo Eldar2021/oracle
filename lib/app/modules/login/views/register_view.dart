@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:oracle/app/modules/login/controllers/register_controller.dart';
 import 'package:oracle/app/routes/app_pages.dart';
 import 'package:oracle/constants/color_constants.dart';
+import 'package:oracle/service/snack_bar_service.dart';
 import 'package:oracle/widgets/custom_widgets/custom_elevared_button.dart';
 import 'package:oracle/widgets/custom_widgets/link_text_widget.dart';
 
@@ -111,9 +112,8 @@ class RegisterView extends GetView<RegisterController> {
                     function: () {
                       if (controller.password.value.text !=
                           controller.repeatPassword.value.text) {
-                        Get.snackbar("Password", "сыр создор дал келбейт");
+                        SnackBarService.noEqualPasswords();
                       } else if (_formKey.currentState!.validate()) {
-                        print('Form is valid');
                         controller.register("eldar");
                       } else {
                         print('Form is invalid');

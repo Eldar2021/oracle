@@ -119,7 +119,9 @@ class FilterView extends GetView<FilterController> {
             children: [
               CustomElevatedButton(
                 width: 235,
-                function: () {},
+                function: () {
+                  controller.listBattles();
+                },
                 text: "Показать 23 278 сражений",
               ),
             ],

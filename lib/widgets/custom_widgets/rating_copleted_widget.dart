@@ -64,6 +64,7 @@ class RatingShowWithText extends StatelessWidget {
         Expanded(
           flex: 5,
           child: RatingBar(
+            ignoreGestures: true,
             initialRating: rating,
             direction: Axis.horizontal,
             itemSize: 14.0,
@@ -75,7 +76,7 @@ class RatingShowWithText extends StatelessWidget {
               empty: SvgPicture.asset(Assets.componentsRatingEmpty),
             ),
             itemPadding: EdgeInsets.all(7.0),
-            onRatingUpdate: (rating) {
+            onRatingUpdate: (val) {
               print(rating);
             },
           ),

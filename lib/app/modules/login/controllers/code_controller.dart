@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:oracle/app/routes/app_pages.dart';
 import '../../app_page/controllers/app_page_controller.dart';
 
 class CodeController extends GetxController {
@@ -8,7 +9,8 @@ class CodeController extends GetxController {
   final Rx<TextEditingController> code = TextEditingController().obs;
 
   void restore(String token) async {
-    appController.addToken(token);
+    appController.addToken();
+    Get.offAll(Routes.SCREEN);
   }
 
   @override

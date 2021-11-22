@@ -49,6 +49,7 @@ class Battle {
 }
 
 List<Battle> listBattle1 = [battle1, battle2, battle3];
+List<Battle> listBattle2 = [battle1, battle2];
 
 Battle battle1 = Battle(
   title: "Dota 2, Играем на SF, мид до 2 смертей или до падения т1",

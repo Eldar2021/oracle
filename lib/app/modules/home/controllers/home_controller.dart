@@ -9,15 +9,18 @@ class HomeController extends GetxController {
   final AppPageController appController = Get.find();
 
   final RxList<Play> playList = RxList<Play>([]);
-  final RxBool drawer = true.obs;
 
   void goDetail(Play item) {
     Get.toNamed(Routes.PLAY_DETAIL, arguments: [item]);
   }
 
+  void exit(){
+    appController.clearToken();
+    Get.offAllNamed(Routes.LOGIN);
+  }
+
   @override
   void onInit() {
-    drawer.value = appController.token.value;
     super.onInit();
     playList.value = plays;
   }

@@ -11,7 +11,13 @@ import 'drawer_user_card.dart';
 
 class DrawerMenu extends StatelessWidget {
   final UserModel userModel;
-  DrawerMenu({required this.userModel}): super();
+  final Function exit;
+
+  DrawerMenu({
+    required this.userModel,
+    required this.exit,
+  }) : super();
+
   @override
   Widget build(BuildContext context) {
     return ListView(
@@ -80,7 +86,9 @@ class DrawerMenu extends StatelessWidget {
             title: "Выйти",
             style: Get.textTheme.subtitle2!.copyWith(height: 0.1),
             onTap: () {
-              DialogService.customDialogExit();
+              DialogService.customDialogExit(exit: () {
+                exit();
+              });
             },
           ),
         ),

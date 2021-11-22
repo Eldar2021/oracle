@@ -2,22 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:get/get.dart';
 import 'package:oracle/app/data/models/battle_model/battle_model.dart';
+import 'package:oracle/app/modules/app_page/controllers/app_page_controller.dart';
 import 'package:oracle/app/routes/app_pages.dart';
-import 'package:oracle/service/hive_sevice.dart';
+import 'package:oracle/service/snack_bar_service.dart';
 
 class BattleDetailController extends GetxController {
-  final count = 0.obs;
+  final AppPageController appPageController = Get.find();
   late final Battle battle;
-  final HiveService hiveService = HiveService();
-  final RxBool isToken = true.obs;
   final ScrollController scrollController = ScrollController();
   final RxBool visible = true.obs;
 
-  Future<bool> getToken() async {
-    bool token = await hiveService.yesOrNoToken();
-    isToken.value = token;
-    return token;
-  }
 
   void handleScroll(ScrollController _scrollController) async {
     _scrollController.addListener(() {
@@ -32,9 +26,8 @@ class BattleDetailController extends GetxController {
   }
 
   void respond() async {
-    await getToken();
-    if (isToken.value == false) {
-      Get.snackbar("Не авторизованный", "авторизация кыл бир тууган");
+    if (appPageController.token.value == false) {
+      SnackBarService.noTokenSnackBar();
     } else {
       Get.toNamed(Routes.RESPOND_BATTLE);
     }
@@ -68,5 +61,4 @@ class BattleDetailController extends GetxController {
     scrollController.removeListener(() {});
   }
 
-  void increment() => count.value++;
 }

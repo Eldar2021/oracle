@@ -6,11 +6,13 @@ class SettingTextField extends StatelessWidget {
     required this.textEditingController,
     this.text,
     this.hintText,
+    this.validator,
   }) : super(key: key);
 
   final TextEditingController textEditingController;
   final String? text;
   final String? hintText;
+  final String? Function(String?)? validator;
 
   @override
   Widget build(BuildContext context) {
@@ -25,6 +27,7 @@ class SettingTextField extends StatelessWidget {
             decoration: InputDecoration(
               hintText: hintText ?? "",
             ),
+            validator: validator?? null,
           ),
           SizedBox(height: 25.0),
         ],

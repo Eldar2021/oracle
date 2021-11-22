@@ -43,6 +43,8 @@ abstract class Routes {
   static const RESPOND_BATTLE = _Paths.RESPOND_BATTLE;
   static const RESPOND_ADD_GAMER = _Paths.RESPOND_ADD_GAMER;
   static const CODE = _Paths.CODE;
+  static const PLAYER_PROFILE = _Paths.PLAYER_PROFILE;
+  static const FILTER_PLAYS_VIEW = _Paths.FILTER_PLAYS_VIEW;
 }
 
 abstract class _Paths {
@@ -85,4 +87,6 @@ abstract class _Paths {
   static const RESPOND_BATTLE = '/respond-battle';
   static const RESPOND_ADD_GAMER = '/respond-add_gamer';
   static const CODE = '/code';
+  static const PLAYER_PROFILE = '/player-profile';
+  static const FILTER_PLAYS_VIEW = '/filter-plays-view';
 }

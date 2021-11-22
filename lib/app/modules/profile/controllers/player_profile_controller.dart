@@ -4,14 +4,14 @@ import 'package:oracle/app/data/models/user_model/user_model.dart';
 import 'package:oracle/app/modules/app_page/controllers/app_page_controller.dart';
 import 'package:oracle/app/routes/app_pages.dart';
 import 'package:oracle/constants/color_constants.dart';
+import 'package:oracle/service/snack_bar_service.dart';
 
-class ProfileController extends GetxController {
+class PlayerProfileController extends GetxController {
   final AppPageController appController = Get.find();
-
   late final UserModel user;
-
   final RxInt reviews = 2.obs;
   final RxBool changeReview = false.obs;
+  final RxString likeDislike = "bosh".obs;
 
   void changeReviewsPlus(int value) {
     reviews.value = value;
@@ -24,23 +24,34 @@ class ProfileController extends GetxController {
   }
 
   void giveReviews() {
-    // if (drawer.value == false) {
-    //   Get.snackbar(
-    //     "Авторизация болгон эмес",
-    //     "Сын пикир калтыруу учун авторизациядан отунуз",
-    //   );
-    // } else {
+    if (appController.token.value == false) {
+      SnackBarService.noTokenSnackBar();
+    } else {
       Get.toNamed(Routes.GIVE_REVIEW);
-    // }
+    }
+  }
+
+  String likeDislikeFunc(bool how) {
+    if (appController.token.value == false) {
+      SnackBarService.noTokenSnackBar();
+    } else {
+      if (how == false) {
+        likeDislike.value = "dislike";
+        return likeDislike.value;
+      } else if (how == true) {
+        likeDislike.value = "like";
+        return likeDislike.value;
+      } else {
+        likeDislike.value = "bosh";
+        return likeDislike.value;
+      }
+    }
+    return "eldiiar";
   }
 
   @override
   void onInit() {
-    try {
-      user = Get.arguments[0];
-    } catch (e) {
-      user = userModel2;
-    }
+    user = Get.arguments[0];
     super.onInit();
   }
 

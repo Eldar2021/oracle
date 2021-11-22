@@ -14,16 +14,21 @@ class PersonalInfoController extends GetxController {
   Rx<TextEditingController> whatsApp = TextEditingController(text: "+996555123456").obs;
   Rx<TextEditingController> telegram = TextEditingController(text: "").obs;
 
-  var photoUrl = Assets.userPhote.obs;
+  final RxString photoUrl = Assets.userPhote.obs;
+  final RxInt count = 0.obs;
   var selectImage;
 
   final ImagePicker _picker = ImagePicker();
 
-  imgFromGallery() async {
 
-    var image = await _picker.pickImage(source: ImageSource.gallery);
+  imgFromGallery(bool type) async {
+    var image = type == true
+        ? await _picker.pickImage(source: ImageSource.gallery)
+        : await _picker.pickImage(source: ImageSource.camera);
     selectImage =  File(image!.path);
     photoUrl.value = '';
+    count.value++;
+    Get.back();
   }
 
   @override

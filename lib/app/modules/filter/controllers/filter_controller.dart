@@ -1,5 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
+import 'package:oracle/app/data/models/battle_model/battle_model.dart';
+import 'package:oracle/app/routes/app_pages.dart';
 
 class FilterController extends GetxController {
   final RxString typeSort = "Сортировать".obs;
@@ -7,6 +9,12 @@ class FilterController extends GetxController {
   final RxList typeBattles = <String>[].obs;
   final Rx<TextEditingController> minRate = TextEditingController().obs;
   final Rx<TextEditingController> maxRate = TextEditingController().obs;
+  final battles = RxList<Battle>([]);
+
+  void listBattles() async {
+    battles.value = listBattle2;
+    Get.toNamed(Routes.FILTER_PLAYS_VIEW, arguments: [battles]);
+  }
 
   void addCategory(String category) {
     categories.add(category);

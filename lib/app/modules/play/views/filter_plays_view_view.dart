@@ -4,10 +4,9 @@ import 'package:get/get.dart';
 import 'package:oracle/app/routes/app_pages.dart';
 import 'package:oracle/generated/assets.dart';
 import 'package:oracle/widgets/list_builder/battle_list_builder.dart';
-import '../controllers/play_controller.dart';
+import '../controllers/filter_plays_view_controller.dart';
 
-class PlayView extends GetView<PlayController> {
-  final PlayController controller = Get.put(PlayController());
+class FilterPlaysViewView extends GetView<FilterPlaysViewController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -25,7 +24,7 @@ class PlayView extends GetView<PlayController> {
       body: Padding(
         padding: const EdgeInsets.all(20.0),
         child: Obx(
-          () {
+              () {
             if (controller.battles.isEmpty) {
               return buildCircularProgress();
             } else {

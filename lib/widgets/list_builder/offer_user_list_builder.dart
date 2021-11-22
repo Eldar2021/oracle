@@ -45,6 +45,7 @@ class OfferUserList extends StatelessWidget {
               ),
               const SizedBox(height: 10.0),
               LikeDislike(
+                how: "bosh",
                 user: offer.user,
                 mainAxisAlignment: MainAxisAlignment.start,
               )

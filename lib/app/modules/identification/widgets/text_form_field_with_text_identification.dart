@@ -5,12 +5,14 @@ class TextFormFieldWithTextIdentification extends StatelessWidget {
     required this.text,
     required this.hinText,
     required this.textEditingController,
+    this.validator,
     Key? key,
   }) : super(key: key);
 
   final String text;
   final String hinText;
   final TextEditingController textEditingController;
+  final String? Function(String?)? validator;
 
   @override
   Widget build(BuildContext context) {
@@ -24,6 +26,7 @@ class TextFormFieldWithTextIdentification extends StatelessWidget {
           decoration: InputDecoration(
             hintText: hinText,
           ),
+          validator: validator?? null,
         ),
         const SizedBox(height: 10.0),
       ],

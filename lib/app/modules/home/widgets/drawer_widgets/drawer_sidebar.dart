@@ -3,16 +3,18 @@ import 'package:get/get.dart';
 import 'package:oracle/app/data/models/user_model/user_model.dart';
 import 'package:oracle/app/routes/app_pages.dart';
 import 'package:oracle/generated/assets.dart';
-import 'package:oracle/app/modules/home/widgets/drawer_widgets/drawer_menu.dart';
+import '../drawer_widgets/drawer_menu.dart';
 import 'package:oracle/widgets/custom_widgets/custom_elevared_button.dart';
 
 class NavBar extends StatelessWidget {
   final bool drawer;
   final UserModel? userModel;
+  final Function exit;
 
   NavBar({
     this.drawer = true,
     required this.userModel,
+    required this.exit,
   }) : super();
 
   @override
@@ -37,7 +39,12 @@ class NavBar extends StatelessWidget {
                   image: AssetImage(Assets.backgroundDraver),
                 ),
               ),
-              child: DrawerMenu(userModel: userModel!),
+              child: DrawerMenu(
+                userModel: userModel!,
+                exit: () {
+                  exit();
+                },
+              ),
             ),
           );
   }

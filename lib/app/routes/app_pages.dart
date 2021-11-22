@@ -17,10 +17,6 @@ import 'package:oracle/app/modules/battle_detail/views/battle_detail_status.dart
 import 'package:oracle/app/modules/battle_detail/views/battle_detail_view.dart';
 import 'package:oracle/app/modules/battle_detail/views/battle_detail_view_tab_bar.dart';
 import 'package:oracle/app/modules/battle_detail/views/select_performer_view.dart';
-import 'package:oracle/app/modules/filter/bindings/category_binding.dart';
-import 'package:oracle/app/modules/filter/views/category_view.dart';
-import 'package:oracle/app/modules/login/bindings/code_binding.dart';
-import 'package:oracle/app/modules/login/views/code_view.dart';
 import 'package:oracle/app/modules/create_battle/bindings/add_gamer_binding.dart';
 import 'package:oracle/app/modules/create_battle/bindings/battle_format_binding.dart';
 import 'package:oracle/app/modules/create_battle/bindings/create_battle_binding.dart';
@@ -29,10 +25,14 @@ import 'package:oracle/app/modules/create_battle/views/add_gamer_view.dart';
 import 'package:oracle/app/modules/create_battle/views/battle_format_view.dart';
 import 'package:oracle/app/modules/create_battle/views/create_battle_view.dart';
 import 'package:oracle/app/modules/create_battle/views/publish_game_view.dart';
+import 'package:oracle/app/modules/filter/bindings/category_binding.dart';
 import 'package:oracle/app/modules/filter/bindings/filter_binding.dart';
 import 'package:oracle/app/modules/filter/bindings/sort_binding.dart';
+import 'package:oracle/app/modules/filter/views/category_view.dart';
 import 'package:oracle/app/modules/filter/views/filter_view.dart';
 import 'package:oracle/app/modules/filter/views/sort_view.dart';
+import 'package:oracle/app/modules/play/bindings/filter_plays_view_binding.dart';
+import 'package:oracle/app/modules/play/views/filter_plays_view_view.dart';
 import 'package:oracle/app/modules/give_review/bindings/give_review_binding.dart';
 import 'package:oracle/app/modules/give_review/views/give_review_view.dart';
 import 'package:oracle/app/modules/help/bindings/help_binding.dart';
@@ -45,10 +45,12 @@ import 'package:oracle/app/modules/home/views/screen_view.dart';
 import 'package:oracle/app/modules/identification/bindings/identification_binding.dart';
 import 'package:oracle/app/modules/identification/views/identification_view.dart';
 import 'package:oracle/app/modules/login/bindings/auth_phone_binding.dart';
+import 'package:oracle/app/modules/login/bindings/code_binding.dart';
 import 'package:oracle/app/modules/login/bindings/login_binding.dart';
 import 'package:oracle/app/modules/login/bindings/register_binding.dart';
 import 'package:oracle/app/modules/login/bindings/restore_password_binding.dart';
 import 'package:oracle/app/modules/login/views/auth_phone_view.dart';
+import 'package:oracle/app/modules/login/views/code_view.dart';
 import 'package:oracle/app/modules/login/views/login_view.dart';
 import 'package:oracle/app/modules/login/views/register_view.dart';
 import 'package:oracle/app/modules/login/views/restore_password_view.dart';
@@ -58,10 +60,12 @@ import 'package:oracle/app/modules/play/bindings/play_binding.dart';
 import 'package:oracle/app/modules/play/views/play_view.dart';
 import 'package:oracle/app/modules/profile/bindings/change_password_binding.dart';
 import 'package:oracle/app/modules/profile/bindings/personal_info_binding.dart';
+import 'package:oracle/app/modules/profile/bindings/player_profile_binding.dart';
 import 'package:oracle/app/modules/profile/bindings/profile_binding.dart';
 import 'package:oracle/app/modules/profile/bindings/settings_binding.dart';
 import 'package:oracle/app/modules/profile/views/changed_password_view.dart';
 import 'package:oracle/app/modules/profile/views/personal_information_view.dart';
+import 'package:oracle/app/modules/profile/views/player_profile_view.dart';
 import 'package:oracle/app/modules/profile/views/profile_view.dart';
 import 'package:oracle/app/modules/profile/views/setting_view.dart';
 import 'package:oracle/app/modules/respon/bindings/respon_binding.dart';
@@ -253,6 +257,16 @@ class AppPages {
       name: _Paths.CODE,
       page: () => CodeView(),
       binding: CodeBinding(),
+    ),
+    GetPage(
+      name: _Paths.PLAYER_PROFILE,
+      page: () => PlayerProfileView(),
+      binding: PlayerProfileBinding(),
+    ),
+    GetPage(
+      name: _Paths.FILTER_PLAYS_VIEW,
+      page: () => FilterPlaysViewView(),
+      binding: FilterPlaysViewBinding(),
     ),
   ];
 }

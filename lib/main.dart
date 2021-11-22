@@ -1,6 +1,7 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:get_storage/get_storage.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:flutter/foundation.dart' show kIsWeb;
 import 'package:oracle/app/modules/app_page/bindings/app_page_binding.dart';
@@ -16,6 +17,7 @@ Future<void> main() async {
     final appDirectory = await path_provider.getApplicationDocumentsDirectory();
     Hive.init(appDirectory.path);
   }
+  await GetStorage.init();
   runApp(
     GetMaterialApp(
       debugShowCheckedModeBanner: false,

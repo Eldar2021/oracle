@@ -2,18 +2,19 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:oracle/app/data/models/user_model/user_model.dart';
-import 'package:oracle/app/modules/profile/controllers/profile_controller.dart';
+import 'package:oracle/app/modules/profile/controllers/player_profile_controller.dart';
 import 'package:oracle/constants/color_constants.dart';
+import '../custom_widgets/custom_elevared_button.dart';
 
-class ReviewsList extends StatelessWidget {
-  const ReviewsList({
+class PlayerReviewsList extends StatelessWidget {
+  const PlayerReviewsList({
     required this.reviews,
     required this.controller,
     Key? key,
   }) : super(key: key);
 
   final List<Review> reviews;
-  final ProfileController controller;
+  final PlayerProfileController controller;
 
   @override
   Widget build(BuildContext context) {
@@ -28,9 +29,21 @@ class ReviewsList extends StatelessWidget {
           reviews.isEmpty
               ? Container()
               : Obx(() {
-                  return _buildListView();
-                }),
+            return _buildListView();
+          }),
           const SizedBox(height: 40),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              CustomElevatedButton(
+                text: "Оставить отзыв",
+                width: 155,
+                function: () {
+                  controller.giveReviews();
+                },
+              ),
+            ],
+          ),
         ],
       ),
     );
@@ -43,25 +56,25 @@ class ReviewsList extends StatelessWidget {
         Text("${reviews.isEmpty ? "Пока нету отзывов" : "Отзывы"}"),
         controller.changeReview.value == false
             ? InkWell(
-                onTap: () {
-                  controller.changeReviewsPlus(reviews.length);
-                },
-                child: Text(
-                  "${reviews.isEmpty ? "" : "Смотртеть все отзывы"}",
-                  style: Get.textTheme.bodyText1!
-                      .copyWith(color: MyColors.grayTextColor),
-                ),
-              )
+          onTap: () {
+            controller.changeReviewsPlus(reviews.length);
+          },
+          child: Text(
+            "${reviews.isEmpty ? "" : "Смотртеть все отзывы"}",
+            style: Get.textTheme.bodyText1!
+                .copyWith(color: MyColors.grayTextColor),
+          ),
+        )
             : InkWell(
-                onTap: () {
-                  controller.changeReviewsMinus(reviews.length > 2 ? 2 : 1);
-                },
-                child: Text(
-                  "${reviews.isEmpty ? "" : "Смотртеть 2 отзывы"}",
-                  style: Get.textTheme.bodyText1!
-                      .copyWith(color: MyColors.grayTextColor),
-                ),
-              ),
+          onTap: () {
+            controller.changeReviewsMinus(reviews.length > 2 ? 2 : 1);
+          },
+          child: Text(
+            "${reviews.isEmpty ? "" : "Смотртеть 2 отзывы"}",
+            style: Get.textTheme.bodyText1!
+                .copyWith(color: MyColors.grayTextColor),
+          ),
+        ),
       ],
     );
   }
@@ -73,8 +86,8 @@ class ReviewsList extends StatelessWidget {
       itemCount: controller.changeReview.value == true
           ? controller.reviews.value
           : controller.changeReview.value == false && reviews.length > 2
-              ? 2
-              : reviews.length,
+          ? 2
+          : reviews.length,
       itemBuilder: (context, index) {
         Review review = reviews[index];
         return ListTile(

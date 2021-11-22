@@ -63,7 +63,7 @@ class AnswerView extends GetView<AnswerController> {
 
   AppBar _buildAppBar() {
     return AppBar(
-      title: Text('AnswerView'),
+      title: Text('Вопросы ответы'),
       centerTitle: true,
     );
   }

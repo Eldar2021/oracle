@@ -24,7 +24,7 @@ class BattleCustomer extends StatelessWidget {
             borderRadius: BorderRadius.circular(16),
             child: InkWell(
               onTap: (){
-                Get.toNamed(Routes.PROFILE, arguments: [user]);
+                Get.toNamed(Routes.PLAYER_PROFILE, arguments: [user]);
               },
               child: Image.asset(user.photoProfile),
             ),
@@ -38,7 +38,7 @@ class BattleCustomer extends StatelessWidget {
             children: [
               InkWell(
                 onTap: (){
-                  Get.toNamed(Routes.PROFILE, arguments: [user]);
+                  Get.toNamed(Routes.PLAYER_PROFILE, arguments: [user]);
                 },
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.start,
@@ -58,6 +58,7 @@ class BattleCustomer extends StatelessWidget {
               ),
               const SizedBox(height: 10.0),
               LikeDislike(
+                how: "bosh",
                 user: user,
                 mainAxisAlignment: MainAxisAlignment.start,
               )

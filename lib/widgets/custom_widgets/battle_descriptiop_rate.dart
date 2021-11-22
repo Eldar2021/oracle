@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:oracle/app/data/models/battle_model/battle_model.dart';
-import 'package:oracle/app/modules/battle_detail/battle_detail_widgets/battke_format_battle.dart';
-import 'package:oracle/app/modules/battle_detail/battle_detail_widgets/battle_description.dart';
-import 'package:oracle/app/modules/battle_detail/battle_detail_widgets/battle_rate.dart';
-import 'package:oracle/app/modules/battle_detail/battle_detail_widgets/battle_start_time.dart';
-import 'package:oracle/app/modules/battle_detail/battle_detail_widgets/battle_status.dart';
-import 'package:oracle/app/modules/battle_detail/battle_detail_widgets/battle_winner_row.dart';
+import 'package:oracle/app/modules/battle_detail/widgets/battke_format_battle.dart';
+import 'package:oracle/app/modules/battle_detail/widgets/battle_description.dart';
+import 'package:oracle/app/modules/battle_detail/widgets/battle_rate.dart';
+import 'package:oracle/app/modules/battle_detail/widgets/battle_start_time.dart';
+import 'package:oracle/app/modules/battle_detail/widgets/battle_status.dart';
+import 'package:oracle/app/modules/battle_detail/widgets/battle_winner_row.dart';
 import 'custom_divider.dart';
 
 class BattleDescriptionRate extends StatelessWidget {

@@ -4,8 +4,8 @@ import '../controllers/screen_cotroller.dart';
 class ScreenBinding extends Bindings {
   @override
   void dependencies() {
-    Get.lazyPut<ScreenController>(
-      () => ScreenController(),
+    Get.put<ScreenController>(
+      ScreenController(),
     );
   }
 }

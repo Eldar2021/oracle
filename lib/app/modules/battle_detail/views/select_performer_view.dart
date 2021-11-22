@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:oracle/app/modules/battle_detail/battle_detail_widgets/descrip_check.dart';
-import 'package:oracle/app/modules/battle_detail/controllers/select_performer_controller.dart';
+import '../widgets/descrip_check.dart';
+import '../controllers/select_performer_controller.dart';
 import 'package:oracle/constants/color_constants.dart';
 import 'package:oracle/widgets/custom_widgets/custom_elevared_button.dart';
 import 'package:oracle/widgets/custom_widgets/link_text_widget.dart';
