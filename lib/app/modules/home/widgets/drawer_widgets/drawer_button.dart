@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:oracle/app/routes/app_pages.dart';
 import 'package:oracle/constants/color_constants.dart';
 
 class DrawerButton extends StatelessWidget {
@@ -9,15 +10,20 @@ class DrawerButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: EdgeInsets.only(top: 5, bottom: 5, right: 8, left: 8),
-      decoration: BoxDecoration(
-          color: MyColors.linkTextColor,
-          borderRadius: BorderRadius.circular(16.0)),
-      child: Center(
-        child: Text(
-          "Пополнить",
-          style: Get.textTheme.caption!.copyWith(fontSize: 10),
+    return InkWell(
+      onTap: (){
+        Get.toNamed(Routes.BALANCE);
+      },
+      child: Container(
+        padding: EdgeInsets.only(top: 5, bottom: 5, right: 8, left: 8),
+        decoration: BoxDecoration(
+            color: MyColors.linkTextColor,
+            borderRadius: BorderRadius.circular(16.0)),
+        child: Center(
+          child: Text(
+            "Пополнить",
+            style: Get.textTheme.caption!.copyWith(fontSize: 10),
+          ),
         ),
       ),
     );

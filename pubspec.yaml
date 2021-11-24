@@ -11,8 +11,6 @@ dependencies:
   cupertino_icons: ^1.0.2
   # get atate managment
   get: 4.3.8
-  # splash native
-  splash_screen_view: ^3.0.0
   # flutter svg view
   flutter_svg: ^0.23.0+1
   # rating view
@@ -40,6 +38,8 @@ dependencies:
   get_storage: ^2.0.3
   # date time picker:
   flutter_cupertino_date_picker_fork: ^1.0.6
+  # webview:
+  webview_flutter: ^2.0.12
 #-----------------
 
   flutter:

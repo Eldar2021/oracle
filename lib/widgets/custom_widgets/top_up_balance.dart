@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
+import 'package:oracle/app/routes/app_pages.dart';
 import 'package:oracle/constants/color_constants.dart';
 import 'package:oracle/generated/assets.dart';
 
@@ -19,7 +20,12 @@ class TopUpBalance extends StatelessWidget {
     return Column(
       children: [
         InkWell(
-          onTap: () {},
+          onTap: () {
+            Get.toNamed(
+              Routes.BALANCE,
+              arguments: ["На вашем балансе недостаточно"],
+            );
+          },
           child: Container(
             width: 160,
             height: 42,

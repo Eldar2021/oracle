@@ -45,6 +45,7 @@ abstract class Routes {
   static const CODE = _Paths.CODE;
   static const PLAYER_PROFILE = _Paths.PLAYER_PROFILE;
   static const FILTER_PLAYS_VIEW = _Paths.FILTER_PLAYS_VIEW;
+  static const BALANCE = _Paths.BALANCE;
 }
 
 abstract class _Paths {
@@ -89,4 +90,5 @@ abstract class _Paths {
   static const CODE = '/code';
   static const PLAYER_PROFILE = '/player-profile';
   static const FILTER_PLAYS_VIEW = '/filter-plays-view';
+  static const BALANCE = '/balance';
 }

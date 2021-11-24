@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_navigation/src/extension_navigation.dart';
 import 'package:get/get_state_manager/src/simple/get_view.dart';
+import 'package:oracle/app/routes/app_pages.dart';
 import 'package:oracle/service/source_bottom_sheet.dart';
 import '../controllers/respond_battle_controller.dart';
 import 'package:oracle/constants/color_constants.dart';
@@ -107,7 +108,7 @@ class RespondAddGamerView extends GetView<RespondBattleController> {
         print(value);
       },
       onTap: () {
-        Source.sourceBottomSheet(context,
+        Source.sourceBottomSheetRespond(context,
             users: controller.newUsers,
             controller: controller,
             textEditingController: controller.searchByNameNick.value,

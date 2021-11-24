@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
+import 'package:oracle/app/routes/app_pages.dart';
 import 'package:oracle/constants/color_constants.dart';
 import 'package:oracle/generated/assets.dart';
 import 'package:loading_indicator/loading_indicator.dart';
 import '../widgets/custom_widgets/custom_elevared_button.dart';
 
 class DialogService {
-
   static void customDialog({
     String? icon,
     String? text,
@@ -45,7 +45,7 @@ class DialogService {
   }
 
   static void customDialogExit({
-  required Function exit,
+    required Function exit,
   }) {
     Get.defaultDialog(
       title: "",
@@ -107,7 +107,7 @@ class DialogService {
     );
   }
 
-  static void respondSuccess(){
+  static void respondSuccess() {
     Get.defaultDialog(
       backgroundColor: MyColors.backgroundColor,
       title: "",
@@ -128,25 +128,62 @@ class DialogService {
     );
   }
 
-  static void loadingDialog() {
+  static void createBattleSuccess() {
     Get.defaultDialog(
+      barrierDismissible: false,
       backgroundColor: MyColors.backgroundColor,
       title: "",
-      content: Column(
-        children: [
-          SizedBox(
-            width: 50,
-            height: 50,
-            child: LoadingIndicator(
-              indicatorType: Indicator.lineSpinFadeLoader,
-              colors: [MyColors.ratingStarColor],
-            ),
+      content: WillPopScope(
+        onWillPop: ()async => false,
+        child: Padding(
+          padding: const EdgeInsets.all(30.0),
+          child: Column(
+            children: [
+              SvgPicture.asset(
+                Assets.drawerNavBattle,
+                width: 25,
+                color: MyColors.ratingStarColor,
+              ),
+              const SizedBox(height: 30.0),
+              Text(
+                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor",
+                textAlign: TextAlign.center,
+              ),
+              const SizedBox(height: 30.0),
+              CustomElevatedButton(
+                  text: "На главную",
+                  function: () {
+                    Get.offAllNamed(Routes.SCREEN);
+                  })
+            ],
           ),
-          const SizedBox(height: 40.0),
-          Text("Идет проверка документов"),
-        ],
+        ),
       ),
     );
   }
 
+  static void loadingDialog() {
+    Get.defaultDialog(
+      backgroundColor: MyColors.backgroundColor,
+      title: "",
+      barrierDismissible: false,
+      content: WillPopScope(
+        onWillPop: ()async => false,
+        child: Column(
+          children: [
+            SizedBox(
+              width: 50,
+              height: 50,
+              child: LoadingIndicator(
+                indicatorType: Indicator.lineSpinFadeLoader,
+                colors: [MyColors.ratingStarColor],
+              ),
+            ),
+            const SizedBox(height: 40.0),
+            Text("Идет проверка документов"),
+          ],
+        ),
+      ),
+    );
+  }
 }

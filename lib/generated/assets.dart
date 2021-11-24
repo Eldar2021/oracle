@@ -15,7 +15,9 @@ class Assets {
   static const String authenticatePhone = 'assets/icons/authenticate/phone.svg';
   static const String backgroundDraver = 'assets/images/background/draver.png';
   static const String backgroundElsom = 'assets/images/background/elsom.png';
+  static const String backgroundPay = 'assets/images/background/pay.png';
   static const String backgroundStatusWating = 'assets/images/background/statusWating.jpg';
+  static const String backgroundVisa = 'assets/images/background/visa.png';
   static const String bottomNavBottom1 = 'assets/icons/bottom_nav/bottom1.svg';
   static const String bottomNavBottom2 = 'assets/icons/bottom_nav/bottom2.svg';
   static const String bottomNavBottom3 = 'assets/icons/bottom_nav/bottom3.svg';

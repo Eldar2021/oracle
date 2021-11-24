@@ -142,6 +142,7 @@ class IdentificationView extends GetView<IdentificationController> {
             width: 210.0,
             text: "Отпраить на проверку",
             function: () {
+              DialogService.loadingDialog();
               if (_formKey.currentState!.validate()) {
                 if (controller.selectImagePassport == null) {
                   SnackBarService.nullPhoto(

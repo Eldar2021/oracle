@@ -98,7 +98,6 @@ class RespondBattleController extends GetxController {
     newUsers.value = users;
     battle = Get.arguments[0];
     formatBattle.value = listItemCount();
-    print(formatBattle.value);
     getUsers();
     super.onInit();
   }

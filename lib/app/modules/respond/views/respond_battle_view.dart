@@ -3,7 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 import 'package:oracle/app/modules/respond/widgets/battle_command_widget.dart';
-import 'package:oracle/app/modules/respond/widgets/top_up_balance.dart';
+import 'package:oracle/app/routes/app_pages.dart';
+import 'package:oracle/widgets/custom_widgets/top_up_balance.dart';
 import '../controllers/respond_battle_controller.dart';
 import 'package:oracle/constants/color_constants.dart';
 import 'package:oracle/widgets/custom_widgets/custom_divider.dart';
@@ -105,6 +106,12 @@ class RespondBattleView extends GetView<RespondBattleController> {
 
   AppBar _buildAppBar() {
     return AppBar(
+      leading: IconButton(
+        icon: Icon(Icons.arrow_back),
+        onPressed: (){
+          Get.offAllNamed(Routes.SCREEN);
+        },
+      ),
       title: Text("Сражение №${controller.battle.id}"),
       centerTitle: true,
     );

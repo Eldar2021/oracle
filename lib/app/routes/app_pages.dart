@@ -1,4 +1,5 @@
 import 'package:get/get.dart';
+
 import 'package:oracle/app/data/models/battle_model/battle_model.dart';
 import 'package:oracle/app/modules/about/bindings/about_binding.dart';
 import 'package:oracle/app/modules/about/views/about_view.dart';
@@ -6,6 +7,8 @@ import 'package:oracle/app/modules/answer/bindings/answer_binding.dart';
 import 'package:oracle/app/modules/answer/views/answer_view.dart';
 import 'package:oracle/app/modules/app_page/bindings/app_page_binding.dart';
 import 'package:oracle/app/modules/app_page/views/app_page_view.dart';
+import 'package:oracle/app/modules/balance/bindings/balance_binding.dart';
+import 'package:oracle/app/modules/balance/views/balance_view.dart';
 import 'package:oracle/app/modules/battle/bindings/battle_binding.dart';
 import 'package:oracle/app/modules/battle/views/battle_view.dart';
 import 'package:oracle/app/modules/battle_detail/bindings/battle_detail_binding.dart';
@@ -30,8 +33,6 @@ import 'package:oracle/app/modules/filter/bindings/sort_binding.dart';
 import 'package:oracle/app/modules/filter/views/category_view.dart';
 import 'package:oracle/app/modules/filter/views/filter_view.dart';
 import 'package:oracle/app/modules/filter/views/sort_view.dart';
-import 'package:oracle/app/modules/play/bindings/filter_plays_view_binding.dart';
-import 'package:oracle/app/modules/play/views/filter_plays_view_view.dart';
 import 'package:oracle/app/modules/give_review/bindings/give_review_binding.dart';
 import 'package:oracle/app/modules/give_review/views/give_review_view.dart';
 import 'package:oracle/app/modules/help/bindings/help_binding.dart';
@@ -55,7 +56,9 @@ import 'package:oracle/app/modules/login/views/register_view.dart';
 import 'package:oracle/app/modules/login/views/restore_password_view.dart';
 import 'package:oracle/app/modules/notification/bindings/notification_binding.dart';
 import 'package:oracle/app/modules/notification/views/notification_view.dart';
+import 'package:oracle/app/modules/play/bindings/filter_plays_view_binding.dart';
 import 'package:oracle/app/modules/play/bindings/play_binding.dart';
+import 'package:oracle/app/modules/play/views/filter_plays_view_view.dart';
 import 'package:oracle/app/modules/play/views/play_view.dart';
 import 'package:oracle/app/modules/profile/bindings/change_password_binding.dart';
 import 'package:oracle/app/modules/profile/bindings/personal_info_binding.dart';
@@ -179,7 +182,7 @@ class AppPages {
     ),
     GetPage(
       name: _Paths.PUBLISH_GAME,
-      page: () => PublishGameView(battle: battle1),
+      page: () => PublishGameView(),
       binding: PublishGameBinding(),
     ),
     GetPage(
@@ -266,6 +269,11 @@ class AppPages {
       name: _Paths.FILTER_PLAYS_VIEW,
       page: () => FilterPlaysViewView(),
       binding: FilterPlaysViewBinding(),
+    ),
+    GetPage(
+      name: _Paths.BALANCE,
+      page: () => BalanceView(),
+      binding: BalanceBinding(),
     ),
   ];
 }
