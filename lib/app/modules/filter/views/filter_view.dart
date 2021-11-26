@@ -44,7 +44,6 @@ class FilterView extends GetView<FilterController> {
               onTab: (val) {
                 Get.toNamed(Routes.CATEGORY);
               },
-              onDoubleTap: (text) {},
             );
           }),
           const SizedBox(height: 25),
@@ -72,20 +71,14 @@ class FilterView extends GetView<FilterController> {
             controller: controller,
             text: "1х1",
             onTab: (text) async{
-              controller.addFormatBattle(text);
-            },
-            onDoubleTap: (text) async{
-              controller.removedFormatBattle(text);
+              controller.addRemoveBattle(text);
             },
           ),
           TextFieldContainer(
             controller: controller,
             text: "3х3",
             onTab: (text) async{
-              controller.addFormatBattle(text);
-            },
-            onDoubleTap: (text) async{
-              controller.removedFormatBattle(text);
+              controller.addRemoveBattle(text);
             },
           ),
           TextFieldContainer(
@@ -93,10 +86,7 @@ class FilterView extends GetView<FilterController> {
             selected: true,
             text: "5х5",
             onTab: (text) async{
-              controller.addFormatBattle(text);
-            },
-            onDoubleTap: (text) async {
-              controller.removedFormatBattle(text);
+              controller.addRemoveBattle(text);
             },
           ),
           const SizedBox(height: 15),
@@ -110,7 +100,6 @@ class FilterView extends GetView<FilterController> {
               onTab: (val) {
                 Get.toNamed(Routes.SORT);
               },
-              onDoubleTap: (text) {},
             );
           }),
           const SizedBox(height: 40),

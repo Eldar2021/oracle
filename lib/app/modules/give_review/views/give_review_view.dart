@@ -1,23 +1,27 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:oracle/service/get_dialog_service.dart';
 import 'package:oracle/widgets/custom_widgets/custom_elevared_button.dart';
-import 'package:oracle/app/modules/give_review/widgets/get_review_widget.dart';
+import '../widgets/get_review_widget.dart';
 import '../controllers/give_review_controller.dart';
 
 class GiveReviewView extends GetView<GiveReviewController> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: _buildAppBar(),
-      body: SingleChildScrollView(
-        child: ConstrainedBox(
-          constraints: BoxConstraints(
-            maxHeight: double.infinity,
-          ),
-          child: Padding(
-            padding: const EdgeInsets.all(20.0),
-            child: _buildBody(),
+    return GestureDetector(
+      onTap: () {
+        FocusManager.instance.primaryFocus?.unfocus();
+      },
+      child: Scaffold(
+        appBar: _buildAppBar(),
+        body: SingleChildScrollView(
+          child: ConstrainedBox(
+            constraints: BoxConstraints(
+              maxHeight: double.infinity,
+            ),
+            child: Padding(
+              padding: const EdgeInsets.all(20.0),
+              child: _buildBody(),
+            ),
           ),
         ),
       ),
@@ -28,11 +32,14 @@ class GiveReviewView extends GetView<GiveReviewController> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        GetReviewWidget(),
+        GetReviewWidget(
+          controller: controller,
+        ),
         const SizedBox(height: 50.0),
         Text("Оставьте отзыв"),
         const SizedBox(height: 15.0),
         TextFormField(
+          controller: controller.review.value,
           maxLines: 5,
           decoration: InputDecoration(
             hintText: "Комментарий...",
@@ -44,15 +51,7 @@ class GiveReviewView extends GetView<GiveReviewController> {
           children: [
             CustomElevatedButton(
               function: () {
-                DialogService.customDialog(
-                  buttonText: "Вернуться назад",
-                  function: () {
-                    Get.back();
-                    Get.back();
-                  },
-                  description:
-                      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor",
-                );
+                controller.give();
               },
               text: "Отправить",
             ),

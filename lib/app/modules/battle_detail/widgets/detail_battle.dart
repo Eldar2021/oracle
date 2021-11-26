@@ -1,11 +1,14 @@
+import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:get/get.dart';
 import 'package:oracle/app/data/models/battle_model/battle_model.dart';
 import 'package:oracle/app/data/models/battle_task_model/battle_task_model.dart';
 import 'package:oracle/app/data/models/user_model/user_model.dart';
-import 'package:oracle/app/modules/battle_detail/controllers/battle_detail_tab_bar_controller.dart';
+import '../controllers/battle_detail_tab_bar_controller.dart';
+import 'package:oracle/app/routes/app_pages.dart';
 import 'package:oracle/constants/color_constants.dart';
+import 'package:oracle/service/snack_bar_service.dart';
 import 'package:oracle/widgets/custom_widgets/custom_divider.dart';
 import 'package:oracle/widgets/custom_widgets/custom_elevared_button.dart';
 import 'package:oracle/widgets/list_builder/task_list_builder.dart';
@@ -72,11 +75,18 @@ class DetailBattle extends StatelessWidget {
           wh: battle.customer.whatsApp,
         ),
         const SizedBox(height: 40.0),
-        Container(
-          width: Get.width,
-          color: MyColors.buttonBgColor,
-          padding: EdgeInsets.only(top: 15, bottom: 15),
-          child: Center(child: Text("Отменить задание")),
+        InkWell(
+          onTap: ()async{
+            SnackBarService.nullPhoto("Задания отмана", "");
+            await Future.delayed(Duration(seconds: 1));
+            Get.offAllNamed(Routes.SCREEN);
+          },
+          child: Container(
+            width: Get.width,
+            color: MyColors.buttonBgColor,
+            padding: EdgeInsets.only(top: 15, bottom: 15),
+            child: Center(child: Text("Отменить задание")),
+          ),
         ),
         const SizedBox(height: 30.0),
         Row(
@@ -85,7 +95,7 @@ class DetailBattle extends StatelessWidget {
             Text("Похожие задания"),
           ],
         ),
-        TaskListBuilder(battleTaskList: battleTaskList1),
+        TaskListBuilder(battleTaskList: listBattle1),
         const SizedBox(height: 40.0),
       ],
     );
@@ -99,7 +109,7 @@ class DetailBattle extends StatelessWidget {
         child: CustomElevatedButton(
           text: "Редактировать",
           function: () {
-            //Get.toNamed(Routes.RESPOND_BATTLE);
+            Get.toNamed(Routes.CREATE_BATTLE, arguments: [true, battle]);
           },
         ),
       );

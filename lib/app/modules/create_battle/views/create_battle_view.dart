@@ -11,16 +11,21 @@ class CreateBattleView extends GetView<CreateBattleController> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: _buildAppBar(),
-      body: SingleChildScrollView(
-        child: ConstrainedBox(
-          constraints: BoxConstraints(maxHeight: double.infinity),
-          child: Padding(
-            padding: EdgeInsets.all(20),
-            child: Form(
-              key: _formKey,
-              child: _buildBody(context),
+    return GestureDetector(
+      onTap: () {
+        FocusManager.instance.primaryFocus?.unfocus();
+      },
+      child: Scaffold(
+        appBar: _buildAppBar(),
+        body: SingleChildScrollView(
+          child: ConstrainedBox(
+            constraints: BoxConstraints(maxHeight: double.infinity),
+            child: Padding(
+              padding: EdgeInsets.all(20),
+              child: Form(
+                key: _formKey,
+                child: _buildBody(context),
+              ),
             ),
           ),
         ),
@@ -123,7 +128,7 @@ class CreateBattleView extends GetView<CreateBattleController> {
       ),
       validator: (val) {
         if (val!.isEmpty) {
-          return "";
+          return "Это поле должно быть заполнено";
         } else {
           return null;
         }
@@ -133,10 +138,11 @@ class CreateBattleView extends GetView<CreateBattleController> {
 
   TextFormField _rateField() {
     return TextFormField(
+      keyboardType: TextInputType.number,
       controller: controller.rate.value,
       validator: (val) {
         if (val!.isEmpty) {
-          return "";
+          return "Это поле должно быть заполнено";
         } else {
           return null;
         }
@@ -152,6 +158,7 @@ class CreateBattleView extends GetView<CreateBattleController> {
 
   TextFormField _descriptionField() {
     return TextFormField(
+      keyboardType: TextInputType.text,
       controller: controller.description.value,
       maxLines: 6,
       decoration: InputDecoration(
@@ -162,7 +169,7 @@ class CreateBattleView extends GetView<CreateBattleController> {
       ),
       validator: (val) {
         if (val!.isEmpty) {
-          return "";
+          return "Это поле должно быть заполнено";
         } else {
           return null;
         }
@@ -173,6 +180,7 @@ class CreateBattleView extends GetView<CreateBattleController> {
   TextFormField _titleField() {
     return TextFormField(
       controller: controller.title.value,
+      keyboardType: TextInputType.text,
       decoration: InputDecoration(
         hintText: "Введите заголовок",
         hintStyle: Get.textTheme.button!.copyWith(
@@ -181,7 +189,7 @@ class CreateBattleView extends GetView<CreateBattleController> {
       ),
       validator: (val) {
         if (val!.isEmpty) {
-          return "";
+          return "Это поле должно быть заполнено";
         } else {
           return null;
         }

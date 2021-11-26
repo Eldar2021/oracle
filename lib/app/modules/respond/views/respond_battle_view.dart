@@ -15,18 +15,23 @@ class RespondBattleView extends GetView<RespondBattleController> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: _buildAppBar(),
-      body: SingleChildScrollView(
-        child: ConstrainedBox(
-          constraints: BoxConstraints(
-            maxHeight: double.infinity,
-          ),
-          child: Padding(
-            padding: const EdgeInsets.all(20.0),
-            child: Form(
-              key: _formKey,
-              child: _buildBody(),
+    return GestureDetector(
+      onTap: () {
+        FocusManager.instance.primaryFocus?.unfocus();
+      },
+      child: Scaffold(
+        appBar: _buildAppBar(),
+        body: SingleChildScrollView(
+          child: ConstrainedBox(
+            constraints: BoxConstraints(
+              maxHeight: double.infinity,
+            ),
+            child: Padding(
+              padding: const EdgeInsets.all(20.0),
+              child: Form(
+                key: _formKey,
+                child: _buildBody(),
+              ),
             ),
           ),
         ),
@@ -54,7 +59,7 @@ class RespondBattleView extends GetView<RespondBattleController> {
           ),
           validator: (val) {
             if (val!.isEmpty) {
-              return "";
+              return "Это поле должно быть заполнено";
             } else {
               return null;
             }

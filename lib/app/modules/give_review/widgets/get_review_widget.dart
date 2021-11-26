@@ -2,13 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
+import '../controllers/give_review_controller.dart';
 import 'package:oracle/constants/color_constants.dart';
 import 'package:oracle/generated/assets.dart';
 
 class GetReviewWidget extends StatelessWidget {
   const GetReviewWidget({
     Key? key,
+    required this.controller,
   }) : super(key: key);
+  final GiveReviewController controller;
 
   @override
   Widget build(BuildContext context) {
@@ -18,14 +21,29 @@ class GetReviewWidget extends StatelessWidget {
         const SizedBox(height: 35),
         Text("Оцените"),
         const SizedBox(height: 15),
-        _buildGiveReview(text: "Вежливость"),
-        _buildGiveReview(text: "Пунктуальность"),
-        _buildGiveReview(text: "Адекватность"),
+        _buildGiveReview(
+          text: "Вежливость",
+          function: (rating) {
+            controller.val1.value = rating;
+          },
+        ),
+        _buildGiveReview(
+          text: "Пунктуальность",
+          function: (rating) {
+            controller.val2.value = rating;
+          },
+        ),
+        _buildGiveReview(
+          text: "Адекватность",
+          function: (rating) {
+            controller.val3.value = rating;
+          },
+        ),
       ],
     );
   }
 
-  Row _buildGiveReview({required String text}) {
+  Row _buildGiveReview({required String text, required Function function}) {
     return Row(
       children: [
         Expanded(
@@ -33,7 +51,7 @@ class GetReviewWidget extends StatelessWidget {
           child: Text(
             text,
             style:
-            Get.textTheme.caption!.copyWith(color: MyColors.grayWhiteColor),
+                Get.textTheme.caption!.copyWith(color: MyColors.grayWhiteColor),
           ),
         ),
         Expanded(
@@ -51,7 +69,7 @@ class GetReviewWidget extends StatelessWidget {
             ),
             itemPadding: EdgeInsets.all(7.0),
             onRatingUpdate: (rating) {
-              print(rating);
+              function(rating);
             },
           ),
         ),

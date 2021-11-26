@@ -36,8 +36,8 @@ class HomeView extends GetView<HomeController> {
       }),
       floatingActionButton: FloatingActionButton(
         onPressed: () async {
-          Get.toNamed(Routes.BALANCE, arguments: ["На вашем балансе недостаточно средств для создания сражения"]);
-          //  Get.toNamed(Routes.PLAYER_PROFILE, arguments: [userModel2]);
+          // Get.toNamed(Routes.BALANCE, arguments: ["На вашем балансе недостаточно средств для создания сражения"]);
+          Get.toNamed(Routes.PLAYER_PROFILE, arguments: [userModel2]);
           // Get.toNamed(Routes.LOGIN);
           // UrlService.launchWhatsApp("+996990039301", "");
           // UrlService.launchURL("https://www.youtube.com/");

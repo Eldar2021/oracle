@@ -134,7 +134,7 @@ class DialogService {
       backgroundColor: MyColors.backgroundColor,
       title: "",
       content: WillPopScope(
-        onWillPop: ()async => false,
+        onWillPop: () async => false,
         child: Padding(
           padding: const EdgeInsets.all(30.0),
           child: Column(
@@ -168,7 +168,7 @@ class DialogService {
       title: "",
       barrierDismissible: false,
       content: WillPopScope(
-        onWillPop: ()async => false,
+        onWillPop: () async => false,
         child: Column(
           children: [
             SizedBox(
@@ -181,6 +181,13 @@ class DialogService {
             ),
             const SizedBox(height: 40.0),
             Text("Идет проверка документов"),
+            const SizedBox(height: 20.0),
+            CustomElevatedButton(
+              function: () {
+                Get.offAllNamed(Routes.SCREEN);
+              },
+              text:"На главную",
+            )
           ],
         ),
       ),

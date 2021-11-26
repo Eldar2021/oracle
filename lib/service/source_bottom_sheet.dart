@@ -31,66 +31,71 @@ class Source {
       isScrollControlled: true,
       builder: (context) => Padding(
         padding: const EdgeInsets.symmetric(horizontal: 18),
-        child: Container(
-          height: Get.height * 0.9,
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            mainAxisSize: MainAxisSize.min,
-            children: <Widget>[
-              const SizedBox(height: 10),
-              TextField(
-                decoration: InputDecoration(hintText: 'Введите имя или ник'),
-                controller: textEditingController,
-                autofocus: true,
-                onChanged: (val) {
-                  onChanged(val);
-                },
-              ),
-              const SizedBox(height: 10),
-              Expanded(
-                child: Obx(() {
-                  return ListView.builder(
-                    shrinkWrap: true,
-                    itemCount: controller?.newUsers.length ?? users.length,
-                    itemBuilder: (context, index) {
-                      UserModel user =
-                          controller?.newUsers[index] ?? users[index];
-                      return InkWell(
-                        onTap: () {
-                          if (select != null) {
-                            select(user);
-                          } else {}
-                        },
-                        child: Container(
-                          padding: const EdgeInsets.all(10),
-                          margin: const EdgeInsets.only(top: 10),
-                          decoration: BoxDecoration(
-                            color: MyColors.backgroundColor,
-                            borderRadius: BorderRadius.circular(16),
-                            border: Border.all(
-                              color: MyColors.grayWhiteColor,
+        child: GestureDetector(
+          onTap: () {
+            FocusManager.instance.primaryFocus?.unfocus();
+          },
+          child: Container(
+            height: Get.height * 0.9,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisSize: MainAxisSize.min,
+              children: <Widget>[
+                const SizedBox(height: 10),
+                TextField(
+                  decoration: InputDecoration(hintText: 'Введите имя или ник'),
+                  controller: textEditingController,
+                  autofocus: true,
+                  onChanged: (val) {
+                    onChanged(val);
+                  },
+                ),
+                const SizedBox(height: 10),
+                Expanded(
+                  child: Obx(() {
+                    return ListView.builder(
+                      shrinkWrap: true,
+                      itemCount: controller?.newUsers.length ?? users.length,
+                      itemBuilder: (context, index) {
+                        UserModel user =
+                            controller?.newUsers[index] ?? users[index];
+                        return InkWell(
+                          onTap: () {
+                            if (select != null) {
+                              select(user);
+                            } else {}
+                          },
+                          child: Container(
+                            padding: const EdgeInsets.all(10),
+                            margin: const EdgeInsets.only(top: 10),
+                            decoration: BoxDecoration(
+                              color: MyColors.backgroundColor,
+                              borderRadius: BorderRadius.circular(16),
+                              border: Border.all(
+                                color: MyColors.grayWhiteColor,
+                              ),
+                            ),
+                            child: Row(
+                              children: [
+                                Image.asset(
+                                  user.photoProfile,
+                                  width: 42,
+                                  height: 42,
+                                  fit: BoxFit.fill,
+                                ),
+                                SizedBox(width: 15),
+                                Text("${user.name} ${user.nickName}"),
+                              ],
                             ),
                           ),
-                          child: Row(
-                            children: [
-                              Image.asset(
-                                user.photoProfile,
-                                width: 42,
-                                height: 42,
-                                fit: BoxFit.fill,
-                              ),
-                              SizedBox(width: 15),
-                              Text("${user.name} ${user.nickName}"),
-                            ],
-                          ),
-                        ),
-                      );
-                    },
-                  );
-                }),
-              ),
-              const SizedBox(height: 20),
-            ],
+                        );
+                      },
+                    );
+                  }),
+                ),
+                const SizedBox(height: 20),
+              ],
+            ),
           ),
         ),
       ),
@@ -120,66 +125,71 @@ class Source {
       isScrollControlled: true,
       builder: (context) => Padding(
         padding: const EdgeInsets.symmetric(horizontal: 18),
-        child: Container(
-          height: Get.height * 0.9,
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            mainAxisSize: MainAxisSize.min,
-            children: <Widget>[
-              const SizedBox(height: 10),
-              TextField(
-                decoration: InputDecoration(hintText: 'Введите имя или ник'),
-                controller: textEditingController,
-                autofocus: true,
-                onChanged: (val) {
-                  onChanged(val);
-                },
-              ),
-              const SizedBox(height: 10),
-              Expanded(
-                child: Obx(() {
-                  return ListView.builder(
-                    shrinkWrap: true,
-                    itemCount: controller?.newUsers.length ?? users.length,
-                    itemBuilder: (context, index) {
-                      UserModel user =
-                          controller?.newUsers[index] ?? users[index];
-                      return InkWell(
-                        onTap: () {
-                          if (select != null) {
-                            select(user);
-                          } else {}
-                        },
-                        child: Container(
-                          padding: const EdgeInsets.all(10),
-                          margin: const EdgeInsets.only(top: 10),
-                          decoration: BoxDecoration(
-                            color: MyColors.backgroundColor,
-                            borderRadius: BorderRadius.circular(16),
-                            border: Border.all(
-                              color: MyColors.grayWhiteColor,
+        child: GestureDetector(
+          onTap: () {
+            FocusManager.instance.primaryFocus?.unfocus();
+          },
+          child: Container(
+            height: Get.height * 0.9,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisSize: MainAxisSize.min,
+              children: <Widget>[
+                const SizedBox(height: 10),
+                TextField(
+                  decoration: InputDecoration(hintText: 'Введите имя или ник'),
+                  controller: textEditingController,
+                  autofocus: true,
+                  onChanged: (val) {
+                    onChanged(val);
+                  },
+                ),
+                const SizedBox(height: 10),
+                Expanded(
+                  child: Obx(() {
+                    return ListView.builder(
+                      shrinkWrap: true,
+                      itemCount: controller?.newUsers.length ?? users.length,
+                      itemBuilder: (context, index) {
+                        UserModel user =
+                            controller?.newUsers[index] ?? users[index];
+                        return InkWell(
+                          onTap: () {
+                            if (select != null) {
+                              select(user);
+                            } else {}
+                          },
+                          child: Container(
+                            padding: const EdgeInsets.all(10),
+                            margin: const EdgeInsets.only(top: 10),
+                            decoration: BoxDecoration(
+                              color: MyColors.backgroundColor,
+                              borderRadius: BorderRadius.circular(16),
+                              border: Border.all(
+                                color: MyColors.grayWhiteColor,
+                              ),
+                            ),
+                            child: Row(
+                              children: [
+                                Image.asset(
+                                  user.photoProfile,
+                                  width: 42,
+                                  height: 42,
+                                  fit: BoxFit.fill,
+                                ),
+                                SizedBox(width: 15),
+                                Text("${user.name} ${user.nickName}"),
+                              ],
                             ),
                           ),
-                          child: Row(
-                            children: [
-                              Image.asset(
-                                user.photoProfile,
-                                width: 42,
-                                height: 42,
-                                fit: BoxFit.fill,
-                              ),
-                              SizedBox(width: 15),
-                              Text("${user.name} ${user.nickName}"),
-                            ],
-                          ),
-                        ),
-                      );
-                    },
-                  );
-                }),
-              ),
-              const SizedBox(height: 20),
-            ],
+                        );
+                      },
+                    );
+                  }),
+                ),
+                const SizedBox(height: 20),
+              ],
+            ),
           ),
         ),
       ),

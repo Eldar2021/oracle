@@ -11,14 +11,19 @@ class RestorePasswordView extends GetView<RestorePasswordController> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(),
-      body: SingleChildScrollView(
-        child: ConstrainedBox(
-          constraints: BoxConstraints(
-            maxHeight: Get.height,
+    return GestureDetector(
+      onTap: () {
+        FocusManager.instance.primaryFocus?.unfocus();
+      },
+      child: Scaffold(
+        appBar: AppBar(),
+        body: SingleChildScrollView(
+          child: ConstrainedBox(
+            constraints: BoxConstraints(
+              maxHeight: Get.height,
+            ),
+            child: _buildBody(),
           ),
-          child: _buildBody(),
         ),
       ),
     );
@@ -42,7 +47,7 @@ class RestorePasswordView extends GetView<RestorePasswordController> {
               ),
               validator: (val) {
                 if (val!.isEmpty) {
-                  return "";
+                  return "Это поле должно быть заполнено";
                 } else {
                   return null;
                 }

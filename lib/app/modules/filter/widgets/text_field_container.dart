@@ -8,7 +8,6 @@ class TextFieldContainer extends StatelessWidget {
   const TextFieldContainer({
     required this.text,
     required this.onTab,
-    required this.onDoubleTap,
     this.icon,
     this.bgColor = MyColors.buttonBgColor,
     this.selected,
@@ -20,7 +19,6 @@ class TextFieldContainer extends StatelessWidget {
   final String? icon;
   final Color bgColor;
   final Function onTab;
-  final Function onDoubleTap;
   final bool? selected;
   final FilterController controller;
 
@@ -29,9 +27,6 @@ class TextFieldContainer extends StatelessWidget {
     return InkWell(
       onTap: () {
         onTab(text);
-      },
-      onDoubleTap: (){
-        onDoubleTap(text);
       },
       child: Obx(
         () {

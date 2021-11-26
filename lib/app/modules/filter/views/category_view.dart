@@ -29,60 +29,42 @@ class CategoryView extends GetView<FilterController> {
             controller: controller,
             text: "По актуальности",
             onTab: (category) async {
-              controller.addCategory(category);
-            },
-            onDoubleTap: (category) async {
-              controller.removeCategory(category);
+              controller.addRemoveCategory(category);
             },
           ),
           SelectedCategory(
             controller: controller,
             text: "По цене, сначала дорогие",
             onTab: (category) async {
-              controller.addCategory(category);
-            },
-            onDoubleTap: (category) async {
-              controller.removeCategory(category);
+              controller.addRemoveCategory(category);
             },
           ),
           SelectedCategory(
             controller: controller,
             text: "По цене, сначала дешевые",
             onTab: (category) async {
-              controller.addCategory(category);
-            },
-            onDoubleTap: (category) async {
-              controller.removeCategory(category);
+              controller.addRemoveCategory(category);
             },
           ),
           SelectedCategory(
             controller: controller,
             text: "По дата, сначала старые",
             onTab: (category) async {
-              controller.addCategory(category);
-            },
-            onDoubleTap: (category) async {
-              controller.removeCategory(category);
+              controller.addRemoveCategory(category);
             },
           ),
           SelectedCategory(
             controller: controller,
             text: "По дата, сначала новые",
             onTab: (category) async {
-              controller.addCategory(category);
-            },
-            onDoubleTap: (category) async {
-              controller.removeCategory(category);
+              controller.addRemoveCategory(category);
             },
           ),
           SelectedCategory(
             controller: controller,
             text: "Больше всего предложений",
             onTab: (category) async {
-              controller.addCategory(category);
-            },
-            onDoubleTap: (category) async {
-              controller.removeCategory(category);
+              controller.addRemoveCategory(category);
             },
           ),
         ],

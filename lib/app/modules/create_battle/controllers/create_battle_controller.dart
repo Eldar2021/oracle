@@ -1,10 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 import 'package:intl/intl.dart';
+import 'package:oracle/app/data/models/battle_model/battle_model.dart';
 import 'package:oracle/app/data/models/user_model/user_model.dart';
 import 'package:oracle/app/modules/app_page/controllers/app_page_controller.dart';
 import 'package:oracle/app/routes/app_pages.dart';
-import 'package:oracle/generated/assets.dart';
 import 'package:oracle/service/get_dialog_service.dart';
 import 'package:oracle/service/snack_bar_service.dart';
 
@@ -33,8 +33,10 @@ class CreateBattleController extends GetxController {
       TextEditingController(text: '1x1').obs;
 
   // late data
+  late final bool isUpdate;
   late final UserModel user;
   late final UserModel capitan;
+  late final Battle? battle;
 
   // user model lists
   final RxList<UserModel> selectUsers = RxList<UserModel>([]);
@@ -155,6 +157,20 @@ class CreateBattleController extends GetxController {
 
   @override
   void onInit() {
+    isUpdate = Get.arguments[0];
+    print(isUpdate);
+    if (isUpdate == true) {
+      try {
+        battle = Get.arguments[1];
+        title.value.text = battle!.title;
+        description.value.text = battle!.description?? "";
+        rate.value.text = battle!.rate.toString();
+        dateTime.value.text = battle!.startDate;
+      } catch (e) {
+        print(e);
+        battle == null;
+      }
+    } else {}
     user = appController.user.value;
     capitan = user;
     newUsers.value = users;

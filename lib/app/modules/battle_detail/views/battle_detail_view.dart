@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:oracle/app/data/models/battle_model/battle_model.dart';
 import '../widgets/battke_format_battle.dart';
 import '../widgets/battle_customer.dart';
 import '../widgets/battle_description.dart';
@@ -85,7 +86,7 @@ class BattleDetailView extends GetView<BattleDetailController> {
               ),
               const SizedBox(height: 40.0),
               Text("Похожие задания"),
-              TaskListBuilder(battleTaskList: controller.battle.tasks ?? []),
+              TaskListBuilder(battleTaskList: listBattle1),
               const SizedBox(height: 40.0),
             ],
           ),
@@ -96,7 +97,7 @@ class BattleDetailView extends GetView<BattleDetailController> {
 
   AppBar _buildAppBar() {
     return AppBar(
-      title: Text('BattleDetailView'),
+      title: Text('Сражение №${controller.battle.id}'),
       centerTitle: true,
     );
   }

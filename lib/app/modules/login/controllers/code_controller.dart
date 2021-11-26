@@ -10,7 +10,7 @@ class CodeController extends GetxController {
 
   void restore(String token) async {
     appController.addToken();
-    Get.offAll(Routes.SCREEN);
+    Get.offAllNamed(Routes.SCREEN);
   }
 
   @override

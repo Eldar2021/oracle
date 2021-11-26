@@ -9,7 +9,6 @@ class SelectedCategory extends StatelessWidget {
   const SelectedCategory({
     required this.text,
     required this.onTab,
-    required this.onDoubleTap,
     this.controller,
     this.isSelect = false,
     Key? key,
@@ -17,7 +16,6 @@ class SelectedCategory extends StatelessWidget {
 
   final String text;
   final Function onTab;
-  final Function onDoubleTap;
   final bool isSelect;
   final FilterController? controller;
 
@@ -26,9 +24,6 @@ class SelectedCategory extends StatelessWidget {
     return InkWell(
       onTap: () {
         onTab(text);
-      },
-      onDoubleTap: () {
-        onDoubleTap(text);
       },
       child: Container(
         padding: EdgeInsets.only(left: 20, right: 20, top: 18, bottom: 18),

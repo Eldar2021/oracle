@@ -1,8 +1,9 @@
 import 'dart:io';
-
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:oracle/service/get_dialog_service.dart';
+import 'package:oracle/service/identification_service.dart';
 
 class IdentificationController extends GetxController {
   Rx<TextEditingController> name = TextEditingController().obs;
@@ -13,12 +14,25 @@ class IdentificationController extends GetxController {
   Rx<TextEditingController> city = TextEditingController().obs;
   Rx<TextEditingController> address = TextEditingController().obs;
 
+  final ImagePicker _picker = ImagePicker();
+  final IdentificationService identificationService = IdentificationService();
+
   var selectImagePassport;
   var selectImageAddress;
   RxBool isPassport = false.obs;
   RxBool isAddress = false.obs;
+  final RxString position = "position".obs;
 
-  final ImagePicker _picker = ImagePicker();
+  Future<void> getPosition() async {
+    final String pos = await identificationService.getIdentification();
+    if (pos == "yesIden") {
+      position.value = "yesIden";
+    } else if (pos == "noIden") {
+      position.value = "noIden";
+    } else {
+      position.value = "waitIden";
+    }
+  }
 
   imgFromGalleryPassportCancel() async {
     isPassport.value = false;
@@ -46,8 +60,18 @@ class IdentificationController extends GetxController {
     Get.back();
   }
 
+  void noIden()async{
+    await identificationService.addIdentification("noIden");
+    DialogService.loadingDialog();
+  }
+
   @override
-  void onInit() {
+  void onInit() async{
+    await getPosition();
+    print(position.value);
+    if(position.value == "noIden"){
+      DialogService.loadingDialog();
+    }
     super.onInit();
   }
 

@@ -16,6 +16,22 @@ class FilterController extends GetxController {
     Get.toNamed(Routes.FILTER_PLAYS_VIEW, arguments: [battles]);
   }
 
+  void addRemoveCategory(String category) {
+    if (categories.contains(category)) {
+      removeCategory(category);
+    } else {
+      addCategory(category);
+    }
+  }
+
+  void addRemoveBattle(String battle) {
+    if (typeBattles.contains(battle)) {
+      removedFormatBattle(battle);
+    } else {
+      addFormatBattle(battle);
+    }
+  }
+
   void addCategory(String category) {
     categories.add(category);
   }

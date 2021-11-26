@@ -15,15 +15,20 @@ import 'package:select_form_field/select_form_field.dart';
 class BattleFormatView extends GetView<CreateBattleController> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: _buildAppBar(),
-      body: SingleChildScrollView(
-        physics: BouncingScrollPhysics(),
-        child: ConstrainedBox(
-          constraints: BoxConstraints(maxHeight: double.infinity),
-          child: Padding(
-            padding: const EdgeInsets.all(20.0),
-            child: _buildBody(),
+    return GestureDetector(
+      onTap: () {
+        FocusManager.instance.primaryFocus?.unfocus();
+      },
+      child: Scaffold(
+        appBar: _buildAppBar(),
+        body: SingleChildScrollView(
+          physics: BouncingScrollPhysics(),
+          child: ConstrainedBox(
+            constraints: BoxConstraints(maxHeight: double.infinity),
+            child: Padding(
+              padding: const EdgeInsets.all(20.0),
+              child: _buildBody(),
+            ),
           ),
         ),
       ),
@@ -66,6 +71,7 @@ class BattleFormatView extends GetView<CreateBattleController> {
                     Text("Команда"),
                     const SizedBox(height: 10),
                     TextFormField(
+                      keyboardType: TextInputType.text,
                       controller: controller.nameCommand.value,
                       decoration: InputDecoration(
                         hintText: "Введите название команды",

@@ -8,16 +8,21 @@ class HelpView extends GetView<HelpController> {
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: _buildAppBar(),
-      body: SingleChildScrollView(
-        child: ConstrainedBox(
-          constraints: BoxConstraints(
-            maxHeight: double.infinity,
-          ),
-          child: Padding(
-            padding: const EdgeInsets.all(20.0),
-            child: _buildBody(),
+    return GestureDetector(
+      onTap: () {
+        FocusManager.instance.primaryFocus?.unfocus();
+      },
+      child: Scaffold(
+        appBar: _buildAppBar(),
+        body: SingleChildScrollView(
+          child: ConstrainedBox(
+            constraints: BoxConstraints(
+              maxHeight: double.infinity,
+            ),
+            child: Padding(
+              padding: const EdgeInsets.all(20.0),
+              child: _buildBody(),
+            ),
           ),
         ),
       ),
@@ -43,10 +48,11 @@ class HelpView extends GetView<HelpController> {
           Text("Электронная почта"),
           SizedBox(height: 10.0),
           TextFormField(
+            keyboardType: TextInputType.emailAddress,
             decoration: InputDecoration(hintText: "Эл. почта"),
             validator: (val){
               if(val!.isEmpty){
-                return "";
+                return "Это поле должно быть заполнено";
               }else{
                 return null;
               }
@@ -57,12 +63,13 @@ class HelpView extends GetView<HelpController> {
           SizedBox(height: 10.0),
           TextFormField(
             maxLines: 7,
+            keyboardType: TextInputType.text,
             decoration: InputDecoration(
               hintText: "Оишите проблему более подробно",
             ),
             validator: (val){
               if(val!.isEmpty){
-                return "";
+                return "Это поле должно быть заполнено";
               }else{
                 return null;
               }
