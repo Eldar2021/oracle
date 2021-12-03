@@ -23,23 +23,33 @@ class TextFieldWithText extends StatelessWidget {
           color: MyColors.buttonBgColor,
           borderRadius: BorderRadius.circular(16),
         ),
-        child: Row(
-          children: [
-            Expanded(
-              flex: 1,
-              child: Text(text, style: Get.textTheme.bodyText2),
-            ),
-            Expanded(
-              flex: 4,
-              child: TextField(
-                keyboardType: type,
-                controller: controller,
-                decoration: new InputDecoration.collapsed(
-                  hintText: "",
-                ),
+        child: SizedBox(
+          height: 30,
+          child: Row(
+            children: [
+              Expanded(
+                flex: 1,
+                child: Text(text, style: Get.textTheme.bodyText2),
               ),
-            )
-          ],
+              Expanded(
+                flex: 4,
+                child: TextField(
+                  keyboardType: type,
+                  controller: controller,
+                  decoration: InputDecoration(
+                    border: InputBorder.none,
+                    enabledBorder: InputBorder.none,
+                    focusedBorder: InputBorder.none,
+                    focusedErrorBorder: InputBorder.none,
+                    errorBorder: InputBorder.none,
+                    disabledBorder: InputBorder.none,
+                    contentPadding: EdgeInsets.only(bottom: 9, top: 11),
+                    hintText: "",
+                  ),
+                ),
+              )
+            ],
+          ),
         ),
       ),
     );

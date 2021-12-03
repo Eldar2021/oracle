@@ -42,6 +42,7 @@ class AuthPhoneView extends GetView<AuthPhoneController> {
         Text("Авторизация через телефон", style: Get.textTheme.headline6),
         const SizedBox(height: 30.0),
         TextFormField(
+          autovalidateMode: AutovalidateMode.onUserInteraction,
           controller: controller.phone.value,
           keyboardType: TextInputType.phone,
           decoration: InputDecoration(
@@ -57,6 +58,7 @@ class AuthPhoneView extends GetView<AuthPhoneController> {
         ),
         const SizedBox(height: 15.0),
         TextFormField(
+          autovalidateMode: AutovalidateMode.onUserInteraction,
           controller: controller.password.value,
           keyboardType: TextInputType.visiblePassword,
           obscureText: true,

@@ -42,6 +42,7 @@ class UserPlaysList extends StatelessWidget {
 
   Container _buildContainer(Play play) {
     return Container(
+      // margin: EdgeInsets.only(top: 20.0, bottom: 20),
       decoration: BoxDecoration(
         border: Border(
           bottom: BorderSide(color: MyColors.grayTextColor, width: 1),
@@ -49,15 +50,22 @@ class UserPlaysList extends StatelessWidget {
       ),
       child: Row(
         children: [
-          Expanded(
-            flex: 1,
-            child: Image.asset(play.photoProfile),
+          ClipRRect(
+            borderRadius: BorderRadius.circular(26),
+            child: Image.asset(
+              play.photoProfile,
+              width: 42,
+              height: 42,
+              fit: BoxFit.cover,
+            ),
           ),
+          const SizedBox(width: 39),
           Expanded(
             flex: 3,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
+                const SizedBox(height: 20),
                 Text(play.name, style: Get.textTheme.subtitle1),
                 const SizedBox(height: 5),
                 Row(
@@ -85,7 +93,8 @@ class UserPlaysList extends StatelessWidget {
                     ),
                     SizedBox(width: 20)
                   ],
-                )
+                ),
+                const SizedBox(height: 20),
               ],
             ),
           ),

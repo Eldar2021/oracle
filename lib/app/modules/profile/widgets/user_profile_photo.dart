@@ -37,7 +37,7 @@ class UserProfilePhoto extends StatelessWidget {
         ),
         Expanded(
           child: ClipRRect(
-            borderRadius: BorderRadius.circular(50.0),
+            borderRadius: BorderRadius.circular(40.0),
             child: Container(
               child: Image.asset(user.photoProfile),
             ),

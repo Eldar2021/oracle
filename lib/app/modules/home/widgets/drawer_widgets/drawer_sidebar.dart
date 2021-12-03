@@ -21,13 +21,21 @@ class NavBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return drawer == false
         ? Drawer(
-            child: Center(
-              child: CustomElevatedButton(
-                text: "Авторизуйтесь",
-                width: 200,
-                function: () {
-                  Get.offAllNamed(Routes.LOGIN);
-                },
+            child: Container(
+              decoration: BoxDecoration(
+                image: DecorationImage(
+                  fit: BoxFit.cover,
+                  image: AssetImage(Assets.backgroundDraver),
+                ),
+              ),
+              child: Center(
+                child: CustomElevatedButton(
+                  text: "Авторизуйтесь",
+                  width: 200,
+                  function: () {
+                    Get.offAllNamed(Routes.LOGIN);
+                  },
+                ),
               ),
             ),
           )

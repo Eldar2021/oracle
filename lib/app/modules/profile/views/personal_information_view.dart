@@ -95,6 +95,7 @@ class PersonalInfoView extends GetView<PersonalInfoController> {
           ),
           SizedBox(height: 30),
           SettingTextField(
+            autovalidateMode: AutovalidateMode.onUserInteraction,
             textEditingController: controller.name.value,
             text: "Имя",
             hintText: "Введите Имя",
@@ -107,6 +108,7 @@ class PersonalInfoView extends GetView<PersonalInfoController> {
             },
           ),
           SettingTextField(
+            autovalidateMode: AutovalidateMode.onUserInteraction,
             textEditingController: controller.lastName.value,
             text: "Фамилия",
             hintText: "Введите Фамилия",
@@ -119,6 +121,7 @@ class PersonalInfoView extends GetView<PersonalInfoController> {
             },
           ),
           SettingTextField(
+            autovalidateMode: AutovalidateMode.onUserInteraction,
             textEditingController: controller.nick.value,
             text: "Ник",
             hintText: "Введите Ник",
@@ -131,6 +134,7 @@ class PersonalInfoView extends GetView<PersonalInfoController> {
             },
           ),
           SettingTextField(
+            autovalidateMode: AutovalidateMode.onUserInteraction,
             textEditingController: controller.email.value,
             type: TextInputType.emailAddress,
             text: "Электронный адрес",
@@ -144,6 +148,7 @@ class PersonalInfoView extends GetView<PersonalInfoController> {
             },
           ),
           SettingTextField(
+            autovalidateMode: AutovalidateMode.onUserInteraction,
             textEditingController: controller.phoneNumber.value,
             type: TextInputType.phone,
             text: "Телефонный номер",
@@ -157,6 +162,7 @@ class PersonalInfoView extends GetView<PersonalInfoController> {
             },
           ),
           SettingTextField(
+            autovalidateMode: AutovalidateMode.onUserInteraction,
             textEditingController: controller.whatsApp.value,
             type: TextInputType.phone,
             text: "WhatsApp",

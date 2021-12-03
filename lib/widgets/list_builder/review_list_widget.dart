@@ -78,7 +78,12 @@ class ReviewsList extends StatelessWidget {
       itemBuilder: (context, index) {
         Review review = reviews[index];
         return ListTile(
-          leading: Image.asset(review.user.photoProfile),
+          leading: Image.asset(
+            review.user.photoProfile,
+            width: 42,
+            height: 42,
+            fit: BoxFit.cover,
+          ),
           title: Text(
             "“${review.comment}”",
             style: Get.textTheme.bodyText2!

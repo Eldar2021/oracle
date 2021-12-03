@@ -13,14 +13,19 @@ import '../controllers/filter_controller.dart';
 class FilterView extends GetView<FilterController> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: buildAppBar(),
-      body: SingleChildScrollView(
-        child: ConstrainedBox(
-          constraints: BoxConstraints(
-            maxHeight: double.infinity,
+    return GestureDetector(
+      onTap: () {
+        FocusManager.instance.primaryFocus?.unfocus();
+      },
+      child: Scaffold(
+        appBar: buildAppBar(),
+        body: SingleChildScrollView(
+          child: ConstrainedBox(
+            constraints: BoxConstraints(
+              maxHeight: double.infinity,
+            ),
+            child: buildBody(),
           ),
-          child: buildBody(),
         ),
       ),
     );

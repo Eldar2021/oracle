@@ -55,6 +55,7 @@ class IdentificationView extends GetView<IdentificationController> {
           ),
           const SizedBox(height: 40.0),
           TextFormFieldWithTextIdentification(
+            autovalidateMode: AutovalidateMode.onUserInteraction,
             textEditingController: controller.name.value,
             text: "Личные данные",
             hinText: "ФИО",
@@ -67,8 +68,9 @@ class IdentificationView extends GetView<IdentificationController> {
             },
           ),
           TextFormField(
+            autovalidateMode: AutovalidateMode.onUserInteraction,
             controller: controller.numberPassport.value,
-            keyboardType: TextInputType.number,
+            keyboardType: TextInputType.text,
             decoration: InputDecoration(
               hintText: "Номер паспорта",
             ),
@@ -82,6 +84,7 @@ class IdentificationView extends GetView<IdentificationController> {
           ),
           const SizedBox(height: 10.0),
           TextFormField(
+            autovalidateMode: AutovalidateMode.onUserInteraction,
             controller: controller.pin.value,
             keyboardType: TextInputType.number,
             decoration: InputDecoration(
@@ -103,16 +106,17 @@ class IdentificationView extends GetView<IdentificationController> {
           ),
           const SizedBox(height: 10.0),
           TextFormField(
+            autovalidateMode: AutovalidateMode.onUserInteraction,
             readOnly: true,
             onTap: () {
               showDatePicker(
                 context: context,
                 initialDate: DateTime.now(),
-                firstDate: DateTime(2019, 1),
-                lastDate: DateTime(2021, 12),
+                firstDate: DateTime(1950, 1),
+                lastDate: DateTime(2100, 1),
               ).then((pickedDate) {
                 controller.birthday.value.text =
-                    DateFormat("yyyy/MM/dd").format(pickedDate!);
+                    DateFormat("dd-MM-yyyy").format(pickedDate!);
               });
             },
             controller: controller.birthday.value,
@@ -130,6 +134,7 @@ class IdentificationView extends GetView<IdentificationController> {
           const SizedBox(height: 10.0),
           const SizedBox(height: 25.0),
           TextFormFieldWithTextIdentification(
+            autovalidateMode: AutovalidateMode.onUserInteraction,
             textEditingController: controller.country.value,
             text: "Адрес проживания",
             hinText: "Страна",
@@ -142,6 +147,7 @@ class IdentificationView extends GetView<IdentificationController> {
             },
           ),
           TextFormField(
+            autovalidateMode: AutovalidateMode.onUserInteraction,
             controller: controller.city.value,
             decoration: InputDecoration(
               hintText: "Город",
@@ -156,6 +162,7 @@ class IdentificationView extends GetView<IdentificationController> {
           ),
           const SizedBox(height: 10.0),
           TextFormField(
+            autovalidateMode: AutovalidateMode.onUserInteraction,
             controller: controller.address.value,
             decoration: InputDecoration(
               hintText: "Адрес",

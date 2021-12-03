@@ -44,6 +44,7 @@ class RegisterView extends GetView<RegisterController> {
         Text("Регистрация", style: Get.textTheme.headline6),
         const SizedBox(height: 30.0),
         TextFormField(
+          autovalidateMode: AutovalidateMode.onUserInteraction,
           controller: controller.phone.value,
           keyboardType: TextInputType.phone,
           decoration: InputDecoration(
@@ -59,6 +60,7 @@ class RegisterView extends GetView<RegisterController> {
         ),
         const SizedBox(height: 15.0),
         TextFormField(
+          autovalidateMode: AutovalidateMode.onUserInteraction,
           controller: controller.email.value,
           keyboardType: TextInputType.emailAddress,
           decoration: InputDecoration(
@@ -74,6 +76,7 @@ class RegisterView extends GetView<RegisterController> {
         ),
         const SizedBox(height: 15.0),
         TextFormField(
+          autovalidateMode: AutovalidateMode.onUserInteraction,
           controller: controller.nickName.value,
           keyboardType: TextInputType.emailAddress,
           decoration: InputDecoration(
@@ -81,7 +84,7 @@ class RegisterView extends GetView<RegisterController> {
           ),
           validator: (val) {
             if (val!.isEmpty) {
-              return "";
+              return "Это поле должно быть заполнено";
             } else {
               return null;
             }
@@ -89,6 +92,7 @@ class RegisterView extends GetView<RegisterController> {
         ),
         const SizedBox(height: 15.0),
         TextFormField(
+          autovalidateMode: AutovalidateMode.onUserInteraction,
           controller: controller.password.value,
           keyboardType: TextInputType.visiblePassword,
           obscureText: true,
@@ -105,6 +109,7 @@ class RegisterView extends GetView<RegisterController> {
         ),
         const SizedBox(height: 15.0),
         TextFormField(
+          autovalidateMode: AutovalidateMode.onUserInteraction,
           controller: controller.repeatPassword.value,
           keyboardType: TextInputType.visiblePassword,
           obscureText: true,

@@ -38,6 +38,7 @@ class ChangedPasswordView extends GetView<ChangePasswordController> {
       child: Column(
         children: [
           SettingTextField(
+            autovalidateMode: AutovalidateMode.onUserInteraction,
             text: "Старый пароль",
             type: TextInputType.emailAddress,
             textEditingController: controller.lastPassword.value,
@@ -51,6 +52,7 @@ class ChangedPasswordView extends GetView<ChangePasswordController> {
             },
           ),
           SettingTextField(
+            autovalidateMode: AutovalidateMode.onUserInteraction,
             text: "Новый пароль",
             type: TextInputType.emailAddress,
             textEditingController: controller.newPassword.value,
@@ -64,6 +66,7 @@ class ChangedPasswordView extends GetView<ChangePasswordController> {
             },
           ),
           SettingTextField(
+            autovalidateMode: AutovalidateMode.onUserInteraction,
             text: "Повторите новый пароль",
             type: TextInputType.emailAddress,
             textEditingController: controller.repeatNewPassword.value,

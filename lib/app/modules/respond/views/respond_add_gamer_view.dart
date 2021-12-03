@@ -4,7 +4,6 @@ import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_navigation/src/extension_navigation.dart';
 import 'package:get/get_state_manager/src/simple/get_view.dart';
-import 'package:oracle/app/routes/app_pages.dart';
 import 'package:oracle/service/source_bottom_sheet.dart';
 import '../controllers/respond_battle_controller.dart';
 import 'package:oracle/constants/color_constants.dart';
@@ -15,18 +14,23 @@ class RespondAddGamerView extends GetView<RespondBattleController> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: _buildAppBar(),
-      body: SingleChildScrollView(
-        child: ConstrainedBox(
-          constraints: BoxConstraints(
-            maxHeight: double.infinity,
-          ),
-          child: Padding(
-            padding: const EdgeInsets.all(20.0),
-            child: Form(
-              key: _formKey,
-              child: buildBody(context),
+    return GestureDetector(
+      onTap: () {
+        FocusManager.instance.primaryFocus?.unfocus();
+      },
+      child: Scaffold(
+        appBar: _buildAppBar(),
+        body: SingleChildScrollView(
+          child: ConstrainedBox(
+            constraints: BoxConstraints(
+              maxHeight: double.infinity,
+            ),
+            child: Padding(
+              padding: const EdgeInsets.all(20.0),
+              child: Form(
+                key: _formKey,
+                child: buildBody(context),
+              ),
             ),
           ),
         ),
@@ -52,12 +56,20 @@ class RespondAddGamerView extends GetView<RespondBattleController> {
         ),
         const SizedBox(height: 10),
         TextFormField(
+          autovalidateMode: AutovalidateMode.onUserInteraction,
           controller: controller.searchByName.value,
           decoration: InputDecoration(
             hintText: "Введите имя",
             hintStyle: Get.textTheme.bodyText2!
                 .copyWith(color: MyColors.grayWhiteColor),
           ),
+          validator: (val) {
+            if (val!.isEmpty) {
+              return "Это поле должно быть заполнено";
+            } else {
+              return null;
+            }
+          },
         ),
         const SizedBox(height: 10),
         TextFormField(

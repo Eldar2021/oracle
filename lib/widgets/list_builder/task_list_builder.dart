@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:oracle/app/data/models/battle_model/battle_model.dart';
 import 'package:oracle/app/routes/app_pages.dart';
@@ -31,11 +32,13 @@ class TaskListBuilder extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Expanded(
-                  flex: 1,
-                  child: ClipRRect(
-                    borderRadius: BorderRadius.circular(16),
-                    child: Image.asset(battleTask.getGameIcon),
+                ClipRRect(
+                  borderRadius: BorderRadius.circular(26),
+                  child: Image.asset(
+                    battleTask.getGameIcon,
+                    width: 42,
+                    height: 42,
+                    fit: BoxFit.cover,
                   ),
                 ),
                 const SizedBox(width: 20.0),
@@ -43,15 +46,12 @@ class TaskListBuilder extends StatelessWidget {
                   flex: 5,
                   child: Text(battleTask.title),
                 ),
-                const SizedBox(width: 12.0),
-                Expanded(
-                  flex: 1,
-                  child: Column(
-                    children: [
-                      Text(battleTask.rate.toString()),
-                      SvgPicture.asset(Assets.componentsCoin)
-                    ],
-                  ),
+                const SizedBox(width: 22.0),
+                Column(
+                  children: [
+                    Text(battleTask.rate.toString()),
+                    SvgPicture.asset(Assets.componentsCoin)
+                  ],
                 )
               ],
             ),

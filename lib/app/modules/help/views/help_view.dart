@@ -48,6 +48,7 @@ class HelpView extends GetView<HelpController> {
           Text("Электронная почта"),
           SizedBox(height: 10.0),
           TextFormField(
+            autovalidateMode: AutovalidateMode.onUserInteraction,
             keyboardType: TextInputType.emailAddress,
             decoration: InputDecoration(hintText: "Эл. почта"),
             validator: (val){
@@ -63,6 +64,7 @@ class HelpView extends GetView<HelpController> {
           SizedBox(height: 10.0),
           TextFormField(
             maxLines: 7,
+            autovalidateMode: AutovalidateMode.onUserInteraction,
             keyboardType: TextInputType.text,
             decoration: InputDecoration(
               hintText: "Оишите проблему более подробно",

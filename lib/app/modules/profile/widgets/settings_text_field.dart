@@ -8,6 +8,7 @@ class SettingTextField extends StatelessWidget {
     this.hintText,
     this.validator,
     this.type,
+    this.autovalidateMode,
   }) : super(key: key);
 
   final TextEditingController textEditingController;
@@ -15,6 +16,7 @@ class SettingTextField extends StatelessWidget {
   final String? hintText;
   final String? Function(String?)? validator;
   final TextInputType? type;
+  final AutovalidateMode? autovalidateMode;
 
   @override
   Widget build(BuildContext context) {
@@ -25,6 +27,7 @@ class SettingTextField extends StatelessWidget {
           Text(text ?? ""),
           SizedBox(height: 10.0),
           TextFormField(
+            autovalidateMode: autovalidateMode?? null,
             keyboardType: type ?? null,
             controller: textEditingController,
             decoration: InputDecoration(

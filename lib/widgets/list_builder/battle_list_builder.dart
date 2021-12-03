@@ -50,12 +50,12 @@ class BattlesListBuilder extends StatelessWidget {
             Expanded(
               flex: 1,
               child: ClipRRect(
-                borderRadius: BorderRadius.circular(16.0),
+                borderRadius: BorderRadius.circular(36),
                 child: Image.asset(
                   battle.getGameIcon,
                   width: 42,
                   height: 42,
-                  fit: BoxFit.cover,
+                  fit: BoxFit.fill,
                 ),
               ),
             ),

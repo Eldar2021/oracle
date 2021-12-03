@@ -49,15 +49,22 @@ class PlayerPlaysList extends StatelessWidget {
       ),
       child: Row(
         children: [
-          Expanded(
-            flex: 1,
-            child: Image.asset(play.photoProfile),
+          ClipRRect(
+            borderRadius: BorderRadius.circular(26),
+            child: Image.asset(
+              play.photoProfile,
+              width: 42,
+              height: 42,
+              fit: BoxFit.cover,
+            ),
           ),
+          const SizedBox(width: 39),
           Expanded(
             flex: 3,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
+                const SizedBox(height: 20),
                 Text(play.name, style: Get.textTheme.subtitle1),
                 const SizedBox(height: 5),
                 Row(
@@ -83,9 +90,10 @@ class PlayerPlaysList extends StatelessWidget {
                       color: controller.percentColor(play.winRate ?? 0),
                       text: "${play.winRate?.round() ?? 0}",
                     ),
-                    SizedBox(width: 20)
+                    SizedBox(width: 20),
                   ],
-                )
+                ),
+                const SizedBox(height: 20),
               ],
             ),
           ),

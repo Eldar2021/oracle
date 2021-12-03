@@ -1,4 +1,4 @@
-import 'package:oracle/app/modules/create_battle/controllers/create_battle_controller.dart';
+import '../controllers/create_battle_controller.dart';
 import 'package:oracle/service/source_bottom_sheet.dart';
 import 'package:oracle/widgets/custom_widgets/custom_elevared_button.dart';
 import 'package:get/get_state_manager/src/simple/get_view.dart';
@@ -53,6 +53,7 @@ class AddGamerView extends GetView<CreateBattleController> {
         ),
         const SizedBox(height: 10),
         TextFormField(
+          autovalidateMode: AutovalidateMode.onUserInteraction,
           controller: controller.searchByName.value,
           decoration: InputDecoration(
             hintText: "Введите имя",

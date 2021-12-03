@@ -12,9 +12,11 @@ class RespondBattleController extends GetxController {
   final AppPageController appController = AppPageController();
   final Rx<TextEditingController> description = TextEditingController().obs;
   final Rx<TextEditingController> nameCommand = TextEditingController().obs;
-  final Rx<TextEditingController> searchByNameNick = TextEditingController().obs;
+  final Rx<TextEditingController> searchByNameNick =
+      TextEditingController().obs;
   final Rx<TextEditingController> searchByName = TextEditingController().obs;
-  final Rx<TextEditingController> searchByLastName = TextEditingController().obs;
+  final Rx<TextEditingController> searchByLastName =
+      TextEditingController().obs;
   final Rx<TextEditingController> searchByNick = TextEditingController().obs;
   final RxList<UserModel> users = RxList<UserModel>([]);
   final RxList<UserModel> newUsers = RxList<UserModel>([]);
@@ -42,7 +44,8 @@ class RespondBattleController extends GetxController {
     if (user.money! < battle.rate!) {
       SnackBarService.nullPhoto("Каражат жетишсиз", "Каражатынызды толтурунуз");
     } else if (notEmptyList.value < formatBattle.value) {
-      SnackBarService.nullPhoto("Оюнчулар толук эмес", "Команданы толук толтур");
+      SnackBarService.nullPhoto(
+          "Оюнчулар толук эмес", "Команданы толук толтур");
     } else {
       print(description.value.text);
       print(nameCommand.value.text);
@@ -86,7 +89,7 @@ class RespondBattleController extends GetxController {
     }
   }
 
-  void proceed()async{
+  void proceed() async {
     DialogService.respondSuccess();
     await Future.delayed(Duration(seconds: 1));
     Get.offAllNamed(Routes.HOME);

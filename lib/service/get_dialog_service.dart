@@ -193,4 +193,65 @@ class DialogService {
       ),
     );
   }
+
+  static void customDialogCancelBattle({
+    required Function exit,
+  }) {
+    Get.defaultDialog(
+      title: "",
+      backgroundColor: MyColors.backgroundColor,
+      content: Column(
+        children: [
+          SizedBox(height: 30.0),
+          Text(
+            "Вы действительно хотите\nотменить игру?",
+            textAlign: TextAlign.center,
+          ),
+          SizedBox(height: 30.0),
+        ],
+      ),
+      cancelTextColor: MyColors.whiteColor,
+      confirmTextColor: MyColors.whiteColor,
+      confirm: InkWell(
+        onTap: () {
+          exit();
+        },
+        child: Container(
+          width: 120.0,
+          padding: EdgeInsets.only(top: 10, bottom: 10),
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(16.0),
+            color: MyColors.linkTextColor,
+          ),
+          child: Text(
+            "Да",
+            textAlign: TextAlign.center,
+          ),
+        ),
+      ),
+      cancel: InkWell(
+        onTap: () {
+          Get.back();
+        },
+        child: Container(
+          width: 120.0,
+          padding: EdgeInsets.only(top: 10, bottom: 10),
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(16.0),
+            border: Border.all(
+              color: MyColors.linkTextColor,
+            ),
+          ),
+          child: Text(
+            "Нет",
+            textAlign: TextAlign.center,
+            style: Get.textTheme.subtitle1!.copyWith(
+              color: MyColors.grayTextColor,
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+
 }

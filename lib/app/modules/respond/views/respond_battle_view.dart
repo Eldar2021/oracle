@@ -51,6 +51,7 @@ class RespondBattleView extends GetView<RespondBattleController> {
         ),
         const SizedBox(height: 15),
         TextFormField(
+          autovalidateMode: AutovalidateMode.onUserInteraction,
           controller: controller.description.value,
           maxLines: null,
           keyboardType: TextInputType.multiline,

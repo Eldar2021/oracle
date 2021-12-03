@@ -71,6 +71,7 @@ class BattleFormatView extends GetView<CreateBattleController> {
                     Text("Команда"),
                     const SizedBox(height: 10),
                     TextFormField(
+                      autovalidateMode: AutovalidateMode.onUserInteraction,
                       keyboardType: TextInputType.text,
                       controller: controller.nameCommand.value,
                       decoration: InputDecoration(

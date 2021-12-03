@@ -1,5 +1,6 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:hive_flutter/hive_flutter.dart';
@@ -18,6 +19,10 @@ Future<void> main() async {
     Hive.init(appDirectory.path);
   }
   await GetStorage.init();
+  SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
+    systemNavigationBarColor: MyColors.backgroundColor, // navigation bar color
+    statusBarColor: MyColors.backgroundColor, // status bar color
+  ));
   runApp(
     GetMaterialApp(
       debugShowCheckedModeBanner: false,
@@ -36,9 +41,17 @@ Future<void> main() async {
           border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(16.0),
           ),
+          errorBorder: OutlineInputBorder(
+           borderSide: BorderSide(color: MyColors.redColor),
+            borderRadius: BorderRadius.circular(16.0),
+          ),
+          focusedBorder: OutlineInputBorder(
+            borderSide: BorderSide(color: MyColors.greenColor),
+            borderRadius: BorderRadius.circular(16.0),
+          ),
         ),
         bottomNavigationBarTheme: BottomNavigationBarThemeData(
-          backgroundColor: MyColors.bottomNavBgColor,
+          backgroundColor: MyColors.backgroundColor,
           selectedItemColor: MyColors.moneyTextColor,
           selectedIconTheme: IconThemeData(color: MyColors.moneyTextColor),
           selectedLabelStyle: TextStyle(fontSize: 13.0, height: 1.5),

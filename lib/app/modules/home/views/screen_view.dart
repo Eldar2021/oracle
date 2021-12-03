@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
-import 'package:oracle/app/data/models/user_model/user_model.dart';
 import 'package:oracle/app/modules/home/controllers/screen_cotroller.dart';
 import 'package:oracle/constants/color_constants.dart';
 import 'package:oracle/generated/assets.dart';
-import 'package:oracle/app/modules/home/widgets/drawer_widgets/drawer_sidebar.dart';
 
 class ScreenView extends GetView<ScreenController> {
   final ScreenController controller = Get.put(ScreenController());
@@ -17,6 +15,7 @@ class ScreenView extends GetView<ScreenController> {
       //drawer: NavBar(userModel: userModel1),
       bottomNavigationBar: Obx(
         () => BottomNavigationBar(
+          backgroundColor: MyColors.backgroundColor,
           items: [
             BottomNavigationBarItem(
               icon: SvgPicture.asset(Assets.bottomNavBottom1),

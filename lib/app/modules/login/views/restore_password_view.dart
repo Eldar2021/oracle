@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:oracle/app/modules/login/controllers/restore_password_controller.dart';
+import '../controllers/restore_password_controller.dart';
 import 'package:oracle/app/routes/app_pages.dart';
 import 'package:oracle/constants/color_constants.dart';
 import 'package:oracle/widgets/custom_widgets/custom_elevared_button.dart';
@@ -40,6 +40,7 @@ class RestorePasswordView extends GetView<RestorePasswordController> {
             Text("Восстановление пароля", style: Get.textTheme.headline6),
             const SizedBox(height: 30.0),
             TextFormField(
+              autovalidateMode: AutovalidateMode.onUserInteraction,
               controller: controller.emailPhone.value,
               keyboardType: TextInputType.emailAddress,
               decoration: InputDecoration(

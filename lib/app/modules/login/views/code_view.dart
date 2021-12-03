@@ -45,6 +45,7 @@ class CodeView extends GetView<CodeController> {
         Text("Ввведите код", style: Get.textTheme.headline6),
         const SizedBox(height: 30.0),
         TextFormField(
+          autovalidateMode: AutovalidateMode.onUserInteraction,
           controller: controller.code.value,
           keyboardType: TextInputType.number,
           decoration: InputDecoration(

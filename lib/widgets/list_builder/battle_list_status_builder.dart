@@ -49,14 +49,9 @@ class BattlesStatusListBuilder extends StatelessWidget {
           children: [
             Expanded(
               flex: 1,
-              child: ClipRRect(
-                borderRadius: BorderRadius.circular(16.0),
-                child: Image.asset(
-                  battle.getGameIcon,
-                  width: 42,
-                  height: 42,
-                  fit: BoxFit.cover,
-                ),
+              child:  CircleAvatar(
+                radius: 22,
+                backgroundImage: AssetImage(battle.getGameIcon),
               ),
             ),
             const SizedBox(width: 15),

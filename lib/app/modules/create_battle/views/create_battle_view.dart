@@ -37,7 +37,7 @@ class CreateBattleView extends GetView<CreateBattleController> {
     return AppBar(
       leading: IconButton(
         icon: Icon(Icons.arrow_back),
-        onPressed: (){
+        onPressed: () {
           Get.offAllNamed(Routes.SCREEN);
         },
       ),
@@ -112,6 +112,7 @@ class CreateBattleView extends GetView<CreateBattleController> {
 
   TextFormField _dateTimeField(BuildContext context) {
     return TextFormField(
+      autovalidateMode: AutovalidateMode.onUserInteraction,
       readOnly: true,
       controller: controller.dateTime.value,
       onTap: () {
@@ -138,6 +139,7 @@ class CreateBattleView extends GetView<CreateBattleController> {
 
   TextFormField _rateField() {
     return TextFormField(
+      autovalidateMode: AutovalidateMode.onUserInteraction,
       keyboardType: TextInputType.number,
       controller: controller.rate.value,
       validator: (val) {
@@ -158,6 +160,7 @@ class CreateBattleView extends GetView<CreateBattleController> {
 
   TextFormField _descriptionField() {
     return TextFormField(
+      autovalidateMode: AutovalidateMode.onUserInteraction,
       keyboardType: TextInputType.text,
       controller: controller.description.value,
       maxLines: 6,
@@ -179,6 +182,7 @@ class CreateBattleView extends GetView<CreateBattleController> {
 
   TextFormField _titleField() {
     return TextFormField(
+      autovalidateMode: AutovalidateMode.onUserInteraction,
       controller: controller.title.value,
       keyboardType: TextInputType.text,
       decoration: InputDecoration(

@@ -27,6 +27,7 @@ class BattleCommand extends StatelessWidget {
         ),
         const SizedBox(height: 15),
         TextFormField(
+          autovalidateMode: AutovalidateMode.onUserInteraction,
           controller: controller.nameCommand.value,
           maxLines: null,
           keyboardType: TextInputType.multiline,

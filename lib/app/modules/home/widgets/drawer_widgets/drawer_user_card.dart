@@ -19,6 +19,8 @@ class DrawerUserCard extends StatelessWidget {
       child: ListTile(
         leading: Image.asset(
           userModel.photoProfile,
+          width: 50,
+          height: 50,
           fit: BoxFit.cover,
         ),
         title: Row(
@@ -45,6 +47,7 @@ class DrawerUserCard extends StatelessWidget {
                 ),
               ],
             ),
+            SizedBox(width: 15.0),
             DrawerButton(),
           ],
         ),

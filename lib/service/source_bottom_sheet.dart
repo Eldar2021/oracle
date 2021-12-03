@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
+import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 import 'package:oracle/app/data/models/user_model/user_model.dart';
 import 'package:oracle/app/modules/create_battle/controllers/create_battle_controller.dart';
@@ -14,7 +15,7 @@ class Source {
     BuildContext context, {
     required List<UserModel> users,
     required TextEditingController textEditingController,
-    RespondBattleController? controller,
+    required RespondBattleController controller,
     Function? search,
     required Function onChanged,
     Function? select,
@@ -53,12 +54,22 @@ class Source {
                 const SizedBox(height: 10),
                 Expanded(
                   child: Obx(() {
+                    if (controller.newUsers.isEmpty) {
+                      return Padding(
+                        padding: const EdgeInsets.all(20.0),
+                        child: Text(
+                          "По вашему запросу не найдено пользователей",
+                          // textAlign: TextAlign.center,
+                          style: Get.textTheme.bodyText1!
+                              .copyWith(color: MyColors.grayTextColor),
+                        ),
+                      );
+                    }
                     return ListView.builder(
                       shrinkWrap: true,
-                      itemCount: controller?.newUsers.length ?? users.length,
+                      itemCount: controller.newUsers.length,
                       itemBuilder: (context, index) {
-                        UserModel user =
-                            controller?.newUsers[index] ?? users[index];
+                        UserModel user = controller.newUsers[index];
                         return InkWell(
                           onTap: () {
                             if (select != null) {
@@ -108,7 +119,7 @@ class Source {
     BuildContext context, {
     required List<UserModel> users,
     required TextEditingController textEditingController,
-    CreateBattleController? controller,
+    required CreateBattleController controller,
     Function? search,
     required Function onChanged,
     Function? select,
@@ -147,12 +158,23 @@ class Source {
                 const SizedBox(height: 10),
                 Expanded(
                   child: Obx(() {
+                    if (controller.newUsers.isEmpty) {
+                      return Padding(
+                        padding: const EdgeInsets.all(20.0),
+                        child: Text(
+                          "По вашему запросу не найдено пользователей",
+                          // textAlign: TextAlign.center,
+                          style: Get.textTheme.bodyText1!
+                              .copyWith(color: MyColors.grayTextColor),
+                        ),
+                      );
+                    }
                     return ListView.builder(
                       shrinkWrap: true,
-                      itemCount: controller?.newUsers.length ?? users.length,
+                      itemCount: controller.newUsers.length,
                       itemBuilder: (context, index) {
                         UserModel user =
-                            controller?.newUsers[index] ?? users[index];
+                            controller.newUsers[index];
                         return InkWell(
                           onTap: () {
                             if (select != null) {

@@ -66,7 +66,6 @@ class ProfileView extends GetView<ProfileController> {
             reviews: controller.user.reviews ?? [],
             controller: controller,
           ),
-          const SizedBox(height: 40),
           UserEmailPhoneList(),
           UserPlaysList(
             controller: controller,

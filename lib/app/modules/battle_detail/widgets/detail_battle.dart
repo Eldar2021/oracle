@@ -1,14 +1,12 @@
-import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:get/get.dart';
 import 'package:oracle/app/data/models/battle_model/battle_model.dart';
-import 'package:oracle/app/data/models/battle_task_model/battle_task_model.dart';
 import 'package:oracle/app/data/models/user_model/user_model.dart';
+import 'package:oracle/service/get_dialog_service.dart';
 import '../controllers/battle_detail_tab_bar_controller.dart';
 import 'package:oracle/app/routes/app_pages.dart';
 import 'package:oracle/constants/color_constants.dart';
-import 'package:oracle/service/snack_bar_service.dart';
 import 'package:oracle/widgets/custom_widgets/custom_divider.dart';
 import 'package:oracle/widgets/custom_widgets/custom_elevared_button.dart';
 import 'package:oracle/widgets/list_builder/task_list_builder.dart';
@@ -76,10 +74,10 @@ class DetailBattle extends StatelessWidget {
         ),
         const SizedBox(height: 40.0),
         InkWell(
-          onTap: ()async{
-            SnackBarService.nullPhoto("Задания отмана", "");
-            await Future.delayed(Duration(seconds: 1));
-            Get.offAllNamed(Routes.SCREEN);
+          onTap: () async {
+            DialogService.customDialogCancelBattle(exit: () {
+              Get.offAllNamed(Routes.SCREEN);
+            });
           },
           child: Container(
             width: Get.width,

@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:get/get.dart';
 import 'package:oracle/app/data/models/battle_model/battle_model.dart';
+import 'package:oracle/app/routes/app_pages.dart';
+import 'package:oracle/service/get_dialog_service.dart';
 
 class BattleDetailTabBarController extends GetxController {
   late final Battle battle;
@@ -18,6 +20,12 @@ class BattleDetailTabBarController extends GetxController {
         toBottom();
       }
     });
+  }
+
+  void cancelBattle(){
+     DialogService.customDialogCancelBattle(exit: (){
+       Get.offNamed(Routes.SCREEN);
+     });
   }
 
   void toBottom() {

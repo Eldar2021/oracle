@@ -88,7 +88,7 @@ class BottomSheetService {
       minDateTime: DateTime.parse('2020-05-15 09:23:00'),
       maxDateTime: DateTime.parse('2023-06-03 21:11:00'),
       initialDateTime: DateTime.parse(DateTime.now().toString()),
-      dateFormat: 'yyyy-MM-dd   HH:mm',
+      dateFormat: 'dd-MM-yyyy   HH:mm',
       pickerMode: DateTimePickerMode.datetime,
       pickerTheme: DateTimePickerTheme(
         backgroundColor: MyColors.backgroundColor,

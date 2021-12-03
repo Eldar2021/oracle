@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 import 'package:oracle/app/data/models/user_model/user_model.dart';
 import 'package:oracle/app/routes/app_pages.dart';
@@ -23,10 +24,15 @@ class BattleCustomer extends StatelessWidget {
           child: ClipRRect(
             borderRadius: BorderRadius.circular(16),
             child: InkWell(
-              onTap: (){
+              onTap: () {
                 Get.toNamed(Routes.PLAYER_PROFILE, arguments: [user]);
               },
-              child: Image.asset(user.photoProfile),
+              child: Image.asset(
+                user.photoProfile,
+                width: 45,
+                height: 45,
+                fit: BoxFit.contain,
+              ),
             ),
           ),
         ),
@@ -35,24 +41,18 @@ class BattleCustomer extends StatelessWidget {
           flex: 6,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.start,
             children: [
               InkWell(
-                onTap: (){
+                onTap: () {
                   Get.toNamed(Routes.PLAYER_PROFILE, arguments: [user]);
                 },
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
-                    Padding(
-                      padding: const EdgeInsets.only(top: 15.0),
-                      child:
-                          Text("${user.name}", style: Get.textTheme.subtitle2!),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.only(top: 15.0),
-                      child: Text("  •  ${userModel1.nickName}",
-                          style: Get.textTheme.subtitle2!),
-                    ),
+                    Text("${user.name}", style: Get.textTheme.subtitle2!),
+                    Text("  •  ${userModel1.nickName}",
+                        style: Get.textTheme.subtitle2!),
                   ],
                 ),
               ),
