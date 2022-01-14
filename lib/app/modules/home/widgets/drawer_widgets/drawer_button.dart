@@ -15,7 +15,7 @@ class DrawerButton extends StatelessWidget {
         Get.toNamed(Routes.BALANCE);
       },
       child: Container(
-        padding: EdgeInsets.only(top: 5, bottom: 5, right: 8, left: 8),
+        padding: EdgeInsets.only(top: 5, bottom: 5, right: 6, left: 6),
         decoration: BoxDecoration(
             color: MyColors.linkTextColor,
             borderRadius: BorderRadius.circular(16.0)),

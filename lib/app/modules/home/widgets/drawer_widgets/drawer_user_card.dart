@@ -47,7 +47,7 @@ class DrawerUserCard extends StatelessWidget {
                 ),
               ],
             ),
-            SizedBox(width: 15.0),
+            SizedBox(width: 10.0),
             DrawerButton(),
           ],
         ),
